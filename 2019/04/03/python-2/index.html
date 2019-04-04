@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="习题三十七：复习各种符号：为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了… 一.关键字 and  not or from  import del while as global with if/elif/else assert pass yield break expect finally print class exec in raise continue is retur">
+  <meta name="description" content="习题三十七：复习各种符号： 为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了… 总注   True为任意非0或非空的值。0或空为False。一.关键字   and  not or from  import del while as global with if/elif/else assert pass yield break expect finally print clas">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 2">
 <meta property="og:url" content="http://linmushen.com/2019/04/03/python-2/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="习题三十七：复习各种符号：为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了… 一.关键字 and  not or from  import del while as global with if/elif/else assert pass yield break expect finally print class exec in raise continue is retur">
+<meta property="og:description" content="习题三十七：复习各种符号： 为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了… 总注   True为任意非0或非空的值。0或空为False。一.关键字   and  not or from  import del while as global with if/elif/else assert pass yield break expect finally print clas">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-04T10:05:48.881Z">
+<meta property="og:updated_time" content="2019-04-04T13:35:52.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 2">
-<meta name="twitter:description" content="习题三十七：复习各种符号：为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了… 一.关键字 and  not or from  import del while as global with if/elif/else assert pass yield break expect finally print class exec in raise continue is retur">
+<meta name="twitter:description" content="习题三十七：复习各种符号： 为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了… 总注   True为任意非0或非空的值。0或空为False。一.关键字   and  not or from  import del while as global with if/elif/else assert pass yield break expect finally print clas">
 
 
 
@@ -353,7 +353,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-04 18:05:48" itemprop="dateModified" datetime="2019-04-04T18:05:48+08:00">2019-04-04</time>
+                <time title="修改时间：2019-04-04 21:35:52" itemprop="dateModified" datetime="2019-04-04T21:35:52+08:00">2019-04-04</time>
               
             
           </span>
@@ -387,8 +387,14 @@
       
 
       
-        <h1 id="习题三十七：复习各种符号："><a href="#习题三十七：复习各种符号：" class="headerlink" title="习题三十七：复习各种符号："></a>习题三十七：复习各种符号：</h1><p>为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了…</p>
-<h2 id="一-关键字"><a href="#一-关键字" class="headerlink" title="一.关键字"></a><strong>一.关键字</strong></h2><ul>
+        <h1 id="习题三十七：复习各种符号："><a href="#习题三十七：复习各种符号：" class="headerlink" title="习题三十七：复习各种符号："></a>习题三十七：复习各种符号：</h1><ul>
+<li>为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了…</li>
+<li>总注</li>
+</ul>
+<ol>
+<li>True为任意非0或非空的值。0或空为False。<h2 id="一-关键字"><a href="#一-关键字" class="headerlink" title="一.关键字"></a><strong>一.关键字</strong></h2></li>
+</ol>
+<ul>
 <li>and </li>
 <li>not</li>
 <li>or</li>
@@ -497,6 +503,26 @@
 </li>
 <li>del只解除了a对1的引用，并没有删除数据a。</li>
 </ul>
+<p>##global语句</p>
+<blockquote>
+<p>用于定义全局变量<br>global用于给定义在函数外的变量赋值，用global表明，这是个全局变量而非局部变量。</p>
+</blockquote>
+<blockquote>
+<p>global语句可以在函数内对定义在函数外的变量赋值<br>赋值产生的变化也同时反映在主块中的变量</p>
+<p>使用：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">i=20</span><br><span class="line">def somefau()</span><br><span class="line">  global i</span><br><span class="line">  print i</span><br><span class="line">  i=10</span><br><span class="line">  print&quot;2nd=&quot;,i</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果</p>
+<blockquote>
+<p>20</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>2nd=10<br>通过global实现了在函数内对主块变量的赋值</p>
+</blockquote>
+</blockquote>
 <h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><h3 id="while型"><a href="#while型" class="headerlink" title="while型"></a>while型</h3><blockquote>
 <h4 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句:"></a>while循环语句:</h4><blockquote>
 <p>基本形式：（注：执行语句前要有缩进）</p>
@@ -675,7 +701,50 @@
 <p>for中语句与之前的没有区别，但else只在for正常循环结束后（不是通过break结束）的情况下被执行。</p>
 </blockquote>
 </blockquote>
-<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2>
+<p>##占位语句（pass）</p>
+<ul>
+<li>pass不做任何事情，只用作占位。</li>
+<li>没想好函数内容是，在函数内写入一条pass可以避免报错<blockquote>
+<p>像这样：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def unthink()</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="条件语句（if…elif…else…"><a href="#条件语句（if…elif…else…" class="headerlink" title="条件语句（if…elif…else…)"></a>条件语句（if…elif…else…)</h2><blockquote>
+<blockquote>
+<p>通过一条或多条语句的执行结果（Ture或False)来决定执行的代码块。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>要格外注意缩进的问题，没进入一个新代码块，打两个空格</p>
+</blockquote>
+<blockquote>
+<p>使用：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if 判断条件1：</span><br><span class="line">    执行语句1</span><br><span class="line">elif 判断条件2：</span><br><span class="line">    执行语句2</span><br><span class="line">···</span><br><span class="line">else:</span><br><span class="line">    执行语句n</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>也有类似于while的简单语句组：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if 判断语句：执行语句</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>#暂时不懂的关键字</p>
+<h2 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h2><blockquote>
+<p>yield类似中断，一旦执行到yield就会返回变量当前的值，之后再继续执行yield后的语句。<br>使用：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yield 变量</span><br></pre></td></tr></table></figure>
+<p>##异常处理(try/excepy/else)</p>
+<p>###使用不带任何异常类型的except</p>
+<blockquote>
+<p>无法识别是什么异常，因为这个语句捕获所有异常</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  正常操作</span><br><span class="line">  ...</span><br><span class="line">except:</span><br><span class="line">  发生异常，执行此代码</span><br><span class="line">  ...</span><br><span class="line">else:</span><br><span class="line">  没有异常，执行此代码</span><br></pre></td></tr></table></figure>
+<p>##with as</p>
+<blockquote>
+</blockquote>
+
       
     </div>
 
@@ -714,6 +783,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/04/wuwuwu/" rel="prev" title="吴瑾薪">
+                吴瑾薪 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -782,7 +855,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -824,7 +897,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#习题三十七：复习各种符号："><span class="nav-number">1.</span> <span class="nav-text">习题三十七：复习各种符号：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-关键字"><span class="nav-number">1.1.</span> <span class="nav-text">一.关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑关键词-and-or-not"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑关键词(and,or,not)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优先级："><span class="nav-number">1.2.1.</span> <span class="nav-text">优先级：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回值"><span class="nav-number">1.2.2.</span> <span class="nav-text">返回值:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#and：（x为真返回y，x为假返回x）"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">and：（x为真返回y，x为假返回x）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#or-not："><span class="nav-number">1.2.2.2.</span> <span class="nav-text">or/not：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块的引入（import-from…import）"><span class="nav-number">1.3.</span> <span class="nav-text">模块的引入（import/from…import）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#import语句的使用"><span class="nav-number">1.3.1.</span> <span class="nav-text">import语句的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#from…import语句的使用"><span class="nav-number">1.3.2.</span> <span class="nav-text">from…import语句的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#from…import-的使用"><span class="nav-number">1.3.3.</span> <span class="nav-text">from…import * 的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#del语句"><span class="nav-number">1.4.</span> <span class="nav-text">del语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环语句"><span class="nav-number">1.5.</span> <span class="nav-text">循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#while型"><span class="nav-number">1.5.1.</span> <span class="nav-text">while型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#while循环语句"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">while循环语句:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while…else语句："><span class="nav-number">1.5.1.2.</span> <span class="nav-text">while…else语句：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while的简单语句组："><span class="nav-number">1.5.1.3.</span> <span class="nav-text">while的简单语句组：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while的附加命令"><span class="nav-number">1.5.1.4.</span> <span class="nav-text">while的附加命令:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#continue："><span class="nav-number">1.5.1.4.1.</span> <span class="nav-text">continue：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#break"><span class="nav-number">1.5.1.4.2.</span> <span class="nav-text">break:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for型"><span class="nav-number">1.5.2.</span> <span class="nav-text">for型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#for…in…"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">for…in…</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-遍历列表）："><span class="nav-number">1.5.2.1.1.</span> <span class="nav-text">使用(遍历列表）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用（遍历字符串）："><span class="nav-number">1.5.2.1.2.</span> <span class="nav-text">使用（遍历字符串）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过指针变量来进行遍历："><span class="nav-number">1.5.2.1.3.</span> <span class="nav-text">通过指针变量来进行遍历：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#range-函数"><span class="nav-number">1.5.2.1.3.1.</span> <span class="nav-text">range()函数:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for…in-else"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">for…in:/else:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件语句"><span class="nav-number">1.6.</span> <span class="nav-text">条件语句</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#习题三十七：复习各种符号："><span class="nav-number">1.</span> <span class="nav-text">习题三十七：复习各种符号：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-关键字"><span class="nav-number">1.1.</span> <span class="nav-text">一.关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑关键词-and-or-not"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑关键词(and,or,not)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优先级："><span class="nav-number">1.2.1.</span> <span class="nav-text">优先级：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回值"><span class="nav-number">1.2.2.</span> <span class="nav-text">返回值:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#and：（x为真返回y，x为假返回x）"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">and：（x为真返回y，x为假返回x）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#or-not："><span class="nav-number">1.2.2.2.</span> <span class="nav-text">or/not：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块的引入（import-from…import）"><span class="nav-number">1.3.</span> <span class="nav-text">模块的引入（import/from…import）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#import语句的使用"><span class="nav-number">1.3.1.</span> <span class="nav-text">import语句的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#from…import语句的使用"><span class="nav-number">1.3.2.</span> <span class="nav-text">from…import语句的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#from…import-的使用"><span class="nav-number">1.3.3.</span> <span class="nav-text">from…import * 的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#del语句"><span class="nav-number">1.4.</span> <span class="nav-text">del语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环语句"><span class="nav-number">1.5.</span> <span class="nav-text">循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#while型"><span class="nav-number">1.5.1.</span> <span class="nav-text">while型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#while循环语句"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">while循环语句:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while…else语句："><span class="nav-number">1.5.1.2.</span> <span class="nav-text">while…else语句：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while的简单语句组："><span class="nav-number">1.5.1.3.</span> <span class="nav-text">while的简单语句组：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while的附加命令"><span class="nav-number">1.5.1.4.</span> <span class="nav-text">while的附加命令:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#continue："><span class="nav-number">1.5.1.4.1.</span> <span class="nav-text">continue：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#break"><span class="nav-number">1.5.1.4.2.</span> <span class="nav-text">break:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for型"><span class="nav-number">1.5.2.</span> <span class="nav-text">for型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#for…in…"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">for…in…</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-遍历列表）："><span class="nav-number">1.5.2.1.1.</span> <span class="nav-text">使用(遍历列表）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用（遍历字符串）："><span class="nav-number">1.5.2.1.2.</span> <span class="nav-text">使用（遍历字符串）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过指针变量来进行遍历："><span class="nav-number">1.5.2.1.3.</span> <span class="nav-text">通过指针变量来进行遍历：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#range-函数"><span class="nav-number">1.5.2.1.3.1.</span> <span class="nav-text">range()函数:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for…in-else"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">for…in:/else:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件语句（if…elif…else…"><span class="nav-number">1.6.</span> <span class="nav-text">条件语句（if…elif…else…)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yield"><span class="nav-number">1.7.</span> <span class="nav-text">yield</span></a></li></ol></li></ol></div>
             
 
           </div>
