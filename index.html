@@ -338,12 +338,24 @@
                 
               
 
-              <time title="创建时间：2019-04-03 23:36:32 / 修改时间：23:55:50" itemprop="dateCreated datePublished" datetime="2019-04-03T23:36:32+08:00">2019-04-03</time>
+              <time title="创建时间：2019-04-03 23:36:32" itemprop="dateCreated datePublished" datetime="2019-04-03T23:36:32+08:00">2019-04-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-04 17:23:12" itemprop="dateModified" datetime="2019-04-04T17:23:12+08:00">2019-04-04</time>
               
             
           </span>
@@ -379,15 +391,316 @@
       
         
           
-            <p>#复习各种符号：</p>
-<p>##<strong>关键字</strong></p>
-<ol>
-<li>and————与</li>
-<li>or————-或</li>
-<li>not————非</li>
-<li>if/elif/else—条件语句</li>
-<li>global———定义一个全局变量 </li>
-</ol>
+            <h1 id="习题三十七：复习各种符号："><a href="#习题三十七：复习各种符号：" class="headerlink" title="习题三十七：复习各种符号："></a>习题三十七：复习各种符号：</h1><p>为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了…</p>
+<h2 id="一-关键字"><a href="#一-关键字" class="headerlink" title="一.关键字"></a><strong>一.关键字</strong></h2><ul>
+<li>and </li>
+<li>not</li>
+<li>or</li>
+<li>from </li>
+<li>import</li>
+<li>del</li>
+<li>while</li>
+<li>as</li>
+<li>global</li>
+<li>with</li>
+<li>if/elif/else</li>
+<li>assert</li>
+<li>pass</li>
+<li>yield</li>
+<li>break</li>
+<li>expect</li>
+<li>finally</li>
+<li>print</li>
+<li>class</li>
+<li>exec</li>
+<li>in</li>
+<li>raise</li>
+<li>continue</li>
+<li>is</li>
+<li>return</li>
+<li>def</li>
+<li>for</li>
+<li>lambda</li>
+<li>try</li>
+</ul>
+<hr>
+<h2 id="1-逻辑关键词-and-or-not"><a href="#1-逻辑关键词-and-or-not" class="headerlink" title="1.逻辑关键词(and,or,not)"></a>1.逻辑关键词(and,or,not)</h2><p>####1)优先级：</p>
+<blockquote>
+<p>#####优先级从大到小为：</p>
+<blockquote>
+<p>not&gt;and&gt;or</p>
+</blockquote>
+</blockquote>
+<p>####2) 返回值:</p>
+<blockquote>
+<p>#####1.and：（x为真返回y，x为假返回x）</p>
+<blockquote>
+<p>and的返回值是决定表达式结果的值。</p>
+<blockquote>
+<p>如x and y：若x为真，则y决定了表达式的结果，返回值为y（与表达式真假无关，只要x为真，就返回y）。若x为假，则返回值为x。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>#####2.or/not：</p>
+<blockquote>
+<p>x or y有一个结果真，返回的结果就是真。</p>
+<blockquote>
+<p>print(x or y):x为真输出x，x为假输出y。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>not 布尔表达式 ：返回与表达式结果相反的值。</p>
+<blockquote>
+<p>print(not 表达式）：只输出False/Ture </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="2-模块的引入（import-from…import）"><a href="#2-模块的引入（import-from…import）" class="headerlink" title="2.模块的引入（import/from…import）"></a>2.模块的引入（import/from…import）</h2><p>####1）import语句的使用</p>
+<blockquote>
+<p>导入模块：</p>
+<blockquote>
+<p>import 模块<br>这个声明将整个模块导入</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>调用模块中的函数：</p>
+<blockquote>
+<p>模块名.函数名</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>无论执行多少次import，模块只会被导入一次。</p>
+</blockquote>
+<p>####2)from…import语句的使用</p>
+<blockquote>
+<p>导入模块中的指定部分：</p>
+<blockquote>
+<p>from 模块名 import 函数名<br>这个声明将模块中的特定函数导入</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>调用函数:</p>
+<blockquote>
+<p>函数名()</p>
+</blockquote>
+</blockquote>
+<p>####3)from…import * 的使用</p>
+<blockquote>
+<p>导入模块中所有内容:</p>
+<blockquote>
+<p>from 模块名 import *</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>调用模块中的任意函数：</p>
+<blockquote>
+<p>函数名（）</p>
+</blockquote>
+</blockquote>
+<h2 id="3-del语句"><a href="#3-del语句" class="headerlink" title="3.del语句"></a>3.del语句</h2><ul>
+<li><p>del语句作用在变量上，而不是数据对象上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=1</span><br><span class="line">b=a</span><br><span class="line">del a</span><br><span class="line">print b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输出结果为1。</p>
+</li>
+<li>del只解除了a对1的引用，并没有删除数据a。</li>
+</ul>
+<p>##4.循环语句</p>
+<p>###一.while型</p>
+<blockquote>
+<p>####1)while循环语句:</p>
+<blockquote>
+<p>基本形式：（注：执行语句前要有缩进）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">while 判断条件：</span><br><span class="line">  执行语句...</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>当判断条件为Ture时，则会无限循环。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>####2)while…else语句：</p>
+<blockquote>
+<p>基本形式：（注：同样要缩进)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while 判断条件：</span><br><span class="line">  执行语句1...</span><br><span class="line">else：</span><br><span class="line">  执行语句2...</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>当判断条件为Ture时，执行1。</li>
+<li>当判断条件为False时，执行2。</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>####3)while的简单语句组：</p>
+<blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">while(判断语句）：执行语句</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>当执行语句只有一行时，可以将执行语句与while写在同一行。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>####4)while的附加命令:</p>
+<blockquote>
+<p>#####1)continue：</p>
+<blockquote>
+<p>continue用于跳过当次循环</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">i = 1</span><br><span class="line">while i&lt;10:</span><br><span class="line">    i += 1</span><br><span class="line">    if i%2 == 0:</span><br><span class="line">        continue</span><br><span class="line">    print i</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>####2)break:</p>
+<blockquote>
+<p>break用于退出循环</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>使用：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">i=1</span><br><span class="line">while 1:</span><br><span class="line">    i+=1</span><br><span class="line">    if i&gt;10:</span><br><span class="line">         break</span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+<p>###二.for型</p>
+<blockquote>
+<p>###1)for…in…</p>
+<p>主要用于遍历列表，字符串。</p>
+<blockquote>
+<p>####1.使用(遍历列表）：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list = [1,2,3,4,5]</span><br><span class="line">for num in list</span><br><span class="line">    print num</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>输出结果：</p>
+<blockquote>
+<p>1</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>2</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>3</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>4</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>5</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>####2.使用（遍历字符串）：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for var in &apos;lin&apos;</span><br><span class="line">    print var</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>输出结果：</p>
+<blockquote>
+<p>l</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>i</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>n</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>####3.通过指针变量来进行遍历：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list = [1,2,3,4,5]</span><br><span class="line">for i in range(5):</span><br><span class="line">    num = list[i]</span><br><span class="line">    print num,</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>输出结果：</p>
+<blockquote>
+<p>1 2 3 4 5</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>####3.range()函数:<br>range（start，stop,step）可创建一个整数列表：<br>三个参数</p>
+<blockquote>
+<p>start:计数开始位置，默认是0。如range(3)等价于range（0，3）</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>stop:计数结束位置，但不包括stop。如range（0，5）中没有5。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>step:步长（每次加的数），默认是1。如range(0,6,2)为[0,1,3,5]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>###2)for…in:/else:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for i in range(10):</span><br><span class="line">    print i</span><br><span class="line">else:</span><br><span class="line">    print i+100</span><br></pre></td></tr></table></figure>
+<blockquote>
+<blockquote>
+<p>for中语句与之前的没有区别，但else只在for正常循环结束后（不是通过break结束）的情况下被执行。</p>
+</blockquote>
+</blockquote>
+<p>##5.条件语句</p>
 
           
         
