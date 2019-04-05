@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="习题三十七：复习各种符号： 为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了…">
+  <meta name="description" content="习题三十七：复习各种符号 为了更方便的记笔记，我搭建了这个博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 2">
 <meta property="og:url" content="http://linmushen.com/2019/04/03/python-2/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="习题三十七：复习各种符号： 为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了…">
+<meta property="og:description" content="习题三十七：复习各种符号 为了更方便的记笔记，我搭建了这个博客">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-05T12:57:31.460Z">
+<meta property="og:updated_time" content="2019-04-05T17:42:43.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 2">
-<meta name="twitter:description" content="习题三十七：复习各种符号： 为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了…">
+<meta name="twitter:description" content="习题三十七：复习各种符号 为了更方便的记笔记，我搭建了这个博客">
 
 
 
@@ -353,7 +353,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-05 20:57:31" itemprop="dateModified" datetime="2019-04-05T20:57:31+08:00">2019-04-05</time>
+                <time title="修改时间：2019-04-06 01:42:43" itemprop="dateModified" datetime="2019-04-06T01:42:43+08:00">2019-04-06</time>
               
             
           </span>
@@ -387,12 +387,15 @@
       
 
       
-        <h1 id="习题三十七：复习各种符号："><a href="#习题三十七：复习各种符号：" class="headerlink" title="习题三十七：复习各种符号："></a>习题三十七：复习各种符号：</h1><ul>
-<li>为了更方便的记笔记，我居然花了三天搭了个博客…想不好好记笔记都不行了…<a id="more"></a></li>
+        <h1 id="习题三十七：复习各种符号"><a href="#习题三十七：复习各种符号" class="headerlink" title="习题三十七：复习各种符号"></a>习题三十七：复习各种符号</h1><ul>
+<li>为了更方便的记笔记，我搭建了这个博客<a id="more"></a></li>
 <li>总注</li>
 </ul>
 <ol>
-<li>True为任意非0或非空的值。0或空为False。<h2 id="一-关键字"><a href="#一-关键字" class="headerlink" title="一.关键字"></a><strong>一.关键字</strong></h2></li>
+<li>True为任意非0或非空的值。0或空为False。</li>
+<li>Traceback，回溯，一种错误信息</li>
+<li>python用异常对象表示异常情况。异常对象未被捕捉或处理，则会用回溯的方式结束程序</li>
+<li><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a><strong>关键字</strong></h2></li>
 </ol>
 <ul>
 <li>and </li>
@@ -455,6 +458,29 @@
 <p>print(not 表达式）：只输出False/Ture </p>
 </blockquote>
 </blockquote>
+</blockquote>
+<p>##print语句</p>
+<blockquote>
+<p>print会自动在末尾加\n，如果不需要，直接在最末加‘，’。（如果有字符串，在引号外）</p>
+<p>输出变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num=1</span><br><span class="line">print num</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>输出数字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print 1</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>输出字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print &quot;lin mu shen &quot;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>输出字符串加变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str=&apos;lin&apos;</span><br><span class="line">print&quot;str=&quot;,str</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>格式化输出数字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num=1</span><br><span class="line">print&apos;num= %d&quot; %num</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>格式化输出字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str=&apos;lin&apos;</span><br><span class="line">print &apos;str= %s&apos; %str    #输出lin</span><br><span class="line">print &apos;str=.1%s&apos; %str   #输出l</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>格式化输出原样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str=&apos;lin&apos;</span><br><span class="line">num=1</span><br><span class="line">print &apos;str=%r,num=%r&apos; %(str,num)   # str=&apos;lin&apos;,num=1</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h2 id="模块的引入（import-from…import）"><a href="#模块的引入（import-from…import）" class="headerlink" title="模块的引入（import/from…import）"></a>模块的引入（import/from…import）</h2><h3 id="import语句的使用"><a href="#import语句的使用" class="headerlink" title="import语句的使用"></a>import语句的使用</h3><blockquote>
 <p>导入模块：</p>
@@ -730,19 +756,44 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if 判断语句：执行语句</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>#暂时不懂的关键字</p>
-<h2 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h2><blockquote>
-<p>yield类似中断，一旦执行到yield就会返回变量当前的值，之后再继续执行yield后的语句。<br>使用：</p>
+<h2 id="捕捉异常并异常处理（try-except-else-finally）"><a href="#捕捉异常并异常处理（try-except-else-finally）" class="headerlink" title="捕捉异常并异常处理（try/except/else/finally）"></a>捕捉异常并异常处理（try/except/else/finally）</h2><blockquote>
+<p>检测try中的错误，用except捕获异常并处理。<strong> 然后程序返回到try位置 </strong><br>可以做到异常发生时不结束程序。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yield 变量</span><br></pre></td></tr></table></figure>
-<p>##异常处理(try/excepy/else)</p>
-<p>###使用不带任何异常类型的except</p>
-<blockquote>
-<p>无法识别是什么异常，因为这个语句捕获所有异常</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h3><blockquote>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  正常操作</span><br><span class="line">  ...</span><br><span class="line">except:</span><br><span class="line">  发生异常，执行此代码</span><br><span class="line">  ...</span><br><span class="line">else:</span><br><span class="line">  没有异常，执行此代码</span><br></pre></td></tr></table></figure>
-<p>##with as</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  语句1    #先执行语句1</span><br><span class="line">  ...</span><br><span class="line">except name:</span><br><span class="line">  语句2    #发生name异常，执行语句2，而后通过整个try</span><br><span class="line">  ...</span><br><span class="line">except name1，数据：</span><br><span class="line">  语句3    #发生name1异常，执行语句3，获得数据。数据可以是（as reason 输出程序检测到的错误类型）</span><br><span class="line">except：</span><br><span class="line">  语句3_1  #没有匹配到的异常，执行语句3_1</span><br><span class="line">else:</span><br><span class="line">  语句4    #语句1没有异常，执行此代码</span><br><span class="line">finally:</span><br><span class="line">  语句5    #无论有无异常发生，都会执行语句5</span><br></pre></td></tr></table></figure>
 <blockquote>
+<p>执行语句1，根据语句1发生的异常类型来选择执行的except下的代码块，没有发生异常则执行else下的代码块。</p>
+</blockquote>
+<h3 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h3><blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    num1 = raw_input(&apos;输入一个数字&apos;)</span><br><span class="line">    num1 = int(num1)</span><br><span class="line">except ValueError , as reason:</span><br><span class="line">    print &quot;请输入一个数字&quot;, reason</span><br><span class="line">else:</span><br><span class="line">    print num1</span><br><span class="line">finally:</span><br><span class="line">    print &quot;无论如何都执行我&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输入：5<br>输出：</p>
+<blockquote>
+<p>5</p>
+</blockquote>
+<blockquote>
+<p>无论如何都输出我</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>输入：a<br>输出：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>请输入一个数字</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>无论如何都输出我</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>_(光标，回到try位置）</p>
+</blockquote>
 </blockquote>
 
       
@@ -783,6 +834,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/06/python-3/" rel="prev" title="python 3">
+                python 3 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -851,7 +906,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -893,7 +948,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#习题三十七：复习各种符号："><span class="nav-number">1.</span> <span class="nav-text">习题三十七：复习各种符号：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-关键字"><span class="nav-number">1.1.</span> <span class="nav-text">一.关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑关键词-and-or-not"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑关键词(and,or,not)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优先级："><span class="nav-number">1.2.1.</span> <span class="nav-text">优先级：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回值"><span class="nav-number">1.2.2.</span> <span class="nav-text">返回值:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#and：（x为真返回y，x为假返回x）"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">and：（x为真返回y，x为假返回x）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#or-not："><span class="nav-number">1.2.2.2.</span> <span class="nav-text">or/not：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块的引入（import-from…import）"><span class="nav-number">1.3.</span> <span class="nav-text">模块的引入（import/from…import）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#import语句的使用"><span class="nav-number">1.3.1.</span> <span class="nav-text">import语句的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#from…import语句的使用"><span class="nav-number">1.3.2.</span> <span class="nav-text">from…import语句的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#from…import-的使用"><span class="nav-number">1.3.3.</span> <span class="nav-text">from…import * 的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#del语句"><span class="nav-number">1.4.</span> <span class="nav-text">del语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环语句"><span class="nav-number">1.5.</span> <span class="nav-text">循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#while型"><span class="nav-number">1.5.1.</span> <span class="nav-text">while型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#while循环语句"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">while循环语句:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while…else语句："><span class="nav-number">1.5.1.2.</span> <span class="nav-text">while…else语句：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while的简单语句组："><span class="nav-number">1.5.1.3.</span> <span class="nav-text">while的简单语句组：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while的附加命令"><span class="nav-number">1.5.1.4.</span> <span class="nav-text">while的附加命令:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#continue："><span class="nav-number">1.5.1.4.1.</span> <span class="nav-text">continue：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#break"><span class="nav-number">1.5.1.4.2.</span> <span class="nav-text">break:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for型"><span class="nav-number">1.5.2.</span> <span class="nav-text">for型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#for…in…"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">for…in…</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-遍历列表）："><span class="nav-number">1.5.2.1.1.</span> <span class="nav-text">使用(遍历列表）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用（遍历字符串）："><span class="nav-number">1.5.2.1.2.</span> <span class="nav-text">使用（遍历字符串）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过指针变量来进行遍历："><span class="nav-number">1.5.2.1.3.</span> <span class="nav-text">通过指针变量来进行遍历：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#range-函数"><span class="nav-number">1.5.2.1.3.1.</span> <span class="nav-text">range()函数:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for…in-else"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">for…in:/else:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件语句（if…elif…else…"><span class="nav-number">1.6.</span> <span class="nav-text">条件语句（if…elif…else…)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yield"><span class="nav-number">1.7.</span> <span class="nav-text">yield</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#习题三十七：复习各种符号"><span class="nav-number">1.</span> <span class="nav-text">习题三十七：复习各种符号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字"><span class="nav-number">1.1.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑关键词-and-or-not"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑关键词(and,or,not)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优先级："><span class="nav-number">1.2.1.</span> <span class="nav-text">优先级：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回值"><span class="nav-number">1.2.2.</span> <span class="nav-text">返回值:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#and：（x为真返回y，x为假返回x）"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">and：（x为真返回y，x为假返回x）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#or-not："><span class="nav-number">1.2.2.2.</span> <span class="nav-text">or/not：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块的引入（import-from…import）"><span class="nav-number">1.3.</span> <span class="nav-text">模块的引入（import/from…import）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#import语句的使用"><span class="nav-number">1.3.1.</span> <span class="nav-text">import语句的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#from…import语句的使用"><span class="nav-number">1.3.2.</span> <span class="nav-text">from…import语句的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#from…import-的使用"><span class="nav-number">1.3.3.</span> <span class="nav-text">from…import * 的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#del语句"><span class="nav-number">1.4.</span> <span class="nav-text">del语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环语句"><span class="nav-number">1.5.</span> <span class="nav-text">循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#while型"><span class="nav-number">1.5.1.</span> <span class="nav-text">while型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#while循环语句"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">while循环语句:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while…else语句："><span class="nav-number">1.5.1.2.</span> <span class="nav-text">while…else语句：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while的简单语句组："><span class="nav-number">1.5.1.3.</span> <span class="nav-text">while的简单语句组：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while的附加命令"><span class="nav-number">1.5.1.4.</span> <span class="nav-text">while的附加命令:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#continue："><span class="nav-number">1.5.1.4.1.</span> <span class="nav-text">continue：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#break"><span class="nav-number">1.5.1.4.2.</span> <span class="nav-text">break:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for型"><span class="nav-number">1.5.2.</span> <span class="nav-text">for型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#for…in…"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">for…in…</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-遍历列表）："><span class="nav-number">1.5.2.1.1.</span> <span class="nav-text">使用(遍历列表）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用（遍历字符串）："><span class="nav-number">1.5.2.1.2.</span> <span class="nav-text">使用（遍历字符串）：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过指针变量来进行遍历："><span class="nav-number">1.5.2.1.3.</span> <span class="nav-text">通过指针变量来进行遍历：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#range-函数"><span class="nav-number">1.5.2.1.3.1.</span> <span class="nav-text">range()函数:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for…in-else"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">for…in:/else:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件语句（if…elif…else…"><span class="nav-number">1.6.</span> <span class="nav-text">条件语句（if…elif…else…)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#捕捉异常并异常处理（try-except-else-finally）"><span class="nav-number">1.7.</span> <span class="nav-text">捕捉异常并异常处理（try/except/else/finally）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.7.1.</span> <span class="nav-text">语法:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例如："><span class="nav-number">1.7.2.</span> <span class="nav-text">例如：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
