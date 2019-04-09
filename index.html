@@ -293,6 +293,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/04/08/python-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="林木深">
+      <meta itemprop="description" content="记录python学习之旅">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="林木深的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/08/python-6/" class="post-title-link" itemprop="url">python 6</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-08 22:39:44" itemprop="dateCreated datePublished" datetime="2019-04-08T22:39:44+08:00">2019-04-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-09 23:01:01" itemprop="dateModified" datetime="2019-04-09T23:01:01+08:00">2019-04-09</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#习题四十</p>
+<p>##模块的概念：</p>
+<ol>
+<li>模块是包含函数和变量的python文件</li>
+<li>可以导入模块</li>
+<li>可以用.操作调用模块中的函数和变量<br><strong> 与字典的类比：</strong></li>
+</ol>
+<ul>
+<li>对于字典—键来获取值（[键]）</li>
+<li>对于模块—键相当于函数或变量，用函数或变量获取操作（.函数)<br><strong> 模块就好像是用来储存代码的字典，通过.操作进行访问。</strong><h2 id="通过模块类比-类"><a href="#通过模块类比-类" class="headerlink" title="通过模块类比 类"></a>通过模块类比 类</h2><strong> 好像一个迷你模块 </strong><br>类与模块的不同，可以使用一个类重复创建多个类，而类与类之间互不干涉。（而模块不行，导入一次之后，只有一份内容）<br><strong> 对象与模块的导入类比 </strong><br>实例化—创建—得到一个将之前创建的self空对象赋值给这个变量。<br>实现方法：</li>
+</ul>
+<ol>
+<li>调用一个类<blockquote>
+<p>object = class()<br>对象好像就是模块被导入后产生的东西一样。</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="习题四十一"><a href="#习题四十一" class="headerlink" title="习题四十一"></a>习题四十一</h1><h2 id="有关面向对象编程的概念"><a href="#有关面向对象编程的概念" class="headerlink" title="有关面向对象编程的概念"></a>有关面向对象编程的概念</h2><ul>
+<li>类：告诉python要创建新类型的东西</li>
+<li>对象：最基本的东西，或某个东西的实例</li>
+<li>实例：python创建时得到的东西</li>
+<li>self：在类的函数中，用来指代被访问的对象或实例中的变量</li>
+<li>继承：一个类可以继承另一个类的特性</li>
+<li>组合：一个类可以将另一类作为它的部件</li>
+<li>属性：源自组合，通常是一个变量</li>
+<li>是什么（is-a)：用来描述继承关系</li>
+<li>有什么（has-a):用来描述组合关系，或者某个东西有某个特性。<h2 id="描述代码的句子"><a href="#描述代码的句子" class="headerlink" title="描述代码的句子"></a>描述代码的句子</h2></li>
+<li>class X(Y):创建一个叫X的类，他是Y的一种</li>
+<li>class X(object):def <strong>init</strong>(self,J):类中有init函数来接收self和J参数</li>
+<li>class X(object):def M(self,J):类中有M函数来接收self和J参数</li>
+<li>foo = X():将foo设为X的一个实例</li>
+<li>foo.M(J):从实例foo中找到函数M并使用self和J参数调用他</li>
+<li>foo.K=Q:从实例中获得K属性并设为Q。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/04/07/python-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -975,7 +1163,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-06 18:09:00" itemprop="dateModified" datetime="2019-04-06T18:09:00+08:00">2019-04-06</time>
+                <time title="修改时间：2019-04-09 21:33:00" itemprop="dateModified" datetime="2019-04-09T21:33:00+08:00">2019-04-09</time>
               
             
           </span>
@@ -1101,7 +1289,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
