@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="习题四十四继承与合成">
+  <meta name="description" content="习题四十四继承与合成的简单介绍">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python_10">
 <meta property="og:url" content="http://linmushen.com/2019/04/14/python-10/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="习题四十四继承与合成">
+<meta property="og:description" content="习题四十四继承与合成的简单介绍">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-14T11:28:18.985Z">
+<meta property="og:updated_time" content="2019-04-14T15:44:20.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python_10">
-<meta name="twitter:description" content="习题四十四继承与合成">
+<meta name="twitter:description" content="习题四十四继承与合成的简单介绍">
 
 
 
@@ -336,7 +336,7 @@
                 
               
 
-              <time title="创建时间：2019-04-14 14:38:15 / 修改时间：19:28:18" itemprop="dateCreated datePublished" datetime="2019-04-14T14:38:15+08:00">2019-04-14</time>
+              <time title="创建时间：2019-04-14 14:38:15 / 修改时间：23:44:20" itemprop="dateCreated datePublished" datetime="2019-04-14T14:38:15+08:00">2019-04-14</time>
             
 
             
@@ -375,7 +375,7 @@
       
 
       
-        <h1 id="习题四十四"><a href="#习题四十四" class="headerlink" title="习题四十四"></a>习题四十四</h1><p><strong>继承与合成</strong><br><a id="more"></a></p>
+        <h1 id="习题四十四"><a href="#习题四十四" class="headerlink" title="习题四十四"></a>习题四十四</h1><p><strong>继承与合成的简单介绍</strong><br><a id="more"></a></p>
 <h2 id="作者的警告"><a href="#作者的警告" class="headerlink" title="作者的警告"></a>作者的警告</h2><p>大部分使用合成的场合都可以用合成取代，而多重继承则要不惜一切代价</p>
 <h2 id="继承（据说是邪恶女巫）"><a href="#继承（据说是邪恶女巫）" class="headerlink" title="继承（据说是邪恶女巫）"></a>继承（据说是邪恶女巫）</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>继承：用来知名一个类中大部分或全部分都是从一个父类中获得的</p>
 <h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><p>class Foo(bar) 创建一个叫Foo的类，并让他继承Bar。（Foo的实例所具有的功能都工作在Foo的实例上）</p>
@@ -398,7 +398,22 @@
 <ol>
 <li>在子类中只写dad（）而不写内容（pass），叫隐式继承，执行父类函数中的内容，</li>
 <li>在子类中写dad（）其中又有内容（与父类中的不一样），只执行子类的内容，叫显示继承（覆盖）。</li>
-<li>调用super（）函数，执行子类到super（）函数位置执行父类，然后继续执行子类（相当于将父类导入）。</li>
+<li>调用super（）函数，执行子类到super（）函数位置执行父类，然后继续执行子类（相当于将父类导入）。<h2 id="多重继承"><a href="#多重继承" class="headerlink" title="多重继承"></a>多重继承</h2><h3 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h3>定义的子类继承了多个类<h3 id="例如-2"><a href="#例如-2" class="headerlink" title="例如"></a>例如</h3>class superfoo(dad,mom)<br>superfoo类同时继承了dad和mom类 <h3 id="发生情况"><a href="#发生情况" class="headerlink" title="发生情况"></a>发生情况</h3>如果出现隐式动作，则要使用固定顺序回到类的层次逐个检查类。<br>而这个固定顺序就是“方法解析顺序”（MRO)（C3算法）<br>运用super()这样把继承关系弄糟，python会找到正确的函数。<h3 id="常用情况"><a href="#常用情况" class="headerlink" title="常用情况"></a>常用情况</h3>常用情况是在基类的<strong>init</strong>()函数中使用<br>对子类做一些事情，然后再对父类进行初始化<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3>super（子类，self）.<strong>init</strong>()</li>
+</ol>
+<p>##合成</p>
+<h3 id="概念-5"><a href="#概念-5" class="headerlink" title="概念"></a>概念</h3><p>通过调用模块里的函数来实现继承</p>
+<h3 id="写法"><a href="#写法" class="headerlink" title="写法"></a>写法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Other(object):</span><br><span class="line">	def override(self):</span><br><span class="line">		print&quot;Other override()&quot;</span><br><span class="line">		</span><br><span class="line">	def implicit(self):</span><br><span class="line">		print&quot;Other implicit()&quot;</span><br><span class="line">	</span><br><span class="line">	def altered(self):</span><br><span class="line">		print&quot;Other altered()&quot;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">class Child(object):</span><br><span class="line">	def __init__(self):</span><br><span class="line">		self.other = Other()</span><br><span class="line">		#用Child里的变量实例化other类</span><br><span class="line">	def implicit(self):</span><br><span class="line">		print&quot;Child override()&quot;</span><br><span class="line">	</span><br><span class="line">	def override(self):</span><br><span class="line">		print &quot;Child override()&quot;</span><br><span class="line">	def altered(self):</span><br><span class="line">		print&quot;Child Before other altered()&quot;</span><br><span class="line">		self.other.altered()</span><br><span class="line">		#通过实例化other类来调用other中的函数</span><br><span class="line">		print&quot;Child after altered()&quot;</span><br><span class="line">		</span><br><span class="line">son = Child()</span><br><span class="line">son.implicit()</span><br><span class="line">son.override()</span><br><span class="line">son.altered()</span><br></pre></td></tr></table></figure>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>合成就是在类2中对一个类1进行实例化并且调用类1的函数的操作</p>
+<h2 id="对继承与合成的总结"><a href="#对继承与合成的总结" class="headerlink" title="对继承与合成的总结"></a>对继承与合成的总结</h2><blockquote>
+<p>继承与合成说到底只是解决代码复用的问题</p>
+<blockquote>
+<p>继承可以隐含基类中的功能<br>而合成则是用别的类和其中的函数达到相同的目的</p>
+</blockquote>
+</blockquote>
+<h3 id="作者的建议"><a href="#作者的建议" class="headerlink" title="作者的建议"></a>作者的建议</h3><ol>
+<li>不惜一切代价避免多重继承</li>
+<li>如果一些代码会在不同位置和场合应用到，就应用合成把他们做成模块（类）</li>
+<li>如果代码之间有清楚的联系，可以通过共性联系起来的时候使用继承</li>
 </ol>
 
       
@@ -549,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#习题四十四"><span class="nav-number">1.</span> <span class="nav-text">习题四十四</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作者的警告"><span class="nav-number">1.1.</span> <span class="nav-text">作者的警告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承（据说是邪恶女巫）"><span class="nav-number">1.2.</span> <span class="nav-text">继承（据说是邪恶女巫）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写作"><span class="nav-number">1.2.2.</span> <span class="nav-text">写作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">1.2.3.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三种交互方式"><span class="nav-number">1.2.4.</span> <span class="nav-text">三种交互方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐式继承"><span class="nav-number">1.3.</span> <span class="nav-text">隐式继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例如"><span class="nav-number">1.3.2.</span> <span class="nav-text">例如</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显式覆盖"><span class="nav-number">1.4.</span> <span class="nav-text">显式覆盖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例如-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">例如</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在进行前后进行后替换"><span class="nav-number">1.5.</span> <span class="nav-text">在进行前后进行后替换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-3"><span class="nav-number">1.5.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.5.2.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#习题四十四"><span class="nav-number">1.</span> <span class="nav-text">习题四十四</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作者的警告"><span class="nav-number">1.1.</span> <span class="nav-text">作者的警告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承（据说是邪恶女巫）"><span class="nav-number">1.2.</span> <span class="nav-text">继承（据说是邪恶女巫）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写作"><span class="nav-number">1.2.2.</span> <span class="nav-text">写作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">1.2.3.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三种交互方式"><span class="nav-number">1.2.4.</span> <span class="nav-text">三种交互方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐式继承"><span class="nav-number">1.3.</span> <span class="nav-text">隐式继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例如"><span class="nav-number">1.3.2.</span> <span class="nav-text">例如</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显式覆盖"><span class="nav-number">1.4.</span> <span class="nav-text">显式覆盖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例如-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">例如</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在进行前后进行后替换"><span class="nav-number">1.5.</span> <span class="nav-text">在进行前后进行后替换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-3"><span class="nav-number">1.5.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.5.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多重继承"><span class="nav-number">1.6.</span> <span class="nav-text">多重继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-4"><span class="nav-number">1.6.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例如-2"><span class="nav-number">1.6.2.</span> <span class="nav-text">例如</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发生情况"><span class="nav-number">1.6.3.</span> <span class="nav-text">发生情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用情况"><span class="nav-number">1.6.4.</span> <span class="nav-text">常用情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式"><span class="nav-number">1.6.5.</span> <span class="nav-text">格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-5"><span class="nav-number">1.6.6.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写法"><span class="nav-number">1.6.7.</span> <span class="nav-text">写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-1"><span class="nav-number">1.6.8.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对继承与合成的总结"><span class="nav-number">1.7.</span> <span class="nav-text">对继承与合成的总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作者的建议"><span class="nav-number">1.7.1.</span> <span class="nav-text">作者的建议</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
