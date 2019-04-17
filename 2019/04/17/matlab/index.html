@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="习题三十七：复习各种符号简短的一章，主要用来简单记录各种数据类型">
+  <meta name="description" content="Matlab知识笔记为了准备东三省数学建模，现在学习Matlab，以此做笔记。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python 4">
-<meta property="og:url" content="http://linmushen.com/2019/04/07/python-4/index.html">
+<meta property="og:title" content="matlab">
+<meta property="og:url" content="http://linmushen.com/2019/04/17/matlab/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="习题三十七：复习各种符号简短的一章，主要用来简单记录各种数据类型">
+<meta property="og:description" content="Matlab知识笔记为了准备东三省数学建模，现在学习Matlab，以此做笔记。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-07T05:21:11.055Z">
+<meta property="og:updated_time" content="2019-04-17T16:59:07.440Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python 4">
-<meta name="twitter:description" content="习题三十七：复习各种符号简短的一章，主要用来简单记录各种数据类型">
+<meta name="twitter:title" content="matlab">
+<meta name="twitter:description" content="Matlab知识笔记为了准备东三省数学建模，现在学习Matlab，以此做笔记。">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://linmushen.com/2019/04/07/python-4/">
+  <link rel="canonical" href="http://linmushen.com/2019/04/17/matlab/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>python 4 | 林木深的个人博客</title>
+  <title>matlab | 林木深的个人博客</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/04/07/python-4/">
+    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/04/17/matlab/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="林木深">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python 4
+          <h1 class="post-title" itemprop="name headline">matlab
 
               
             
@@ -336,12 +336,24 @@
                 
               
 
-              <time title="创建时间：2019-04-07 00:09:43 / 修改时间：13:21:11" itemprop="dateCreated datePublished" datetime="2019-04-07T00:09:43+08:00">2019-04-07</time>
+              <time title="创建时间：2019-04-17 21:59:01" itemprop="dateCreated datePublished" datetime="2019-04-17T21:59:01+08:00">2019-04-17</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-18 00:59:07" itemprop="dateModified" datetime="2019-04-18T00:59:07+08:00">2019-04-18</time>
               
             
           </span>
@@ -375,94 +387,70 @@
       
 
       
-        <h1 id="习题三十七：复习各种符号"><a href="#习题三十七：复习各种符号" class="headerlink" title="习题三十七：复习各种符号"></a>习题三十七：复习各种符号</h1><p>简短的一章，主要用来简单记录各种数据类型<br><a id="more"></a><br>总注：</p>
-<ol>
-<li>数据类型是不允许改变的</li>
+        <h1 id="Matlab知识笔记"><a href="#Matlab知识笔记" class="headerlink" title="Matlab知识笔记"></a>Matlab知识笔记</h1><p>为了准备东三省数学建模，现在学习Matlab，以此做笔记。<br><a id="more"></a></p>
+<h2 id="命令与函数"><a href="#命令与函数" class="headerlink" title="命令与函数"></a>命令与函数</h2><h3 id="基本符号"><a href="#基本符号" class="headerlink" title="基本符号"></a>基本符号</h3><ol>
+<li>help inv ：显示函数（inv）的帮助信息</li>
+<li>[]  ：创建矩阵</li>
+<li>[]; : 创建一个矩阵但不在命令行中显示出来</li>
+<li>,   ：矩阵行元素分隔符号</li>
+<li>;   ：矩阵列元素分隔符号</li>
+<li>%   : 注释行</li>
+<li>clear ：清理工作空间中的各种变量</li>
+<li>== ：关系运算符：等于</li>
+<li>~= ：关系运算符：不等于</li>
+<li>| ：逻辑或运算</li>
 </ol>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
-<li>True</li>
-<li>False</li>
-<li>None</li>
-<li>strings</li>
-<li>numbers</li>
-<li>floats</li>
-<li>lists</li>
+<h3 id="定义类型"><a href="#定义类型" class="headerlink" title="定义类型"></a>定义类型</h3><ol>
+<li>format short : 定义输出格式为短，显示小数点后四位</li>
+<li>format long : 定义输出格式为长，显示小数点后14（15）位</li>
+<li>syms x ：定义x为符号变量</li>
+</ol>
+<h3 id="控制流程语句"><a href="#控制流程语句" class="headerlink" title="控制流程语句"></a>控制流程语句</h3><ol>
+<li>if..else if..end : 条件语句，作用与c中类似</li>
+<li>for..end : for循环语句，与c类似</li>
+</ol>
+<h3 id="输入输出函数"><a href="#输入输出函数" class="headerlink" title="输入输出函数"></a>输入输出函数</h3><ol>
+<li>n=input(‘…’):输入函数，其中’’之间的是提示字符</li>
+<li>disp(‘….’):显示单引号中字符串</li>
+</ol>
+<h2 id="矩阵的基本运算"><a href="#矩阵的基本运算" class="headerlink" title="矩阵的基本运算"></a>矩阵的基本运算</h2><ol>
+<li>eye(n):创建n阶单位矩阵</li>
+<li>zeros（m,n）：创建m*n阶零矩阵</li>
+<li>zeros(n) :创建n阶方阵</li>
+<li>ones（m,n):创建m*n阶元素全为1的矩阵</li>
+<li>rand（m,n):创建m*n阶元素为从0到1均匀分布的随机数矩阵</li>
+<li>randn(m,n):创建m*n阶均值为0，方差为1的标准正态分布随机矩阵</li>
+<li>round（A）：对矩阵A所有元素进行四舍五入运算</li>
+<li>inv(A):求矩阵A的逆</li>
+<li>A^-1:用幂运算求矩阵A的逆</li>
+<li>a’ ：a的转置</li>
+<li>inv(a):a的逆矩阵</li>
+<li>\ :MATLAB特有的矩阵左除A/B=inv（A)*B</li>
+<li>/ ：matlab特有的矩阵右除B/A=B*inv（A)</li>
+<li>. ：在运算符号前加 . 含义为对应矩阵群运算<blockquote>
+<ul>
+<li>C=A.*B：矩阵元素群运算（A,B矩阵中对应元素相乘）</li>
+<li>D=A.^2:矩阵元素对应群运算（A中每一个元素平方）</li>
 </ul>
-<h1 id="对各个数据类型进行举例"><a href="#对各个数据类型进行举例" class="headerlink" title="对各个数据类型进行举例"></a>对各个数据类型进行举例</h1><h2 id="True-False和None"><a href="#True-False和None" class="headerlink" title="True,False和None"></a>True,False和None</h2><p>都是布尔值</p>
-<h2 id="strings（字符串）"><a href="#strings（字符串）" class="headerlink" title="strings（字符串）"></a>strings（字符串）</h2><ol>
-<li><p>创建字符串,使用单引号或双引号创建字符串,python中单个字符也作为字符串</p>
-<blockquote>
-<p>如：value=’strings’</p>
-</blockquote>
-</li>
-<li><p>访问字符串中断值</p>
-<blockquote>
-<p>如：let=value[1]—-t<br>   lets=value[1:5]—–trin（包括头但不包括尾）</p>
-</blockquote>
-</li>
-<li><p>字符串的更新</p>
-<blockquote>
-<p>如：valuess=value[:4]+lins——strlins(从冒号后面的是更新启始位，相当于添加字符串的0位）</p>
 </blockquote>
 </li>
 </ol>
-<h2 id="numbers（数字）"><a href="#numbers（数字）" class="headerlink" title="numbers（数字）"></a>numbers（数字）</h2><p>该数据类型用于存储数字<br>python支持四种不同的数据类型</p>
-<ol>
-<li>整型（int)—-正数或负数，不带有小数点<blockquote>
-<p>如： var=10  var=-100</p>
+<h2 id="行列式与方程组求解"><a href="#行列式与方程组求解" class="headerlink" title="行列式与方程组求解"></a>行列式与方程组求解</h2><ol>
+<li>U=rref(A)  :对矩阵A进行初等行变换，得到的U是A的最简行列式<blockquote>
+<p>rref([A,b]) :就是将A，b的混合矩阵化为行最简</p>
 </blockquote>
 </li>
-<li>长整型（long int）—-无限大小的整数，末尾带有大写或小写的L<blockquote>
-<p>如： var=11112222L</p>
-</blockquote>
-</li>
-<li>浮点型（floating point real values）—-由整数部分和小数部分组成，也可以使用科学记数法<blockquote>
-<p>如：flo=15.20 flo=32.3+e18</p>
-</blockquote>
-</li>
-<li>复数：由实部和虚部组成<blockquote>
-<p>如： fus=a+bj fus=complex(a,b)</p>
-</blockquote>
-</li>
+<li>[m,n]=size(A)：计算A的行，列，并返回一个二维向量</li>
+<li>det(A):计算矩阵A的行列式</li>
+<li>rank(A):计算矩阵A的秩</li>
+<li>A(i,j) :引出A的第i行第j列的元素</li>
+<li>B（：，i)=b : 把向量b的值赋给矩阵B的第i列（矩阵B的列向量和向量b同型）</li>
+<li>B（：，1：5）：取矩阵的第一列至第五列</li>
+<li>[A,eye(5)] : 创建一个5*10矩阵，前五列为A，后五列为单位矩阵i</li>
+<li>T(1,:)=[] : 把一个空行赋给T的第1行（删除T的第一行）</li>
+<li>factor(D):对符号变量多项式D进行因式分解</li>
+<li>solve(D) :求符号变量多项式方程D=0的解</li>
 </ol>
-<h2 id="lists-列表）"><a href="#lists-列表）" class="headerlink" title="lists(列表）"></a>lists(列表）</h2><p>列表是较为常见的数据结构<br>列表中每一个元素都有一个特定的索引（每一个元素分配一个数字）</p>
-<h3 id="列表的创建"><a href="#列表的创建" class="headerlink" title="列表的创建"></a>列表的创建</h3><p>list=[‘python’,’lin’,1,2,3]</p>
-<blockquote>
-<p>也就是说，列表中的元素不需要一定同类型</p>
-</blockquote>
-<h3 id="列表的操作包括：索引，切片，加，乘，检查成员"><a href="#列表的操作包括：索引，切片，加，乘，检查成员" class="headerlink" title="列表的操作包括：索引，切片，加，乘，检查成员"></a>列表的操作包括：索引，切片，加，乘，检查成员</h3><blockquote>
-<p>索引（正向读取）—var=list[0]—–var=’python’。<br>索引（逆向读取）—var=list[-1]—-var=3—–(-1就是倒数第一个<br>索引(替换）—var=2。list[2]=var—-list2=[‘python’,’lin’,2,2,3]</p>
-<p>切片—lis=list[0:3]—lis=[‘python’,’lin’,1]（包括头不包括尾）</p>
-<p>加(也可以用list.extend（lis））—–lit=lis+list—-lit=<br>[‘python’,’lin’,1,’python’,’lin’,1,2,3]</p>
-</blockquote>
-<blockquote>
-<p>乘—–lis2=list[2:5] lis3=lis2*2—-lis3=[1,2,3,1,2,3]</p>
-</blockquote>
-<h3 id="通过内置函数和方法，可以实现"><a href="#通过内置函数和方法，可以实现" class="headerlink" title="通过内置函数和方法，可以实现:"></a>通过内置函数和方法，可以实现:</h3><ul>
-<li>比较（cmp(a,b)，</li>
-<li>添加成员(list.append(obj)(obj可以是列表，也可以是成员)，</li>
-<li>计算长度（len（a))，</li>
-<li>返回最值(max(a);min(a)),</li>
-<li>统计某成员出现次数（list.count(obj)),</li>
-<li>反向排序（list.reverse())，</li>
-<li>移除特定成员（list.remove（obj）），</li>
-<li>移除特定位置成员（list.pop(-1)(-1为最后一项，0为第一个，1为第二个…)</li>
-<li>找出特定对象的索引位置（list.index(obj))(找出obj的索引位置）</li>
-<li>将对象插入特定位置（list.insert（index，obj））</li>
-<li>对原列表进行排序（list.sort())</li>
-</ul>
-<h3 id="列表与字符串的转化"><a href="#列表与字符串的转化" class="headerlink" title="列表与字符串的转化"></a>列表与字符串的转化</h3><h4 id="列表-gt-字符串"><a href="#列表-gt-字符串" class="headerlink" title="列表 =&gt; 字符串"></a>列表 =&gt; 字符串</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list=[&apos;lin&apos;,&apos;mu&apos;,&apos;shen&apos;]</span><br><span class="line">print &apos; &apos;.join(list)</span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<blockquote>
-</blockquote>
-<p>lin mu shen</p>
-<p>用字符串的形式显示并用空格分隔列表中的成员。</p>
-<h4 id="字符串-gt-列表"><a href="#字符串-gt-列表" class="headerlink" title="字符串 =&gt; 列表"></a>字符串 =&gt; 列表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var=&apos;lin mu shen&apos;</span><br><span class="line">list=var.split(&apos; &apos;)</span><br><span class="line">print list</span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<blockquote>
-</blockquote>
-<p>[‘lin’,’mu’,’shen’]</p>
-<p>以空格为每一个成员分隔点创建列表。</p>
 
       
     </div>
@@ -493,8 +481,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/06/python-3/" rel="next" title="python 3">
-                <i class="fa fa-chevron-left"></i> python 3
+              <a href="/2019/04/14/python-10/" rel="next" title="python_10">
+                <i class="fa fa-chevron-left"></i> python_10
               </a>
             
           </div>
@@ -502,10 +490,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/07/python-5/" rel="prev" title="python 5">
-                python 5 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -616,7 +600,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#习题三十七：复习各种符号"><span class="nav-number">1.</span> <span class="nav-text">习题三十七：复习各种符号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.1.</span> <span class="nav-text">数据类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对各个数据类型进行举例"><span class="nav-number">2.</span> <span class="nav-text">对各个数据类型进行举例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#True-False和None"><span class="nav-number">2.1.</span> <span class="nav-text">True,False和None</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strings（字符串）"><span class="nav-number">2.2.</span> <span class="nav-text">strings（字符串）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#numbers（数字）"><span class="nav-number">2.3.</span> <span class="nav-text">numbers（数字）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lists-列表）"><span class="nav-number">2.4.</span> <span class="nav-text">lists(列表）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列表的创建"><span class="nav-number">2.4.1.</span> <span class="nav-text">列表的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表的操作包括：索引，切片，加，乘，检查成员"><span class="nav-number">2.4.2.</span> <span class="nav-text">列表的操作包括：索引，切片，加，乘，检查成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过内置函数和方法，可以实现"><span class="nav-number">2.4.3.</span> <span class="nav-text">通过内置函数和方法，可以实现:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表与字符串的转化"><span class="nav-number">2.4.4.</span> <span class="nav-text">列表与字符串的转化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#列表-gt-字符串"><span class="nav-number">2.4.4.1.</span> <span class="nav-text">列表 =&gt; 字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串-gt-列表"><span class="nav-number">2.4.4.2.</span> <span class="nav-text">字符串 =&gt; 列表</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Matlab知识笔记"><span class="nav-number">1.</span> <span class="nav-text">Matlab知识笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令与函数"><span class="nav-number">1.1.</span> <span class="nav-text">命令与函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本符号"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义类型"><span class="nav-number">1.1.2.</span> <span class="nav-text">定义类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制流程语句"><span class="nav-number">1.1.3.</span> <span class="nav-text">控制流程语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入输出函数"><span class="nav-number">1.1.4.</span> <span class="nav-text">输入输出函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的基本运算"><span class="nav-number">1.2.</span> <span class="nav-text">矩阵的基本运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式与方程组求解"><span class="nav-number">1.3.</span> <span class="nav-text">行列式与方程组求解</span></a></li></ol></li></ol></div>
             
 
           </div>
