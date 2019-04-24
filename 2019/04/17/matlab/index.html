@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="Matlab知识笔记为了准备东三省数学建模，现在学习Matlab，以此做笔记。">
+  <meta name="description" content="Matlab知识笔记为了准备东三省数学建模，现在学习Matlab，以此做笔记。  Matlab主要用来处理整个矩阵和数组。 所有matlab变量都是多维的。 matlab将数字存储为浮点值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="matlab">
 <meta property="og:url" content="http://linmushen.com/2019/04/17/matlab/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="Matlab知识笔记为了准备东三省数学建模，现在学习Matlab，以此做笔记。">
+<meta property="og:description" content="Matlab知识笔记为了准备东三省数学建模，现在学习Matlab，以此做笔记。  Matlab主要用来处理整个矩阵和数组。 所有matlab变量都是多维的。 matlab将数字存储为浮点值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-17T16:59:07.440Z">
+<meta property="og:updated_time" content="2019-04-24T16:48:12.352Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="matlab">
-<meta name="twitter:description" content="Matlab知识笔记为了准备东三省数学建模，现在学习Matlab，以此做笔记。">
+<meta name="twitter:description" content="Matlab知识笔记为了准备东三省数学建模，现在学习Matlab，以此做笔记。  Matlab主要用来处理整个矩阵和数组。 所有matlab变量都是多维的。 matlab将数字存储为浮点值">
 
 
 
@@ -353,7 +353,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-18 00:59:07" itemprop="dateModified" datetime="2019-04-18T00:59:07+08:00">2019-04-18</time>
+                <time title="修改时间：2019-04-25 00:48:12" itemprop="dateModified" datetime="2019-04-25T00:48:12+08:00">2019-04-25</time>
               
             
           </span>
@@ -387,7 +387,13 @@
       
 
       
-        <h1 id="Matlab知识笔记"><a href="#Matlab知识笔记" class="headerlink" title="Matlab知识笔记"></a>Matlab知识笔记</h1><p>为了准备东三省数学建模，现在学习Matlab，以此做笔记。<br><a id="more"></a></p>
+        <h1 id="Matlab知识笔记"><a href="#Matlab知识笔记" class="headerlink" title="Matlab知识笔记"></a>Matlab知识笔记</h1><p><strong>为了准备东三省数学建模，现在学习Matlab，以此做笔记。</strong></p>
+<ul>
+<li>Matlab主要用来处理整个矩阵和数组。</li>
+<li>所有matlab变量都是多维的。</li>
+<li>matlab将数字存储为浮点值<a id="more"></a>
+</li>
+</ul>
 <h2 id="命令与函数"><a href="#命令与函数" class="headerlink" title="命令与函数"></a>命令与函数</h2><h3 id="基本符号"><a href="#基本符号" class="headerlink" title="基本符号"></a>基本符号</h3><ol>
 <li>help inv ：显示函数（inv）的帮助信息</li>
 <li>[]  ：创建矩阵</li>
@@ -403,6 +409,10 @@
 <h3 id="定义类型"><a href="#定义类型" class="headerlink" title="定义类型"></a>定义类型</h3><ol>
 <li>format short : 定义输出格式为短，显示小数点后四位</li>
 <li>format long : 定义输出格式为长，显示小数点后14（15）位</li>
+<li>format rat：以有理数形式输出<blockquote>
+<p>format只影响输出格式，不影响存储方式 </p>
+</blockquote>
+</li>
 <li>syms x ：定义x为符号变量</li>
 </ol>
 <h3 id="控制流程语句"><a href="#控制流程语句" class="headerlink" title="控制流程语句"></a>控制流程语句</h3><ol>
@@ -413,7 +423,7 @@
 <li>n=input(‘…’):输入函数，其中’’之间的是提示字符</li>
 <li>disp(‘….’):显示单引号中字符串</li>
 </ol>
-<h2 id="矩阵的基本运算"><a href="#矩阵的基本运算" class="headerlink" title="矩阵的基本运算"></a>矩阵的基本运算</h2><ol>
+<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><h3 id="创建矩阵的函数"><a href="#创建矩阵的函数" class="headerlink" title="创建矩阵的函数"></a>创建矩阵的函数</h3><ol>
 <li>eye(n):创建n阶单位矩阵</li>
 <li>zeros（m,n）：创建m*n阶零矩阵</li>
 <li>zeros(n) :创建n阶方阵</li>
@@ -421,17 +431,31 @@
 <li>rand（m,n):创建m*n阶元素为从0到1均匀分布的随机数矩阵</li>
 <li>randn(m,n):创建m*n阶均值为0，方差为1的标准正态分布随机矩阵</li>
 <li>round（A）：对矩阵A所有元素进行四舍五入运算</li>
+</ol>
+<h3 id="矩阵的运算"><a href="#矩阵的运算" class="headerlink" title="矩阵的运算"></a>矩阵的运算</h3><ol>
 <li>inv(A):求矩阵A的逆</li>
 <li>A^-1:用幂运算求矩阵A的逆</li>
 <li>a’ ：a的转置</li>
 <li>inv(a):a的逆矩阵</li>
+<li><ul>
+<li>：执行标准矩阵乘法，计算行与列之间的内积</li>
+</ul>
+</li>
 <li>\ :MATLAB特有的矩阵左除A/B=inv（A)*B</li>
 <li>/ ：matlab特有的矩阵右除B/A=B*inv（A)</li>
-<li>. ：在运算符号前加 . 含义为对应矩阵群运算<blockquote>
+<li>. ：在运算符号前加 . 含义为对应矩阵群运算（元素级运算，即每一个元素之间的运算）<blockquote>
 <ul>
+<li>只有乘除幂运算有相应的群运算。</li>
 <li>C=A.*B：矩阵元素群运算（A,B矩阵中对应元素相乘）</li>
-<li>D=A.^2:矩阵元素对应群运算（A中每一个元素平方）</li>
+<li>D=A.^2:矩阵元素群运算（A中每一个元素平方）【a^2，相当于a乘a；a.^2，相当于a的每一个元素平方】</li>
 </ul>
+</blockquote>
+</li>
+<li>：  ：冒号运算符，start:step:end   不写step的值时，默认为1<blockquote>
+<p>可以创建等距向量 ：B=0：50：100    </p>
+<blockquote>
+<p>B = 0，50，100</p>
+</blockquote>
 </blockquote>
 </li>
 </ol>
@@ -450,6 +474,45 @@
 <li>T(1,:)=[] : 把一个空行赋给T的第1行（删除T的第一行）</li>
 <li>factor(D):对符号变量多项式D进行因式分解</li>
 <li>solve(D) :求符号变量多项式方程D=0的解</li>
+</ol>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>mean()：获得一个序列的均值<br>std（）：获得一个序列的方差<br>magic():魔方矩阵<br>hilb():产生一个希尔伯特矩阵</p>
+<blockquote>
+<p>矩阵各个值为H（ij）= i+j-1分之一</p>
+</blockquote>
+<h1 id="入门学习"><a href="#入门学习" class="headerlink" title="入门学习"></a>入门学习</h1><h2 id="数组创建"><a href="#数组创建" class="headerlink" title="数组创建"></a>数组创建</h2><h3 id="常规方法"><a href="#常规方法" class="headerlink" title="常规方法"></a>常规方法</h3><p> 使用 ， 或 空格 来分隔各元素</p>
+<blockquote>
+<p>a = [1,2,3,4]<br>b = [1 2 3 4]<br> 使用 ； 来分隔各行</p>
+</blockquote>
+<h3 id="函数方法"><a href="#函数方法" class="headerlink" title="函数方法"></a>函数方法</h3><p> 使用ones zeros 或 rand函数（具体函数参照上文）</p>
+<blockquote>
+<p>z = zeros(5,1)   %创建一个五行一列的矩阵</p>
+</blockquote>
+<h2 id="矩阵与数组的运算"><a href="#矩阵与数组的运算" class="headerlink" title="矩阵与数组的运算"></a>矩阵与数组的运算</h2><h3 id="使用运算符"><a href="#使用运算符" class="headerlink" title="使用运算符"></a>使用运算符</h3><p> 使用单一的算术运算符或函数来处理矩阵中的所有值</p>
+<blockquote>
+<p>a+10     %对矩阵a中每一个元素加十<br>sin(a)   %对矩阵中每一个元素进行正弦处理<br>a’       %对矩阵a转置</p>
+</blockquote>
+<h3 id="串联"><a href="#串联" class="headerlink" title="串联"></a>串联</h3><ol>
+<li>串联是连接数组以便形成更大数组的过程。（数组的创建也是如此，通过将各个元素串联而构成的）</li>
+<li>[]即为串联符<br>规则：<blockquote>
+<p>A = [a,b]   %将数组a与数组b水平串联，ab必须具有相同的行数<br>B = [a;b]   %将数组a与数组b竖直串联，ab必须具有相同的列数</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h3><p>复数包含 实部和虚部<br>虚数单位是-1的平方根</p>
+<h2 id="数组的索引"><a href="#数组的索引" class="headerlink" title="数组的索引"></a>数组的索引</h2><p>前提 ：</p>
+<blockquote>
+<p>A = [1,2,3,4;4,3,2,1;5,6,7,8]</p>
+</blockquote>
+<h3 id="引用单个元素"><a href="#引用单个元素" class="headerlink" title="引用单个元素"></a>引用单个元素</h3><ol>
+<li>A(4,2)     %引用数组中的特定元素，指定行标和列标</li>
+<li>A(8)       %用单一下标，逐个遍历每一<strong>列</strong>  ；也叫线性索引<h3 id="添加单个元素"><a href="#添加单个元素" class="headerlink" title="添加单个元素"></a>添加单个元素</h3></li>
+</ol>
+<ul>
+<li>A(4,3)=10  %在索引不存在的情况下，在右边进行赋值，数组大小就会扩大，其余部分填0<h3 id="引用多个元素"><a href="#引用多个元素" class="headerlink" title="引用多个元素"></a>引用多个元素</h3>用冒号 </li>
+</ul>
+<ol>
+<li>A(1:3,2)   %指定一个start:end的范围（以原来形式列出前三行第二列的元素）</li>
+<li>A(:,2)     %单独只有冒号，则列出该列所有元素 </li>
 </ol>
 
       
@@ -490,6 +553,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/18/dilmurat/" rel="prev" title="dilmurat">
+                dilmurat <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -558,7 +625,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -600,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Matlab知识笔记"><span class="nav-number">1.</span> <span class="nav-text">Matlab知识笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令与函数"><span class="nav-number">1.1.</span> <span class="nav-text">命令与函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本符号"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义类型"><span class="nav-number">1.1.2.</span> <span class="nav-text">定义类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制流程语句"><span class="nav-number">1.1.3.</span> <span class="nav-text">控制流程语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入输出函数"><span class="nav-number">1.1.4.</span> <span class="nav-text">输入输出函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的基本运算"><span class="nav-number">1.2.</span> <span class="nav-text">矩阵的基本运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式与方程组求解"><span class="nav-number">1.3.</span> <span class="nav-text">行列式与方程组求解</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Matlab知识笔记"><span class="nav-number">1.</span> <span class="nav-text">Matlab知识笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令与函数"><span class="nav-number">1.1.</span> <span class="nav-text">命令与函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本符号"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义类型"><span class="nav-number">1.1.2.</span> <span class="nav-text">定义类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制流程语句"><span class="nav-number">1.1.3.</span> <span class="nav-text">控制流程语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入输出函数"><span class="nav-number">1.1.4.</span> <span class="nav-text">输入输出函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵"><span class="nav-number">1.2.</span> <span class="nav-text">矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建矩阵的函数"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建矩阵的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵的运算"><span class="nav-number">1.2.2.</span> <span class="nav-text">矩阵的运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行列式与方程组求解"><span class="nav-number">1.3.</span> <span class="nav-text">行列式与方程组求解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">1.4.</span> <span class="nav-text">函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#入门学习"><span class="nav-number">2.</span> <span class="nav-text">入门学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组创建"><span class="nav-number">2.1.</span> <span class="nav-text">数组创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常规方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">常规方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数方法"><span class="nav-number">2.1.2.</span> <span class="nav-text">函数方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵与数组的运算"><span class="nav-number">2.2.</span> <span class="nav-text">矩阵与数组的运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用运算符"><span class="nav-number">2.2.1.</span> <span class="nav-text">使用运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#串联"><span class="nav-number">2.2.2.</span> <span class="nav-text">串联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复数"><span class="nav-number">2.2.3.</span> <span class="nav-text">复数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的索引"><span class="nav-number">2.3.</span> <span class="nav-text">数组的索引</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引用单个元素"><span class="nav-number">2.3.1.</span> <span class="nav-text">引用单个元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加单个元素"><span class="nav-number">2.3.2.</span> <span class="nav-text">添加单个元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用多个元素"><span class="nav-number">2.3.3.</span> <span class="nav-text">引用多个元素</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
