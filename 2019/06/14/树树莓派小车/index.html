@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="2D游戏开发笔记最近在读一本新书，跟着上面做一个基于Pygame开发2D游戏的实践">
+  <meta name="description" content="概述 核心元件：树莓派 L298N 需要实现：视觉识别（Opencv） 底层电机驱动 核心功能：识别赛道图像，沿着白线走 核心原理：利用二值化（大律法二值化）将白色单独显示出来 未知问题： 腐蚀膨胀问题？—一种对图像的处理方法，腐蚀是去掉，膨胀是把图放大缩放倍率？    GPIO控制使用 GPIO–通入输入/输出端口 wiringPi/RPI.GPIO是需要导入的库函数  使用说明 import">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2D Game Develop">
-<meta property="og:url" content="http://linmushen.com/2019/05/16/2D-Game-Develop/index.html">
+<meta property="og:title" content="树树莓派小车">
+<meta property="og:url" content="http://linmushen.com/2019/06/14/树树莓派小车/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="2D游戏开发笔记最近在读一本新书，跟着上面做一个基于Pygame开发2D游戏的实践">
+<meta property="og:description" content="概述 核心元件：树莓派 L298N 需要实现：视觉识别（Opencv） 底层电机驱动 核心功能：识别赛道图像，沿着白线走 核心原理：利用二值化（大律法二值化）将白色单独显示出来 未知问题： 腐蚀膨胀问题？—一种对图像的处理方法，腐蚀是去掉，膨胀是把图放大缩放倍率？    GPIO控制使用 GPIO–通入输入/输出端口 wiringPi/RPI.GPIO是需要导入的库函数  使用说明 import">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-16T07:28:50.806Z">
+<meta property="og:updated_time" content="2019-06-14T15:01:05.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2D Game Develop">
-<meta name="twitter:description" content="2D游戏开发笔记最近在读一本新书，跟着上面做一个基于Pygame开发2D游戏的实践">
+<meta name="twitter:title" content="树树莓派小车">
+<meta name="twitter:description" content="概述 核心元件：树莓派 L298N 需要实现：视觉识别（Opencv） 底层电机驱动 核心功能：识别赛道图像，沿着白线走 核心原理：利用二值化（大律法二值化）将白色单独显示出来 未知问题： 腐蚀膨胀问题？—一种对图像的处理方法，腐蚀是去掉，膨胀是把图放大缩放倍率？    GPIO控制使用 GPIO–通入输入/输出端口 wiringPi/RPI.GPIO是需要导入的库函数  使用说明 import">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://linmushen.com/2019/05/16/2D-Game-Develop/">
+  <link rel="canonical" href="http://linmushen.com/2019/06/14/树树莓派小车/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>2D Game Develop | 林木深的个人博客</title>
+  <title>树树莓派小车 | 林木深的个人博客</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/05/16/2D-Game-Develop/">
+    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/06/14/树树莓派小车/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="林木深">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2D Game Develop
+          <h1 class="post-title" itemprop="name headline">树树莓派小车
 
               
             
@@ -336,7 +336,7 @@
                 
               
 
-              <time title="创建时间：2019-05-16 14:34:22 / 修改时间：15:28:50" itemprop="dateCreated datePublished" datetime="2019-05-16T14:34:22+08:00">2019-05-16</time>
+              <time title="创建时间：2019-06-14 22:45:13 / 修改时间：23:01:05" itemprop="dateCreated datePublished" datetime="2019-06-14T22:45:13+08:00">2019-06-14</time>
             
 
             
@@ -375,20 +375,29 @@
       
 
       
-        <h1 id="2D游戏开发笔记"><a href="#2D游戏开发笔记" class="headerlink" title="2D游戏开发笔记"></a>2D游戏开发笔记</h1><p>最近在读一本新书，跟着上面做一个基于Pygame开发2D游戏的实践<br><a id="more"></a></p>
-<h2 id="知识杂记"><a href="#知识杂记" class="headerlink" title="知识杂记"></a>知识杂记</h2><ol>
-<li>import…as…<blockquote>
-<p>可以给导入的模块起一个代号</p>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ol>
+<li>核心元件：树莓派 L298N</li>
+<li>需要实现：视觉识别（Opencv） 底层电机驱动</li>
+<li>核心功能：识别赛道图像，沿着白线走</li>
+<li>核心原理：利用二值化（大律法二值化）将白色单独显示出来</li>
+<li>未知问题：<blockquote>
+<p>腐蚀膨胀问题？—一种对图像的处理方法，腐蚀是去掉，膨胀是把图放大<br>缩放倍率？</p>
 </blockquote>
 </li>
-<li>当需要在模块2中调用模块1，而模块1又需要用模块2的变量时，可以用参数的方式来解决<blockquote>
-<p>参见：et1.py与game_functions.py中update_screen()之间的调用关系。</p>
-</blockquote>
-</li>
-<li>c中的0 用False代替。1 用True代替</li>
 </ol>
-<h2 id="作者忠告"><a href="#作者忠告" class="headerlink" title="作者忠告"></a>作者忠告</h2><ol>
-<li>一开始将代码编写的尽可能简单，并在项目越来越复杂时进行重构</li>
+<h1 id="GPIO控制使用"><a href="#GPIO控制使用" class="headerlink" title="GPIO控制使用"></a>GPIO控制使用</h1><ol>
+<li>GPIO–通入输入/输出端口</li>
+<li>wiringPi/RPI.GPIO是需要导入的库函数</li>
+</ol>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><ol>
+<li>import RPI.GPIO as GPIO</li>
+<li>设置编码规范： gpio.setmode(gpio.BOARD)<blockquote>
+<p>编码规范：</p>
+<blockquote>
+<p>1）BOARD： 从左到右，从上到下：左边基数，右边偶数：1-40<br>2）BCM：编号侧重 CPU 寄存器，根据 BCM2835 的 GPIO 寄存器编号<br>3）wpi： 编号侧重实现逻辑，把扩展 GPIO 端口从 0 开始编号，这种编号方便编程。</p>
+</blockquote>
+</blockquote>
+</li>
 </ol>
 
       
@@ -420,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/11/html/" rel="next" title="html">
-                <i class="fa fa-chevron-left"></i> html
+              <a href="/2019/05/16/2D-Game-Develop/" rel="next" title="2D Game Develop">
+                <i class="fa fa-chevron-left"></i> 2D Game Develop
               </a>
             
           </div>
@@ -429,10 +438,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/14/树树莓派小车/" rel="prev" title="树树莓派小车">
-                树树莓派小车 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2D游戏开发笔记"><span class="nav-number">1.</span> <span class="nav-text">2D游戏开发笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识杂记"><span class="nav-number">1.1.</span> <span class="nav-text">知识杂记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作者忠告"><span class="nav-number">1.2.</span> <span class="nav-text">作者忠告</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GPIO控制使用"><span class="nav-number">2.</span> <span class="nav-text">GPIO控制使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用说明"><span class="nav-number">2.1.</span> <span class="nav-text">使用说明</span></a></li></ol></li></ol></div>
             
 
           </div>
