@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="历经千辛万苦，终于装完了需要的软件包，并成功运行。现在开始进行进阶的第一步——自动化测试的学习。">
+  <meta name="description" content="#关于MDK5的几个使用技巧1）TAB 键的妙用 首先要介绍的就是TAB键的使用，这个键在很多编译器里面都是用来空位的，每按一下移 空几个位。如果你是经常编写程序的对这个键一定再熟悉不过了。但是 MDK 的 TAB 键和一般 编译器的 TAB 键有不同的地方，和 C++的 TAB 键差不多。MDK 的 TAB 键支持块操作。也就 是可以让一片代码整体右移固定的几个位，也可以通过 SHIFT+TAB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自动化测试">
-<meta property="og:url" content="http://linmushen.com/2019/05/02/python-11/index.html">
+<meta property="og:title" content="stm32学习笔记">
+<meta property="og:url" content="http://linmushen.com/2019/07/18/stm32学习笔记/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="历经千辛万苦，终于装完了需要的软件包，并成功运行。现在开始进行进阶的第一步——自动化测试的学习。">
+<meta property="og:description" content="#关于MDK5的几个使用技巧1）TAB 键的妙用 首先要介绍的就是TAB键的使用，这个键在很多编译器里面都是用来空位的，每按一下移 空几个位。如果你是经常编写程序的对这个键一定再熟悉不过了。但是 MDK 的 TAB 键和一般 编译器的 TAB 键有不同的地方，和 C++的 TAB 键差不多。MDK 的 TAB 键支持块操作。也就 是可以让一片代码整体右移固定的几个位，也可以通过 SHIFT+TAB">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-02T11:32:20.572Z">
+<meta property="og:updated_time" content="2019-07-18T13:27:36.122Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自动化测试">
-<meta name="twitter:description" content="历经千辛万苦，终于装完了需要的软件包，并成功运行。现在开始进行进阶的第一步——自动化测试的学习。">
+<meta name="twitter:title" content="stm32学习笔记">
+<meta name="twitter:description" content="#关于MDK5的几个使用技巧1）TAB 键的妙用 首先要介绍的就是TAB键的使用，这个键在很多编译器里面都是用来空位的，每按一下移 空几个位。如果你是经常编写程序的对这个键一定再熟悉不过了。但是 MDK 的 TAB 键和一般 编译器的 TAB 键有不同的地方，和 C++的 TAB 键差不多。MDK 的 TAB 键支持块操作。也就 是可以让一片代码整体右移固定的几个位，也可以通过 SHIFT+TAB">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://linmushen.com/2019/05/02/python-11/">
+  <link rel="canonical" href="http://linmushen.com/2019/07/18/stm32学习笔记/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>自动化测试 | 林木深的个人博客</title>
+  <title>stm32学习笔记 | 林木深的个人博客</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/05/02/python-11/">
+    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/07/18/stm32学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="林木深">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">自动化测试
+          <h1 class="post-title" itemprop="name headline">stm32学习笔记
 
               
             
@@ -336,7 +336,7 @@
                 
               
 
-              <time title="创建时间：2019-05-02 19:19:39 / 修改时间：19:32:20" itemprop="dateCreated datePublished" datetime="2019-05-02T19:19:39+08:00">2019-05-02</time>
+              <time title="创建时间：2019-07-18 21:22:17 / 修改时间：21:27:36" itemprop="dateCreated datePublished" datetime="2019-07-18T21:22:17+08:00">2019-07-18</time>
             
 
             
@@ -375,20 +375,9 @@
       
 
       
-        <p>历经千辛万苦，终于装完了需要的软件包，并成功运行。<br>现在开始进行进阶的第一步——自动化测试的学习。<br><a id="more"></a></p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ol>
-<li>只需要复制\征服蟒蛇\projects\skeleton中所有内容然后将其粘贴到projecs中的项目文件中。</li>
-<li>将其中所有NAME的文件都改为新项目的名字。</li>
-<li>删除所有.pyc文件</li>
-<li>在原NAME文件下创建新的项目py文件</li>
-<li>根据需要，更改原NAME_tests.py（测试脚本）文件</li>
-</ol>
-<h1 id="作者的建议"><a href="#作者的建议" class="headerlink" title="作者的建议"></a>作者的建议</h1><ol>
-<li>测试脚本要放在tests/目录下，且命名必须符合NAME_tests.py的规则。</li>
-<li>为每一个模块写一个测试。</li>
-<li>测试用例尽可能易懂又易写，但要尽量保持整洁。</li>
-<li>别太把测试当回事。</li>
-</ol>
+        <p>#关于MDK5的几个使用技巧<br>1）TAB 键的妙用 首先要介绍的就是TAB键的使用，这个键在很多编译器里面都是用来空位的，每按一下移 空几个位。如果你是经常编写程序的对这个键一定再熟悉不过了。但是 MDK 的 TAB 键和一般 编译器的 TAB 键有不同的地方，和 C++的 TAB 键差不多。MDK 的 TAB 键支持块操作。也就 是可以让一片代码整体右移固定的几个位，也可以通过 SHIFT+TAB 键整体左移固定的几个位。</p>
+<p>2）接下来我们介绍一下如何快速查看一个函数或者变量所定义的地方。 也可能想看看某个变量或数组是在哪个地方定义的等。MDK提供了这样的快速定位的功能只要你把光标放到这个函数/变量的上面，然后右键，弹出菜单栏，我们找到Go to Definition Of‘名字’ 这个地方，然后单击左键就可以快速跳到该函数的定义处（注意要先在 Options for Target 的 Output 选项卡里面勾选 Browse Information 选项，再编译，再定位，否则无法定位！）</p>
+<p>3）我们再介绍一下快速注释与快速消注释的方法。在调试代码的时候，你可能会想注释某一片的代码，来看看执行的情况，MDK提供了这样的快速注释/消注释块代码的功能。也是通过右键实现的。这个操作比较简单，就是先选中你要注释的代码区，然后右键，选择Advanced-&gt;Comment Selection 就可以了。</p>
 
       
     </div>
@@ -419,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/17/matlab/" rel="next" title="matlab">
-                <i class="fa fa-chevron-left"></i> matlab
+              <a href="/2019/06/23/opencv学习/" rel="next" title="opencv学习">
+                <i class="fa fa-chevron-left"></i> opencv学习
               </a>
             
           </div>
@@ -428,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/11/html/" rel="prev" title="html">
-                html <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -475,17 +460,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -531,23 +507,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作者的建议"><span class="nav-number">2.</span> <span class="nav-text">作者的建议</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
