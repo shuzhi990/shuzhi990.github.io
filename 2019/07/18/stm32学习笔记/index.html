@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="title: stm32学习笔记date: 2019-07-18 21:22:17 tags:关于MDK5的几个使用技巧1）TAB键的妙用。首先要介绍的就是TAB键的使用，这个键在很多编译器里面都是用来空位的，每按一下移 空几个位。如果你是经常编写程序的对这个键一定再熟悉不过了。但是 MDK 的 TAB 键和一般 编译器的 TAB 键有不同的地方，和 C++的 TAB 键差不多。MDK 的 TA">
+  <meta name="description" content="stm32笔记本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="林木深的个人博客">
+<meta property="og:title" content="stm32学习笔记">
 <meta property="og:url" content="http://linmushen.com/2019/07/18/stm32学习笔记/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="title: stm32学习笔记date: 2019-07-18 21:22:17 tags:关于MDK5的几个使用技巧1）TAB键的妙用。首先要介绍的就是TAB键的使用，这个键在很多编译器里面都是用来空位的，每按一下移 空几个位。如果你是经常编写程序的对这个键一定再熟悉不过了。但是 MDK 的 TAB 键和一般 编译器的 TAB 键有不同的地方，和 C++的 TAB 键差不多。MDK 的 TA">
+<meta property="og:description" content="stm32笔记本">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-27T08:33:03.286Z">
+<meta property="og:updated_time" content="2019-07-27T08:37:05.699Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="林木深的个人博客">
-<meta name="twitter:description" content="title: stm32学习笔记date: 2019-07-18 21:22:17 tags:关于MDK5的几个使用技巧1）TAB键的妙用。首先要介绍的就是TAB键的使用，这个键在很多编译器里面都是用来空位的，每按一下移 空几个位。如果你是经常编写程序的对这个键一定再熟悉不过了。但是 MDK 的 TAB 键和一般 编译器的 TAB 键有不同的地方，和 C++的 TAB 键差不多。MDK 的 TA">
+<meta name="twitter:title" content="stm32学习笔记">
+<meta name="twitter:description" content="stm32笔记本">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title> | 林木深的个人博客</title>
+  <title>stm32学习笔记 | 林木深的个人博客</title>
   
 
 
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">stm32学习笔记
 
               
             
@@ -353,7 +353,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-27 16:33:03" itemprop="dateModified" datetime="2019-07-27T16:33:03+08:00">2019-07-27</time>
+                <time title="修改时间：2019-07-27 16:37:05" itemprop="dateModified" datetime="2019-07-27T16:37:05+08:00">2019-07-27</time>
               
             
           </span>
@@ -387,9 +387,8 @@
       
 
       
-        <hr>
-<p>title: stm32学习笔记<br>date: 2019-07-18 21:22:17</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h1 id="关于MDK5的几个使用技巧"><a href="#关于MDK5的几个使用技巧" class="headerlink" title="关于MDK5的几个使用技巧"></a>关于MDK5的几个使用技巧</h1><p>1）TAB键的妙用。首先要介绍的就是TAB键的使用，这个键在很多编译器里面都是用来空位的，每按一下移 空几个位。如果你是经常编写程序的对这个键一定再熟悉不过了。但是 MDK 的 TAB 键和一般 编译器的 TAB 键有不同的地方，和 C++的 TAB 键差不多。MDK 的 TAB 键支持块操作。也就 是可以让一片代码整体右移固定的几个位，也可以通过 SHIFT+TAB 键整体左移固定的几个位。</p>
+        <p>stm32笔记本<br><a id="more"></a></p>
+<h1 id="关于MDK5的几个使用技巧"><a href="#关于MDK5的几个使用技巧" class="headerlink" title="关于MDK5的几个使用技巧"></a>关于MDK5的几个使用技巧</h1><p>1）TAB键的妙用。首先要介绍的就是TAB键的使用，这个键在很多编译器里面都是用来空位的，每按一下移 空几个位。如果你是经常编写程序的对这个键一定再熟悉不过了。但是 MDK 的 TAB 键和一般 编译器的 TAB 键有不同的地方，和 C++的 TAB 键差不多。MDK 的 TAB 键支持块操作。也就 是可以让一片代码整体右移固定的几个位，也可以通过 SHIFT+TAB 键整体左移固定的几个位。</p>
 <p>2）快速查看一个函数或者变量所定义的地方的功能。 也可能想看看某个变量或数组是在哪个地方定义的等。MDK提供了这样的快速定位的功能只要你把光标放到这个函数/变量的上面，然后右键，弹出菜单栏，我们找到Go to Definition Of‘名字’ 这个地方，然后单击左键就可以快速跳到该函数的定义处（注意要先在 Options for Target 的 Output 选项卡里面勾选 Browse Information 选项，再编译，再定位，否则无法定位！）</p>
 <p>3）快速注释与快速消注释功能。在调试代码的时候，你可能会想注释某一片的代码，来看看执行的情况，MDK提供了这样的快速注释/消注释块代码的功能。也是通过右键实现的。这个操作比较简单，就是先选中你要注释的代码区，然后右键，选择Advanced-&gt;Comment Selection 就可以了。</p>
 <p>4）快速打开头文件功能。在将光标放到要打开的引用头文件上，然后右键选择 Open Document“XXX”，就可以快速打开这个文件了（XXX 是你要打开的头文件名字）</p>
@@ -519,7 +518,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -561,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags"><span class="nav-number">1.</span> <span class="nav-text">tags:</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#关于MDK5的几个使用技巧"><span class="nav-number"></span> <span class="nav-text">关于MDK5的几个使用技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MDk下C语言基础复习"><span class="nav-number"></span> <span class="nav-text">MDk下C语言基础复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#六种位操作"><span class="nav-number">1.</span> <span class="nav-text">六种位操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位操作的使用"><span class="nav-number">1.2.</span> <span class="nav-text">位操作的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#define宏定义"><span class="nav-number">2.</span> <span class="nav-text">define宏定义</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于MDK5的几个使用技巧"><span class="nav-number">1.</span> <span class="nav-text">关于MDK5的几个使用技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MDk下C语言基础复习"><span class="nav-number">2.</span> <span class="nav-text">MDk下C语言基础复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#六种位操作"><span class="nav-number">2.1.</span> <span class="nav-text">六种位操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">2.1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位操作的使用"><span class="nav-number">2.1.2.</span> <span class="nav-text">位操作的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#define宏定义"><span class="nav-number">2.2.</span> <span class="nav-text">define宏定义</span></a></li></ol></li></ol></div>
             
 
           </div>
