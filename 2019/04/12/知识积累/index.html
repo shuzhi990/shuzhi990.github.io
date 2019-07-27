@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="stm32笔记本">
+  <meta name="description" content="一个用于日常知识积累的笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="stm32学习笔记">
-<meta property="og:url" content="http://linmushen.com/2019/07/18/stm32学习笔记/index.html">
+<meta property="og:title" content="知识积累">
+<meta property="og:url" content="http://linmushen.com/2019/04/12/知识积累/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="stm32笔记本">
+<meta property="og:description" content="一个用于日常知识积累的笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-27T08:37:05.699Z">
+<meta property="og:updated_time" content="2019-07-27T09:11:49.437Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="stm32学习笔记">
-<meta name="twitter:description" content="stm32笔记本">
+<meta name="twitter:title" content="知识积累">
+<meta name="twitter:description" content="一个用于日常知识积累的笔记">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://linmushen.com/2019/07/18/stm32学习笔记/">
+  <link rel="canonical" href="http://linmushen.com/2019/04/12/知识积累/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>stm32学习笔记 | 林木深的个人博客</title>
+  <title>知识积累 | 林木深的个人博客</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/07/18/stm32学习笔记/">
+    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/04/12/知识积累/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="林木深">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">stm32学习笔记
+          <h1 class="post-title" itemprop="name headline">知识积累
 
               
             
@@ -336,7 +336,7 @@
                 
               
 
-              <time title="创建时间：2019-07-18 21:22:17" itemprop="dateCreated datePublished" datetime="2019-07-18T21:22:17+08:00">2019-07-18</time>
+              <time title="创建时间：2019-04-12 22:30:38" itemprop="dateCreated datePublished" datetime="2019-04-12T22:30:38+08:00">2019-04-12</time>
             
 
             
@@ -353,7 +353,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-27 16:37:05" itemprop="dateModified" datetime="2019-07-27T16:37:05+08:00">2019-07-27</time>
+                <time title="修改时间：2019-07-27 17:11:49" itemprop="dateModified" datetime="2019-07-27T17:11:49+08:00">2019-07-27</time>
               
             
           </span>
@@ -387,31 +387,36 @@
       
 
       
-        <p>stm32笔记本<br><a id="more"></a></p>
-<h1 id="关于MDK5的几个使用技巧"><a href="#关于MDK5的几个使用技巧" class="headerlink" title="关于MDK5的几个使用技巧"></a>关于MDK5的几个使用技巧</h1><p>1）TAB键的妙用。首先要介绍的就是TAB键的使用，这个键在很多编译器里面都是用来空位的，每按一下移 空几个位。如果你是经常编写程序的对这个键一定再熟悉不过了。但是 MDK 的 TAB 键和一般 编译器的 TAB 键有不同的地方，和 C++的 TAB 键差不多。MDK 的 TAB 键支持块操作。也就 是可以让一片代码整体右移固定的几个位，也可以通过 SHIFT+TAB 键整体左移固定的几个位。</p>
-<p>2）快速查看一个函数或者变量所定义的地方的功能。 也可能想看看某个变量或数组是在哪个地方定义的等。MDK提供了这样的快速定位的功能只要你把光标放到这个函数/变量的上面，然后右键，弹出菜单栏，我们找到Go to Definition Of‘名字’ 这个地方，然后单击左键就可以快速跳到该函数的定义处（注意要先在 Options for Target 的 Output 选项卡里面勾选 Browse Information 选项，再编译，再定位，否则无法定位！）</p>
-<p>3）快速注释与快速消注释功能。在调试代码的时候，你可能会想注释某一片的代码，来看看执行的情况，MDK提供了这样的快速注释/消注释块代码的功能。也是通过右键实现的。这个操作比较简单，就是先选中你要注释的代码区，然后右键，选择Advanced-&gt;Comment Selection 就可以了。</p>
-<p>4）快速打开头文件功能。在将光标放到要打开的引用头文件上，然后右键选择 Open Document“XXX”，就可以快速打开这个文件了（XXX 是你要打开的头文件名字）</p>
-<p>5）查找替换功能。这个和WORD等很多文档操作的替换功能是差不多的， 在MDK5里面查找替换的快捷键是“CTRL+H”，只要你按下该按钮就会调出查找替换功能。这个和WORD等很多文档操作的替换功能是差不多的。</p>
-<p>6）跨文件查找功能，先双击你要找的函数/变量名，然后再点击IDE上面的左数第九个按键，然后再点击find。</p>
-<h1 id="MDk下C语言基础复习"><a href="#MDk下C语言基础复习" class="headerlink" title="MDk下C语言基础复习"></a>MDk下C语言基础复习</h1><h2 id="六种位操作"><a href="#六种位操作" class="headerlink" title="六种位操作"></a>六种位操作</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ol>
-<li>&amp;：按位与，全1为1，有0为0。</li>
-<li>|：按位或，全0为0，有1为1。</li>
-<li>^：按位异或，相同为0，不同为1。</li>
-<li>~：取反，按位取反，1变0，0变1。（由于是对其本身进行变换，所以~为单目运算符。</li>
-<li>&lt;&lt;：左移，用来将一个数的各位全部向左移N位，右边补零（a=a&lt;&lt;N)</li>
-<li><blockquote>
+        <p>一个用于日常知识积累的笔记<br><a id="more"></a></p>
+<h1 id="修改环境变量"><a href="#修改环境变量" class="headerlink" title="修改环境变量"></a>修改环境变量</h1><p>此电脑—&gt;属性—-&gt;高级系统设置—-&gt;path—-&gt;新建</p>
+<h1 id="python-安装第三方库"><a href="#python-安装第三方库" class="headerlink" title="python 安装第三方库"></a>python 安装第三方库</h1><p>cmd (powershell)</p>
 <blockquote>
-<p>：右移，与左移作用一样只是方向不同。<br>注：复合运算：a&amp;=1—&gt;a=a&amp;1（其他符号同理）</p>
+<p>转到pip下的cache目录<br>pip install 库名</p>
 </blockquote>
-</blockquote>
-<h3 id="位操作的使用"><a href="#位操作的使用" class="headerlink" title="位操作的使用"></a>位操作的使用</h3>1）与操作的清零作用：如<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GPIOA-&gt;CRL&amp;=0XFFFFFF0F;		//将4-7位清零</span><br></pre></td></tr></table></figure>
+<h1 id="关于pip时的编码错误问题"><a href="#关于pip时的编码错误问题" class="headerlink" title="关于pip时的编码错误问题"></a>关于pip时的编码错误问题</h1><p>最近安装pip-19.1 执行python setup.py install一直提示编码错误<br>弄了一晚上找到解决办法<br>在python27–&gt;Lib–&gt;site-packages下添加一个名为sitecustomize.py的文件<br>内容为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(&apos;gb2312&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>用utf-8不好使，可能是环境不一样的问题</p>
+<h1 id="创建python虚拟环境"><a href="#创建python虚拟环境" class="headerlink" title="创建python虚拟环境"></a>创建python虚拟环境</h1><p>记得要cd到Python27下的Scripts下运行virtualven name（创建一个名为name的虚拟环境）<br>运行Scripts\active进入虚拟环境<br>运行deactive退出虚拟环境</p>
+<h1 id="高深的爬虫基础"><a href="#高深的爬虫基础" class="headerlink" title="高深的爬虫基础"></a>高深的爬虫基础</h1><p>这个笔记拿来记录一点零星的爬虫知识，以备后用<br><!--more--></p>
+<h2 id="urllib模块"><a href="#urllib模块" class="headerlink" title="urllib模块"></a>urllib模块</h2><h3 id="打开网址-url-的操作"><a href="#打开网址-url-的操作" class="headerlink" title="打开网址(url)的操作"></a>打开网址(url)的操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import urllib</span><br><span class="line">f = urllib.urlopen(&apos;网址&apos;)</span><br></pre></td></tr></table></figure>
+<h3 id="返回一个文件对象，有与对文件对象类似的操作"><a href="#返回一个文件对象，有与对文件对象类似的操作" class="headerlink" title="返回一个文件对象，有与对文件对象类似的操作"></a>返回一个文件对象，有与对文件对象类似的操作</h3><ul>
+<li>read() , readline() ,readlines() , fileno() , close() ：这些方法的使用方式与文件对象完全一样</li>
+<li>info()：返回一个httplib.HTTPMessage对象，表示远程服务器返回的头信息</li>
+<li>getcode()：返回Http状态码。如果是http请求，200请求成功完成;404网址未找到</li>
+<li>geturl()：返回请求的url</li>
+</ul>
+<p>后续过于高深，暂时不写<br>关于代码，可以查看py42.py</p>
+<h1 id="HTML文本的笔记"><a href="#HTML文本的笔记" class="headerlink" title="HTML文本的笔记"></a>HTML文本的笔记</h1><p>最近学习了一点有关HTML的知识<br>在此记录一下<br><!--more--></p>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><p>好像是用&lt;&gt;来表示的<br>标签就好像是python里的函数<br>如 </p>
+<ol>
+<li><figure class="highlight plain"><figcaption><span>``` 表示主题内容</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2. ```&lt;html&gt; &lt;/html&gt;``` 表示HTML文件</span><br><span class="line">3. ```&lt;form&gt; &lt;/form&gt;``` 表示表单文件</span><br><span class="line">4. ```&lt;input&gt;``` 标签</span><br><span class="line"></span><br><span class="line">## input标签</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>2）或运算设置相应值：如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GPIOA-&gt;CRL|=0X00000040;		//设置相应位，不改变其他位</span><br></pre></td></tr></table></figure></p>
-<p>3）提高可读性：如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GPIOx-&gt;BSRR=(((uint32_t)0x01)&lt;&lt;pinpos);		//将GPIOx-&gt;BSRR寄存器的第PINPOS位设置为1</span><br></pre></td></tr></table></figure></p>
-<p>其中(uint32_t)0x01是将0x01转换为32位。（因为该寄存器32位）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GPIOA-&gt;ODR|=1&lt;&lt;5;</span><br><span class="line">= GPIOA-&gt;ODR=GPIOA-&gt;ODR|(00000001&lt;&lt;5);</span><br><span class="line">= GPIOA-&gt;ODR=GPIOA-&gt;ODR|0100000;	//将第二位置1，其余位不变</span><br></pre></td></tr></table></figure></p>
-<h2 id="define宏定义"><a href="#define宏定义" class="headerlink" title="define宏定义"></a>define宏定义</h2>
+<p><input type="(1)"><br><code>`</code><br>其中（1）内容为以下</p>
+<blockquote>
+<p>button<br>定义可点击按钮（多数情况下，用于通过 JavaScript 启动脚本）。<br>如果在HTML表单中使用button元素，不同的浏览器会提交不同的值。Internet Explorer将提交<code>&lt;button&gt;与&lt;button/&gt;</code>之间的文本<br>checkbox<br>定义复选框。<br>file<br>定义输入字段和 “浏览”按钮，供文件上传。<br>hidden<br>定义隐藏的输入字段。<br>image<br>定义图像形式的提交按钮。<br>password<br>定义密码字段。该字段中的字符被掩码。<br>radio<br>定义单选按钮。<br>reset<br>定义重置按钮。重置按钮会清除表单中的所有数据。<br>submit<br>定义提交按钮。提交按钮会把表单数据发送到服务器。<br>text<br>定义单行的输入字段，用户可在其中输入文本。默认宽度为 20 个字符。</p>
+</blockquote>
+<h2 id="设置字体风格"><a href="#设置字体风格" class="headerlink" title="设置字体风格"></a>设置字体风格</h2><p>font 简写属性。作用是把所有针对字体的属性设置在一个声明中。<br>font-family 设置字体系列。<br>font-size 设置字体的尺寸。<br>font-size-adjust 当首选字体不可用时，对替换字体进行智能缩放。（CSS2.1 已删除该属性。）<br>font-stretch 对字体进行水平拉伸。（CSS2.1 已删除该属性。）<br>font-style 设置字体风格。<br>font-variant 以小型大写字体或者正常字体显示文本。<br>font-weight 设置字体的粗细。 </p>
+
       
     </div>
 
@@ -441,8 +446,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/14/树树莓派小车/" rel="next" title="树莓派小车">
-                <i class="fa fa-chevron-left"></i> 树莓派小车
+              <a href="/2019/04/11/实战1/" rel="next" title="python 9">
+                <i class="fa fa-chevron-left"></i> python 9
               </a>
             
           </div>
@@ -450,6 +455,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/17/数学建模2/" rel="prev" title="Matlab相关">
+                Matlab相关 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -560,7 +569,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于MDK5的几个使用技巧"><span class="nav-number">1.</span> <span class="nav-text">关于MDK5的几个使用技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MDk下C语言基础复习"><span class="nav-number">2.</span> <span class="nav-text">MDk下C语言基础复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#六种位操作"><span class="nav-number">2.1.</span> <span class="nav-text">六种位操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">2.1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位操作的使用"><span class="nav-number">2.1.2.</span> <span class="nav-text">位操作的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#define宏定义"><span class="nav-number">2.2.</span> <span class="nav-text">define宏定义</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#修改环境变量"><span class="nav-number">1.</span> <span class="nav-text">修改环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-安装第三方库"><span class="nav-number">2.</span> <span class="nav-text">python 安装第三方库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于pip时的编码错误问题"><span class="nav-number">3.</span> <span class="nav-text">关于pip时的编码错误问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建python虚拟环境"><span class="nav-number">4.</span> <span class="nav-text">创建python虚拟环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高深的爬虫基础"><span class="nav-number">5.</span> <span class="nav-text">高深的爬虫基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#urllib模块"><span class="nav-number">5.1.</span> <span class="nav-text">urllib模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开网址-url-的操作"><span class="nav-number">5.1.1.</span> <span class="nav-text">打开网址(url)的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回一个文件对象，有与对文件对象类似的操作"><span class="nav-number">5.1.2.</span> <span class="nav-text">返回一个文件对象，有与对文件对象类似的操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML文本的笔记"><span class="nav-number">6.</span> <span class="nav-text">HTML文本的笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">6.1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置字体风格"><span class="nav-number">6.2.</span> <span class="nav-text">设置字体风格</span></a></li></ol></li></ol></div>
             
 
           </div>
