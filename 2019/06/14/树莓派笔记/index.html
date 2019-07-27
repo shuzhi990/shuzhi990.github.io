@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="一个用于日常知识积累的笔记">
+  <meta name="description" content="概述 核心元件：树莓派 L298N 需要实现：视觉识别（Opencv） 底层电机驱动 核心功能：识别赛道图像，沿着白线走 核心原理：利用二值化（大律法二值化）将白色单独显示出来 未知问题： 腐蚀膨胀问题？—一种对图像的处理方法，腐蚀是去掉，膨胀是把图放大缩放倍率？    GPIO控制使用 GPIO–通入输入/输出端口 wiringPi/RPI.GPIO是需要导入的库函数  使用说明 import">
 <meta property="og:type" content="article">
-<meta property="og:title" content="知识积累">
-<meta property="og:url" content="http://linmushen.com/2019/04/12/知识积累/index.html">
+<meta property="og:title" content="树莓派笔记">
+<meta property="og:url" content="http://linmushen.com/2019/06/14/树莓派笔记/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="一个用于日常知识积累的笔记">
+<meta property="og:description" content="概述 核心元件：树莓派 L298N 需要实现：视觉识别（Opencv） 底层电机驱动 核心功能：识别赛道图像，沿着白线走 核心原理：利用二值化（大律法二值化）将白色单独显示出来 未知问题： 腐蚀膨胀问题？—一种对图像的处理方法，腐蚀是去掉，膨胀是把图放大缩放倍率？    GPIO控制使用 GPIO–通入输入/输出端口 wiringPi/RPI.GPIO是需要导入的库函数  使用说明 import">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-27T09:11:49.437Z">
+<meta property="og:updated_time" content="2019-07-27T09:17:08.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="知识积累">
-<meta name="twitter:description" content="一个用于日常知识积累的笔记">
+<meta name="twitter:title" content="树莓派笔记">
+<meta name="twitter:description" content="概述 核心元件：树莓派 L298N 需要实现：视觉识别（Opencv） 底层电机驱动 核心功能：识别赛道图像，沿着白线走 核心原理：利用二值化（大律法二值化）将白色单独显示出来 未知问题： 腐蚀膨胀问题？—一种对图像的处理方法，腐蚀是去掉，膨胀是把图放大缩放倍率？    GPIO控制使用 GPIO–通入输入/输出端口 wiringPi/RPI.GPIO是需要导入的库函数  使用说明 import">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://linmushen.com/2019/04/12/知识积累/">
+  <link rel="canonical" href="http://linmushen.com/2019/06/14/树莓派笔记/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>知识积累 | 林木深的个人博客</title>
+  <title>树莓派笔记 | 林木深的个人博客</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/04/12/知识积累/">
+    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/06/14/树莓派笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="林木深">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">知识积累
+          <h1 class="post-title" itemprop="name headline">树莓派笔记
 
               
             
@@ -336,7 +336,7 @@
                 
               
 
-              <time title="创建时间：2019-04-12 22:30:38" itemprop="dateCreated datePublished" datetime="2019-04-12T22:30:38+08:00">2019-04-12</time>
+              <time title="创建时间：2019-06-14 22:45:13" itemprop="dateCreated datePublished" datetime="2019-06-14T22:45:13+08:00">2019-06-14</time>
             
 
             
@@ -353,7 +353,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-27 17:11:49" itemprop="dateModified" datetime="2019-07-27T17:11:49+08:00">2019-07-27</time>
+                <time title="修改时间：2019-07-27 17:17:08" itemprop="dateModified" datetime="2019-07-27T17:17:08+08:00">2019-07-27</time>
               
             
           </span>
@@ -387,35 +387,31 @@
       
 
       
-        <p>一个用于日常知识积累的笔记<br><a id="more"></a></p>
-<h1 id="修改环境变量"><a href="#修改环境变量" class="headerlink" title="修改环境变量"></a>修改环境变量</h1><p>此电脑—&gt;属性—-&gt;高级系统设置—-&gt;path—-&gt;新建</p>
-<h1 id="python-安装第三方库"><a href="#python-安装第三方库" class="headerlink" title="python 安装第三方库"></a>python 安装第三方库</h1><p>cmd (powershell)</p>
-<blockquote>
-<p>转到pip下的cache目录<br>pip install 库名</p>
+        <a id="more"></a>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ol>
+<li>核心元件：树莓派 L298N</li>
+<li>需要实现：视觉识别（Opencv） 底层电机驱动</li>
+<li>核心功能：识别赛道图像，沿着白线走</li>
+<li>核心原理：利用二值化（大律法二值化）将白色单独显示出来</li>
+<li>未知问题：<blockquote>
+<p>腐蚀膨胀问题？—一种对图像的处理方法，腐蚀是去掉，膨胀是把图放大<br>缩放倍率？</p>
 </blockquote>
-<h1 id="关于pip时的编码错误问题"><a href="#关于pip时的编码错误问题" class="headerlink" title="关于pip时的编码错误问题"></a>关于pip时的编码错误问题</h1><p>最近安装pip-19.1 执行python setup.py install一直提示编码错误<br>弄了一晚上找到解决办法<br>在python27–&gt;Lib–&gt;site-packages下添加一个名为sitecustomize.py的文件<br>内容为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(&apos;gb2312&apos;)</span><br></pre></td></tr></table></figure></p>
-<p>用utf-8不好使，可能是环境不一样的问题</p>
-<h1 id="创建python虚拟环境"><a href="#创建python虚拟环境" class="headerlink" title="创建python虚拟环境"></a>创建python虚拟环境</h1><p>记得要cd到Python27下的Scripts下运行virtualven name（创建一个名为name的虚拟环境）<br>运行Scripts\active进入虚拟环境<br>运行deactive退出虚拟环境</p>
-<h1 id="高深的爬虫基础"><a href="#高深的爬虫基础" class="headerlink" title="高深的爬虫基础"></a>高深的爬虫基础</h1><p>这个笔记拿来记录一点零星的爬虫知识，以备后用<br><!--more--></p>
-<h2 id="urllib模块"><a href="#urllib模块" class="headerlink" title="urllib模块"></a>urllib模块</h2><h3 id="打开网址-url-的操作"><a href="#打开网址-url-的操作" class="headerlink" title="打开网址(url)的操作"></a>打开网址(url)的操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import urllib</span><br><span class="line">f = urllib.urlopen(&apos;网址&apos;)</span><br></pre></td></tr></table></figure>
-<h3 id="返回一个文件对象，有与对文件对象类似的操作"><a href="#返回一个文件对象，有与对文件对象类似的操作" class="headerlink" title="返回一个文件对象，有与对文件对象类似的操作"></a>返回一个文件对象，有与对文件对象类似的操作</h3><ul>
-<li>read() , readline() ,readlines() , fileno() , close() ：这些方法的使用方式与文件对象完全一样</li>
-<li>info()：返回一个httplib.HTTPMessage对象，表示远程服务器返回的头信息</li>
-<li>getcode()：返回Http状态码。如果是http请求，200请求成功完成;404网址未找到</li>
-<li>geturl()：返回请求的url</li>
-</ul>
-<p>后续过于高深，暂时不写<br>关于代码，可以查看py42.py</p>
-<h1 id="HTML文本的笔记"><a href="#HTML文本的笔记" class="headerlink" title="HTML文本的笔记"></a>HTML文本的笔记</h1><p>最近学习了一点有关HTML的知识<br>在此记录一下<br><!--more--></p>
-<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><p>好像是用&lt;&gt;来表示的<br>标签就好像是python里的函数<br>如 </p>
-<ol>
-<li><figure class="highlight plain"><figcaption><span>``` 表示主题内容</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2. ```&lt;html&gt; &lt;/html&gt;``` 表示HTML文件</span><br><span class="line">3. ```&lt;form&gt; &lt;/form&gt;``` 表示表单文件</span><br><span class="line">4. ```&lt;input&gt;``` 标签</span><br><span class="line"></span><br><span class="line">## input标签</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><input type="(1)"><br><code>`</code><br>其中（1）内容为以下</p>
+<h1 id="GPIO控制使用"><a href="#GPIO控制使用" class="headerlink" title="GPIO控制使用"></a>GPIO控制使用</h1><ol>
+<li>GPIO–通入输入/输出端口</li>
+<li>wiringPi/RPI.GPIO是需要导入的库函数</li>
+</ol>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><ol>
+<li>import RPI.GPIO as GPIO</li>
+<li>设置编码规范： gpio.setmode(gpio.BOARD)<blockquote>
+<p>编码规范：</p>
 <blockquote>
-<p>button<br>定义可点击按钮（多数情况下，用于通过 JavaScript 启动脚本）。<br>如果在HTML表单中使用button元素，不同的浏览器会提交不同的值。Internet Explorer将提交<code>&lt;button&gt;与&lt;button/&gt;</code>之间的文本<br>checkbox<br>定义复选框。<br>file<br>定义输入字段和 “浏览”按钮，供文件上传。<br>hidden<br>定义隐藏的输入字段。<br>image<br>定义图像形式的提交按钮。<br>password<br>定义密码字段。该字段中的字符被掩码。<br>radio<br>定义单选按钮。<br>reset<br>定义重置按钮。重置按钮会清除表单中的所有数据。<br>submit<br>定义提交按钮。提交按钮会把表单数据发送到服务器。<br>text<br>定义单行的输入字段，用户可在其中输入文本。默认宽度为 20 个字符。</p>
+<p>1）BOARD： 从左到右，从上到下：左边基数，右边偶数：1-40<br>2）BCM：编号侧重 CPU 寄存器，根据 BCM2835 的 GPIO 寄存器编号<br>3）wpi： 编号侧重实现逻辑，把扩展 GPIO 端口从 0 开始编号，这种编号方便编程。</p>
 </blockquote>
-<h2 id="设置字体风格"><a href="#设置字体风格" class="headerlink" title="设置字体风格"></a>设置字体风格</h2><p>font 简写属性。作用是把所有针对字体的属性设置在一个声明中。<br>font-family 设置字体系列。<br>font-size 设置字体的尺寸。<br>font-size-adjust 当首选字体不可用时，对替换字体进行智能缩放。（CSS2.1 已删除该属性。）<br>font-stretch 对字体进行水平拉伸。（CSS2.1 已删除该属性。）<br>font-style 设置字体风格。<br>font-variant 以小型大写字体或者正常字体显示文本。<br>font-weight 设置字体的粗细。 </p>
+</blockquote>
+</li>
+</ol>
 
       
     </div>
@@ -446,8 +442,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/11/实战1/" rel="next" title="实战1">
-                <i class="fa fa-chevron-left"></i> 实战1
+              <a href="/2019/04/17/数学建模2/" rel="next" title="Matlab相关">
+                <i class="fa fa-chevron-left"></i> Matlab相关
               </a>
             
           </div>
@@ -456,8 +452,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/17/数学建模2/" rel="prev" title="Matlab相关">
-                Matlab相关 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/18/stm32学习笔记/" rel="prev" title="stm32学习笔记">
+                stm32学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -569,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#修改环境变量"><span class="nav-number">1.</span> <span class="nav-text">修改环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-安装第三方库"><span class="nav-number">2.</span> <span class="nav-text">python 安装第三方库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于pip时的编码错误问题"><span class="nav-number">3.</span> <span class="nav-text">关于pip时的编码错误问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建python虚拟环境"><span class="nav-number">4.</span> <span class="nav-text">创建python虚拟环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高深的爬虫基础"><span class="nav-number">5.</span> <span class="nav-text">高深的爬虫基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#urllib模块"><span class="nav-number">5.1.</span> <span class="nav-text">urllib模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开网址-url-的操作"><span class="nav-number">5.1.1.</span> <span class="nav-text">打开网址(url)的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回一个文件对象，有与对文件对象类似的操作"><span class="nav-number">5.1.2.</span> <span class="nav-text">返回一个文件对象，有与对文件对象类似的操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML文本的笔记"><span class="nav-number">6.</span> <span class="nav-text">HTML文本的笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">6.1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置字体风格"><span class="nav-number">6.2.</span> <span class="nav-text">设置字体风格</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GPIO控制使用"><span class="nav-number">2.</span> <span class="nav-text">GPIO控制使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用说明"><span class="nav-number">2.1.</span> <span class="nav-text">使用说明</span></a></li></ol></li></ol></div>
             
 
           </div>
