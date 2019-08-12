@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="林木深的个人博客">
 <meta property="og:description" content="有关STM32知识的笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-05T17:23:05.253Z">
+<meta property="og:updated_time" content="2019-08-06T07:22:29.893Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="stm32学习笔记">
 <meta name="twitter:description" content="有关STM32知识的笔记">
@@ -353,7 +353,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-06 01:23:05" itemprop="dateModified" datetime="2019-08-06T01:23:05+08:00">2019-08-06</time>
+                <time title="修改时间：2019-08-06 15:22:29" itemprop="dateModified" datetime="2019-08-06T15:22:29+08:00">2019-08-06</time>
               
             
           </span>
@@ -504,8 +504,9 @@
 <h2 id="STM32与PWM"><a href="#STM32与PWM" class="headerlink" title="STM32与PWM"></a>STM32与PWM</h2><p>基本定时器（TIM6;TIM7)无法产生PWM。<br>不同定时器（TIM2~TIM5）可以产生四路PWM输出。<br>高级定时器（TIM1;TIM8）可以产生七路PWM输出。</p>
 <h2 id="相关寄存器-1"><a href="#相关寄存器-1" class="headerlink" title="相关寄存器"></a>相关寄存器</h2><p>TIMx_CCMR1/2：捕获/比较模式寄存器，TIMx_CCMR1控制CH1,CH2;TIMx_CCMR2控制CH3，CH4。主要使用其模式设置功能。<br>TIMx_CCER:捕获/比较使能寄存器，顾名思义：使能PWM波。<br>TIMx_CCR1~4：捕获/比较寄存器，输出模式下，该寄存器的值与CNT寄存器的值比较，根据结果产生相应动作。<br>实际使用中，通过修改这个寄存器的值来控制PWM的输出脉宽。（ccr1~4分别对应CH1~4）</p>
 <h2 id="硬件相关"><a href="#硬件相关" class="headerlink" title="硬件相关"></a>硬件相关</h2><p>由于STM32每个通道连接固定的GPIO口，因此，需要用到GPIO的重映射。<br>STM32的重映射是由复用重映射和IP配置寄存器（AFIO_MAPR）控制的。该寄存器的各位描述见STM32开发指南（库函数版）P217。<br>重映射实现</p>
-<h2 id="库函数使用-3"><a href="#库函数使用-3" class="headerlink" title="库函数使用"></a>库函数使用</h2><h3 id="开启TIM3时钟以及【复用功能时钟（AFIO）】（如果需要的话）"><a href="#开启TIM3时钟以及【复用功能时钟（AFIO）】（如果需要的话）" class="headerlink" title="开启TIM3时钟以及【复用功能时钟（AFIO）】（如果需要的话）"></a>开启TIM3时钟以及【复用功能时钟（AFIO）】（如果需要的话）</h3><p>RCC_APB1PeriphClockCmd(RCC_PAB1Periph_TIM3,ENABLE)    //TIM3时钟使能<br>RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIP,ENABLE)    //使能复用时钟</p>
-<h3 id="设置重映射（如果有需要的话）"><a href="#设置重映射（如果有需要的话）" class="headerlink" title="设置重映射（如果有需要的话）"></a>设置重映射（如果有需要的话）</h3><p>原型：void GPIO_PinRemapConfig(u32_t GPIO_Remap,FunctionalState NewState)<br>参数：第一个参数：GPIO_PinRenmap_TIMx;(重映射)；GPIO_PinRenmap_TIMx;(部分重映射)；第二个参数：使能/失能<br>使用：GPIO_PinRemapConfig(GPIO_PinRemap_TIM3,ENABLE);TIM3重映射使能</p>
+<h2 id="库函数使用-3"><a href="#库函数使用-3" class="headerlink" title="库函数使用"></a>库函数使用</h2><p>关于极性的问题：<br>如果是PWM1模式 :<br>如果设置TIM_OCPolarity_High     TIMx_CNT&lt;TIMx_CCR输出为高电平   TIMx_CNT&gt;TIMx_CCR输出为低电平<br>如果设置TIM_OCPolarity_Low      TIMx_CNT&lt;TIMx_CCR输出就为低电平  TIMx_CNT&gt;&lt;TIMx_CCR输出就为高电平<br>如果是PWM2模式 :<br>如果设置TIM_OCPolarity_High     TIMx_CNT&gt;TIMx_CCR输出为低电平   TIMx_CNT&lt;TIMx_CCR输出为高电平<br>如果设置TIM_OCPolarity_Low      TIMx_CNT&gt;TIMx_CCR输出就为高电平  TIMx_CNT&lt;TIMx_CCR输出就为低电平</p>
+<h3 id="开启TIM3时钟以及【复用功能时钟（AFIO）】（如果需要的话）"><a href="#开启TIM3时钟以及【复用功能时钟（AFIO）】（如果需要的话）" class="headerlink" title="开启TIM3时钟以及【复用功能时钟（AFIO）】（如果需要的话）"></a>开启TIM3时钟以及【复用功能时钟（AFIO）】（如果需要的话）</h3><p>RCC_APB1PeriphClockCmd(RCC_PAB1Periph_TIM3,ENABLE)    //TIM3时钟使能<br>RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIP,ENABLE)    //使能复用时钟</p>
+<h3 id="设置重映射（如果有需要的话）"><a href="#设置重映射（如果有需要的话）" class="headerlink" title="设置重映射（如果有需要的话）"></a>设置重映射（如果有需要的话）</h3><p>原型：void GPIO_PinRemapConfig(u32_t GPIO_Remap,FunctionalState NewState)<br>参数：第一个参数：GPIO_FullRenmap_TIMx;(重映射)；GPIO_PartialRenmap_TIMx;(部分重映射)；第二个参数：使能/失能<br>使用：GPIO_PinRemapConfig(GPIO_PinRemap_TIM3,ENABLE);TIM3重映射使能</p>
 <h3 id="初始化定时器-1"><a href="#初始化定时器-1" class="headerlink" title="初始化定时器"></a>初始化定时器</h3><p>设置重装值，预分频系数，时钟分割（此时该参数设为0），计数模式</p>
 <h3 id="设置TIMx-CHx的PWM模式"><a href="#设置TIMx-CHx的PWM模式" class="headerlink" title="设置TIMx_CHx的PWM模式"></a>设置TIMx_CHx的PWM模式</h3><p>原型：void TIM_OCxInit(TIM_TypeDef<em>TIMx,TIM_OCInitTypeDef</em>TIM_OCInitStruct)【x代表选中的通道】<br>参数：第一个参数：TIM2、TIM3….<br>第二个参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">typedef struct </span><br><span class="line">&#123;</span><br><span class="line">	uint16_t TIM_OCMode;		//设置模式是PWM还是输出比较；PWM下的格式：TIM_OC_PWM2</span><br><span class="line">	uint16_t TIM_OutputState;	//使能PWM到端口；PWM下的格式：TIM_OutputState_ENABLE</span><br><span class="line">	uint16_t TIM_OutputNState;		//高级定时器使用。</span><br><span class="line">	uint16_t TIM_Pulse;				//高级定时器使用</span><br><span class="line">	uint16_t TIM_OCPolarity;	//设置极性高/低</span><br><span class="line">	uint16_t TIM_OCNPolarity;		//高级定时器使用</span><br><span class="line">	uint16_t TIM_OCIdleState;		//高级定时器使用</span><br><span class="line">	uint16_t TIM_OCNIdleState;		//高级定时器使用</span><br><span class="line">&#125; TIM_OCInitTypeDef;</span><br></pre></td></tr></table></figure></p>
 <p>使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TIM_OCInitTypeDef  TIM_OCInitStructure;</span><br><span class="line"></span><br><span class="line">TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM2; //选择 PWM 模式 2 TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; //比较输出使能 TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High; //输出极性高</span><br><span class="line"></span><br><span class="line">TIM_OC2Init(TIM3, &amp;TIM_OCInitStructure);  //初始化 TIM3 OC2</span><br></pre></td></tr></table></figure></p>
@@ -622,7 +623,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
