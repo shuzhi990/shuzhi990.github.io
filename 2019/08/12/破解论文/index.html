@@ -104,7 +104,7 @@
 <meta property="og:description" content="为了准备数学建模竞赛，力求在假期剩余的十几天中，破解七篇优秀论文。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.imgur.com/TcCWaXf.png">
-<meta property="og:updated_time" content="2019-08-12T08:25:18.943Z">
+<meta property="og:updated_time" content="2019-08-13T03:42:13.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="破解论文">
 <meta name="twitter:description" content="为了准备数学建模竞赛，力求在假期剩余的十几天中，破解七篇优秀论文。">
@@ -338,12 +338,24 @@
                 
               
 
-              <time title="创建时间：2019-08-12 09:58:55 / 修改时间：16:25:18" itemprop="dateCreated datePublished" datetime="2019-08-12T09:58:55+08:00">2019-08-12</time>
+              <time title="创建时间：2019-08-12 09:58:55" itemprop="dateCreated datePublished" datetime="2019-08-12T09:58:55+08:00">2019-08-12</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-13 11:42:13" itemprop="dateModified" datetime="2019-08-13T11:42:13+08:00">2019-08-13</time>
               
             
           </span>
@@ -381,8 +393,46 @@
 <h1 id="第一篇优秀论文—系泊模型"><a href="#第一篇优秀论文—系泊模型" class="headerlink" title="第一篇优秀论文—系泊模型"></a>第一篇优秀论文—系泊模型</h1><h2 id="有关模型一的部分"><a href="#有关模型一的部分" class="headerlink" title="有关模型一的部分"></a>有关模型一的部分</h2><h3 id="模型准备"><a href="#模型准备" class="headerlink" title="模型准备"></a>模型准备</h3><p>建立坐标系，为各个结构件命名。<br>（以锚和锚链的交点为原点，建立坐标系；将各个结构件从上至下命名为P1~P267）</p>
 <h3 id="模型建立"><a href="#模型建立" class="headerlink" title="模型建立"></a>模型建立</h3><p>1）对有关结构件进行受力分析，得到各个力之间的方程（模型）。<br>2）确定约束条件（水的深度；吃水深与各个结构件的投影之和等于水的深度）。<br>3）最后要将所有的到的方程汇总写在一起。</p>
 <h3 id="模型修正"><a href="#模型修正" class="headerlink" title="模型修正"></a>模型修正</h3><p>对特殊情况予以考虑，并得到修正方程（修正模型）。<br>（是否有铁链沉底）。</p>
-<h3 id="模型求解"><a href="#模型求解" class="headerlink" title="模型求解"></a>模型求解</h3><p>共有两个变量吃水深h以及各个角度Ai。<br>1）将多目标非线性方程（在第二步中汇总的方程）转换为单目标非线性方程（利用角度与吃水深之间的递推关系）。<br>2）将连续型的变量h转化为离散型的（通过规定步长（步长就是累加的数））。<br>3）计算每一个解，由于最优解等于最大的h（h&lt;=2），计算出满足h&lt;=2的最大h即为最优解。<img src="https://i.imgur.com/TcCWaXf.png" alt></p>
+<h3 id="模型求解"><a href="#模型求解" class="headerlink" title="模型求解"></a>模型求解</h3><p>共有两个变量吃水深h以及各个角度Ai。<br>1）将多目标非线性方程（在第二步中汇总的方程）转换为单目标非线性方程（利用角度与吃水深之间的递推关系）。<br>2）将连续型的变量h转化为离散型的（通过规定步长（步长就是累加的数））。<br>3）计算每一个解，由于最优解等于最大的h（h&lt;=2），计算出满足h&lt;=2的最大h即为最优解。<img src="https://i.imgur.com/TcCWaXf.png" alt><br>4）算法精度检验（暂时不懂）。</p>
+<h2 id="Matlab程序"><a href="#Matlab程序" class="headerlink" title="Matlab程序"></a>Matlab程序</h2><p>当存在一个变量在多个地方有意义时，应该使用矩阵<br><code>`</code><br>mq = 1200;    %重物球质量<br>n = 210;    %锚链数量（22.5/锚链直径）<br>min = inf;    %意义一样，inf代表极小值，更加准确<br>minh = 0;    %最小吃水深度<br>minH = 0;    %最小水深<br>minbeta = 0;%最小锚与锚链角度<br>minthital1 = zeros(1,4);        %创建一行四列的矩阵，因为有4个thital角（钢管夹角）。<br>minthital2 = zeros(1,n)+pi/2;    %创建一个1行210列的值为1.5708的矩阵，因为有n个thital2角（锚链夹角）。<br>minFt2 = zeros(1,n+1);        %创建一个一行211列的零矩阵（）</p>
+<p>for h= 0 : 0.0001 : 2        %h从0开始，每次运行完结构内容后加0.0001，一直到2。</p>
+<pre><code>Ft = zeros(1,5);    %各钢管、浮标之间的拉力
+alpha = zeros(1,5);    %各钢管、浮标之间的角度
+thital1 = zeros(1,4);    %各钢管与竖直方向的夹角
+beta = 0；            %钢桶与树枝方向夹角
+Ft2 = zeros(1,n+1); %各锚链之间的力
+gama = zeros(1,n+1);%各锚链之间的夹角
+thital2 = zeros(1,n);    %各锚链与竖直方向的夹角
 
+%{以下为浮标部分}%
+
+v = 24;        %风速=24
+S = 2*(2-h);%浮标没有没入水中部分的横截面积
+m = 1000;    %浮标质量为1000kg
+rou = 1025; %水的密度
+g = 9.8；    %重力加速度
+V = pi*1^2*h;    %体积 = (pi*d^2*h)/4;d^2 = 4
+Ffeng = 0.625*S*v^2;    %由公式：Ffeng = 0.625*横截面积*风速^2
+Ffu = rou*g*V;    %浮标浮力
+G = m*g;        %浮标重力
+
+if Ffu - G &lt; 0
+    continue;
+end
+
+alpha(1) = atan(Ffeng/(Ffu-G));        %根据建立的模型，解得浮标与第一个钢管之间的角度
+Ft(1) = sqrt(Ffeng^2+(Ffu-Gfu)^2);    %根据之前建立的模型，解得浮标与第一个钢管之间的拉力
+
+%{以下为钢管部分}%
+
+Vg = 1*pi*0.025^2;    %钢管的体积
+Ggang = 10*g;        %钢管的质量
+Fgfu = rou*g*Vg;    %钢管的浮力
+for i=1:4
+    alpha(i+1) = atan(Ft(i)*sin(alpha(i))/(Ft(i)*cos(alpha(i))+Fgfu-Ggang));
+    Ft(i+1) = Ft(i)*sin(alpha(i+1));thital1(i) = atan(Ft(i)*sin(alpha(i))*1/(Fgfu-Ggang)*1/2+Ft(i)*cos(alpha(i))));
+end    
+</code></pre>
       
     </div>
 
@@ -421,6 +471,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/13/PID学习笔记/" rel="prev" title="PID学习笔记">
+                PID学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -489,7 +543,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -531,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一篇优秀论文—系泊模型"><span class="nav-number">1.</span> <span class="nav-text">第一篇优秀论文—系泊模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#有关模型一的部分"><span class="nav-number">1.1.</span> <span class="nav-text">有关模型一的部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型准备"><span class="nav-number">1.1.1.</span> <span class="nav-text">模型准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立"><span class="nav-number">1.1.2.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型修正"><span class="nav-number">1.1.3.</span> <span class="nav-text">模型修正</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型求解"><span class="nav-number">1.1.4.</span> <span class="nav-text">模型求解</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一篇优秀论文—系泊模型"><span class="nav-number">1.</span> <span class="nav-text">第一篇优秀论文—系泊模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#有关模型一的部分"><span class="nav-number">1.1.</span> <span class="nav-text">有关模型一的部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型准备"><span class="nav-number">1.1.1.</span> <span class="nav-text">模型准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立"><span class="nav-number">1.1.2.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型修正"><span class="nav-number">1.1.3.</span> <span class="nav-text">模型修正</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型求解"><span class="nav-number">1.1.4.</span> <span class="nav-text">模型求解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matlab程序"><span class="nav-number">1.2.</span> <span class="nav-text">Matlab程序</span></a></li></ol></li></ol></div>
             
 
           </div>

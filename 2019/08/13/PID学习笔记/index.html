@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="本节根据星瞳科技的OPENMV">
+  <meta name="description" content="记录python学习之旅">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OPENMV学习笔记">
-<meta property="og:url" content="http://linmushen.com/2019/07/29/OPENMV学习笔记/index.html">
+<meta property="og:title" content="PID学习笔记">
+<meta property="og:url" content="http://linmushen.com/2019/08/13/PID学习笔记/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="本节根据星瞳科技的OPENMV">
+<meta property="og:description" content="记录python学习之旅">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-29T11:58:09.712Z">
+<meta property="og:updated_time" content="2019-08-13T06:38:03.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OPENMV学习笔记">
-<meta name="twitter:description" content="本节根据星瞳科技的OPENMV">
+<meta name="twitter:title" content="PID学习笔记">
+<meta name="twitter:description" content="记录python学习之旅">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://linmushen.com/2019/07/29/OPENMV学习笔记/">
+  <link rel="canonical" href="http://linmushen.com/2019/08/13/PID学习笔记/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>OPENMV学习笔记 | 林木深的个人博客</title>
+  <title>PID学习笔记 | 林木深的个人博客</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/07/29/OPENMV学习笔记/">
+    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/08/13/PID学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="林木深">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">OPENMV学习笔记
+          <h1 class="post-title" itemprop="name headline">PID学习笔记
 
               
             
@@ -336,13 +336,9 @@
                 
               
 
-              <time title="创建时间：2019-07-29 19:07:59 / 修改时间：19:58:09" itemprop="dateCreated datePublished" datetime="2019-07-29T19:07:59+08:00">2019-07-29</time>
+              <time title="创建时间：2019-08-13 14:38:03" itemprop="dateCreated datePublished" datetime="2019-08-13T14:38:03+08:00">2019-08-13</time>
             
 
-            
-              
-
-              
             
           </span>
 
@@ -375,22 +371,7 @@
       
 
       
-        <p>本节根据星瞳科技的OPENMV<br><a id="more"></a></p>
-<h1 id="OPENMV图像处理方法"><a href="#OPENMV图像处理方法" class="headerlink" title="OPENMV图像处理方法"></a>OPENMV图像处理方法</h1><h2 id="感光元件"><a href="#感光元件" class="headerlink" title="感光元件"></a>感光元件</h2><p>sensor模块，用于设置感光元件的参数。</p>
-<blockquote>
-<p>初始化：.resert()–初始化感光元件。<br>设置彩色/黑白：.set_pixformat(sensor.RGB565[彩色]/sensor.GARYSCALE[灰度])<br>设置图像大小：.set_framesize([A])</p>
-<blockquote>
-<p>其中A：sensor.QQVGA: 160x120<br>sensor.QQVGA2: 128x160 (用于 lcd 扩展板)<br>sensor.HQVGA: 240x160<br>sensor.QVGA: 320x240<br>sensor.VGA: 640x480 (只用于OpenMV Cam M7 的灰度图处理图像，或者彩图采集图像)<br>sensor.QQCIF: 88x72<br>sensor.QCIF: 176x144<br>sensor.CIF: 352x288</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>跳过一些帧：.skip_frames(n=需要跳过的帧数,time=需要跳过的ms数)。<br>获取一张图象：.snapshot()，拍摄一张照片并返回一个image对象。<br>自动增益：.set_auto_gain(True/False)，使用颜色追踪时，需要关闭(False)自动增益。<br>白平衡：.set_auto_whitebat(True/False)，使用颜色追踪时，需要关闭(False)白平衡。<br>设置窗口ROI：.set_windowing(roi)，roi的格式是(x,y)，取中间的x*y区域。ROI为感兴趣区。<br>设置翻转：.set_hmirror(True)—水平方向翻转；.set_vflip(True)—垂直方向翻转。</p>
-</blockquote>
-<h1 id="图像的基本运算"><a href="#图像的基本运算" class="headerlink" title="图像的基本运算"></a>图像的基本运算</h1><h2 id="获取设置像素点-pixel"><a href="#获取设置像素点-pixel" class="headerlink" title="获取设置像素点(pixel)"></a>获取设置像素点(pixel)</h2><ol>
-<li>image.get_pixel(x,y):返回image中(x,y)处的像素值（若为灰度图，返回灰度值；若为彩色图，返回RGB 的元组）。</li>
-<li>image.set_pixel(x,y):设置image中(x,y)处的像素值（若为灰度图，设置灰度值；若为彩色图，设置(R,G,B)的值。</li>
-</ol>
-
+        
       
     </div>
 
@@ -420,8 +401,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/18/stm32学习笔记/" rel="next" title="stm32学习笔记">
-                <i class="fa fa-chevron-left"></i> stm32学习笔记
+              <a href="/2019/08/12/破解论文/" rel="next" title="破解论文">
+                <i class="fa fa-chevron-left"></i> 破解论文
               </a>
             
           </div>
@@ -429,10 +410,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/12/破解论文/" rel="prev" title="破解论文">
-                破解论文 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -476,17 +453,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -532,23 +500,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OPENMV图像处理方法"><span class="nav-number">1.</span> <span class="nav-text">OPENMV图像处理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#感光元件"><span class="nav-number">1.1.</span> <span class="nav-text">感光元件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图像的基本运算"><span class="nav-number">2.</span> <span class="nav-text">图像的基本运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取设置像素点-pixel"><span class="nav-number">2.1.</span> <span class="nav-text">获取设置像素点(pixel)</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
