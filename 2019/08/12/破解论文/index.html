@@ -104,7 +104,7 @@
 <meta property="og:description" content="为了准备数学建模竞赛，力求在假期剩余的十几天中，破解七篇优秀论文。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.imgur.com/TcCWaXf.png">
-<meta property="og:updated_time" content="2019-08-13T03:42:13.539Z">
+<meta property="og:updated_time" content="2019-08-13T10:40:40.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="破解论文">
 <meta name="twitter:description" content="为了准备数学建模竞赛，力求在假期剩余的十几天中，破解七篇优秀论文。">
@@ -355,7 +355,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-13 11:42:13" itemprop="dateModified" datetime="2019-08-13T11:42:13+08:00">2019-08-13</time>
+                <time title="修改时间：2019-08-13 18:40:40" itemprop="dateModified" datetime="2019-08-13T18:40:40+08:00">2019-08-13</time>
               
             
           </span>
@@ -394,45 +394,8 @@
 <h3 id="模型建立"><a href="#模型建立" class="headerlink" title="模型建立"></a>模型建立</h3><p>1）对有关结构件进行受力分析，得到各个力之间的方程（模型）。<br>2）确定约束条件（水的深度；吃水深与各个结构件的投影之和等于水的深度）。<br>3）最后要将所有的到的方程汇总写在一起。</p>
 <h3 id="模型修正"><a href="#模型修正" class="headerlink" title="模型修正"></a>模型修正</h3><p>对特殊情况予以考虑，并得到修正方程（修正模型）。<br>（是否有铁链沉底）。</p>
 <h3 id="模型求解"><a href="#模型求解" class="headerlink" title="模型求解"></a>模型求解</h3><p>共有两个变量吃水深h以及各个角度Ai。<br>1）将多目标非线性方程（在第二步中汇总的方程）转换为单目标非线性方程（利用角度与吃水深之间的递推关系）。<br>2）将连续型的变量h转化为离散型的（通过规定步长（步长就是累加的数））。<br>3）计算每一个解，由于最优解等于最大的h（h&lt;=2），计算出满足h&lt;=2的最大h即为最优解。<img src="https://i.imgur.com/TcCWaXf.png" alt><br>4）算法精度检验（暂时不懂）。</p>
-<h2 id="Matlab程序"><a href="#Matlab程序" class="headerlink" title="Matlab程序"></a>Matlab程序</h2><p>当存在一个变量在多个地方有意义时，应该使用矩阵<br><code>`</code><br>mq = 1200;    %重物球质量<br>n = 210;    %锚链数量（22.5/锚链直径）<br>min = inf;    %意义一样，inf代表极小值，更加准确<br>minh = 0;    %最小吃水深度<br>minH = 0;    %最小水深<br>minbeta = 0;%最小锚与锚链角度<br>minthital1 = zeros(1,4);        %创建一行四列的矩阵，因为有4个thital角（钢管夹角）。<br>minthital2 = zeros(1,n)+pi/2;    %创建一个1行210列的值为1.5708的矩阵，因为有n个thital2角（锚链夹角）。<br>minFt2 = zeros(1,n+1);        %创建一个一行211列的零矩阵（）</p>
-<p>for h= 0 : 0.0001 : 2        %h从0开始，每次运行完结构内容后加0.0001，一直到2。</p>
-<pre><code>Ft = zeros(1,5);    %各钢管、浮标之间的拉力
-alpha = zeros(1,5);    %各钢管、浮标之间的角度
-thital1 = zeros(1,4);    %各钢管与竖直方向的夹角
-beta = 0；            %钢桶与树枝方向夹角
-Ft2 = zeros(1,n+1); %各锚链之间的力
-gama = zeros(1,n+1);%各锚链之间的夹角
-thital2 = zeros(1,n);    %各锚链与竖直方向的夹角
+<h2 id="Matlab程序"><a href="#Matlab程序" class="headerlink" title="Matlab程序"></a>Matlab程序</h2><p>当存在一个变量在多个地方有意义时，应该使用矩阵<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">mq = 1200;	%重物球质量</span><br><span class="line">n = 210;	%锚链数量（22.5/锚链直径）</span><br><span class="line">min = inf;	%实际水深和计算得到的水的深度的差值</span><br><span class="line">minh = 0;	%修正时目前的计算得到的吃水深</span><br><span class="line">minH = 0;	%修正时目前得到的水深（由吃水深度+投影得到的，但不到18m，因此需要修正）</span><br><span class="line">minbeta = 0;%修正时目前的铁桶与竖直方向的夹角。</span><br><span class="line">minthital1 = zeros(1,4);		%修正时目前的钢管与竖直方向的夹角。</span><br><span class="line">minthital2 = zeros(1,n)+pi/2;	%修正时目前的锚链与竖直方向的夹角的修正办法。</span><br><span class="line">minFt2 = zeros(1,n+1);		%创建一个一行211列的零矩阵（）</span><br><span class="line"></span><br><span class="line">for h= 0 : 0.0001 : 2		%h从0开始，每次运行完结构内容后加0.0001，一直到2。</span><br><span class="line"></span><br><span class="line">	Ft = zeros(1,5);	%各钢管、浮标之间的拉力</span><br><span class="line">	alpha = zeros(1,5);	%各钢管、浮标之间的角度</span><br><span class="line">	thital1 = zeros(1,4);	%各钢管与竖直方向的夹角</span><br><span class="line">	beta = 0；			%钢桶与竖直方向夹角</span><br><span class="line">	Ft2 = zeros(1,n+1); %各锚链之间的力</span><br><span class="line">	gama = zeros(1,n+1);%各锚链之间的夹角</span><br><span class="line">	thital2 = zeros(1,n);	%各锚链与竖直方向的夹角</span><br><span class="line"></span><br><span class="line">	%&#123;以下为浮标部分&#125;%</span><br><span class="line"></span><br><span class="line">	v = 24;		%风速=24</span><br><span class="line">	S = 2*(2-h);%浮标没有没入水中部分的横截面积</span><br><span class="line">	m = 1000;	%浮标质量为1000kg</span><br><span class="line">	rou = 1025; %水的密度</span><br><span class="line">	g = 9.8；	%重力加速度</span><br><span class="line">	V = pi*1^2*h;	%体积 = (pi*d^2*h)/4;d^2 = 4</span><br><span class="line">	Ffeng = 0.625*S*v^2;	%由公式：Ffeng = 0.625*横截面积*风速^2</span><br><span class="line">	Ffu = rou*g*V;	%浮标浮力</span><br><span class="line">	G = m*g;		%浮标重力</span><br><span class="line">	</span><br><span class="line">	if Ffu - G &lt; 0</span><br><span class="line">		continue;</span><br><span class="line">	end</span><br><span class="line">	</span><br><span class="line">	alpha(1) = atan(Ffeng/(Ffu-G));		%根据建立的模型，解得浮标与第一个钢管之间的角度</span><br><span class="line">	Ft(1) = sqrt(Ffeng^2+(Ffu-Gfu)^2);	%根据之前建立的模型，解得浮标与第一个钢管之间的拉力</span><br><span class="line"></span><br><span class="line">	%&#123;以下为钢管部分&#125;%</span><br><span class="line"></span><br><span class="line">	Vg = 1*pi*0.025^2;	%钢管的体积</span><br><span class="line">	Ggang = 10*g;		%钢管的质量</span><br><span class="line">	Fgfu = rou*g*Vg;	%钢管的浮力</span><br><span class="line">	for i=1:4</span><br><span class="line">		alpha(i+1) = atan(Ft(i)*sin(alpha(i))/(Ft(i)*cos(alpha(i))+Fgfu-Ggang));	%根据之前得到的模型，分别计算出四个钢管的之间的角度</span><br><span class="line">		Ft(i+1) = Ft(i)*sin(alpha(i+1));thital1(i) = atan(Ft(i)*sin(alpha(i))*1/(Fgfu-Ggang)*1/2+Ft(i)*cos(alpha(i))));		%根据之前建立的模型，分别计算出来四个钢管之间的作用力</span><br><span class="line">	end	</span><br><span class="line"></span><br><span class="line">	%&#123;以下是钢桶部分&#125;%</span><br><span class="line"></span><br><span class="line">	Vt = 1*pi*0.15^2;	%钢桶的体积（钢桶直径为30cm）</span><br><span class="line">	Vq = mq/7800;		%重物球的体积（由于本题中球的半径没有给出，因此，用铁道密度代指球的密度，用球的质量比球的体积，进而得到球的体积）</span><br><span class="line">	Gt = 100*g;			%钢桶的重量</span><br><span class="line">	Gq = mq*g;			%重物球的重量</span><br><span class="line">	Ftfu = rou*g*Vt;	%桶收到的浮力</span><br><span class="line">	Fqfu = rpu*g*Vq;	%球受到的浮力</span><br><span class="line">	</span><br><span class="line">	gama(1) = atan(Ft(5)*sin(alpha(5))/(Ftfu+Ft(5)*cos(alpha(5))-Gt-Gq+Fqfu));</span><br><span class="line">	%根据之前得到的模型，计算第一个锚链与钢桶的夹角</span><br><span class="line">	bata = atan(Ft(5)*sin(alpha(5)*1/(Ftfu-Gt)*1/2+Ft(5)*cos(alpha(5))*1));	%根据之前得到的模型，计算出钢桶与竖直夹角</span><br><span class="line"></span><br><span class="line">	%&#123;以下是锚链部分&#125;%</span><br><span class="line">	</span><br><span class="line">	mm = 0.735;		%锚链的质量（查阅资料得到）</span><br><span class="line">	roum = 6450;	%锚链的密度（查阅资料得到）</span><br><span class="line">	Vm = mm/roum;	%锚链的体积</span><br><span class="line">	Fmfu = rou*g*Vm;%锚链收到的浮力</span><br><span class="line">	Gm = mm*g;		%锚链受到的重力</span><br><span class="line">	Lm = 0.105;		%一节锚链的长度（22.05/210得到）</span><br><span class="line"></span><br><span class="line">	for i=1:n</span><br><span class="line">		gama(i+1)=atan(Ft2(i)*sin(gama(i))/(Ft(i)*cos(gama(i))+Fmfu - Gm));	%根据之前得到的模型，计算出每个锚链之间的夹角。</span><br><span class="line"></span><br><span class="line">		if gama(i+1)&lt;0		%如果夹角小于0，则加派。</span><br><span class="line"></span><br><span class="line">			gama(i+1) = gama(i+1)+pi</span><br><span class="line"></span><br><span class="line">		end</span><br><span class="line"></span><br><span class="line">		Ft2(i+1) = Ft2(i)*sin(gama(i))/sin(gama(i+1));	%根据模型，得到各个锚链之间的作用力。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		thital2(i) = atan(Ft2(i)*sin(gama(i))*Lm/((Fmfu-Gm)*Lm/2+Ft2(i)*cos(gama(i))*Lm));		%根据模型，计算得到每个锚链与竖直方向的夹角。</span><br><span class="line">		</span><br><span class="line">		if thital2(i)&lt;0		%如果夹角小于0，则加派</span><br><span class="line">			</span><br><span class="line">			thital=thital+pi;</span><br><span class="line">		</span><br><span class="line">		end</span><br><span class="line">	end</span><br><span class="line">	H = h+1*sum(cos(thital1))+1*cos(beta)+Lm*sum(cos(thital2))	%构建几何约束条件，其中sum()为求和函数。</span><br><span class="line">	</span><br><span class="line">	%&#123;当出现有铁链沉底的情况，需要进行修正&#125;%</span><br><span class="line"></span><br><span class="line">	if abs(H-18)&lt;min	</span><br><span class="line">		minh = h;</span><br><span class="line">		min = abs(H-18);</span><br><span class="line">		minH = H ;</span><br><span class="line">		minthita1 = thita1;</span><br><span class="line">		minthita2 = thita2;</span><br><span class="line">		minbeta = beta;</span><br><span class="line">		minFt2 = Ft2;</span><br><span class="line">	end</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
 
-%{以下为浮标部分}%
-
-v = 24;        %风速=24
-S = 2*(2-h);%浮标没有没入水中部分的横截面积
-m = 1000;    %浮标质量为1000kg
-rou = 1025; %水的密度
-g = 9.8；    %重力加速度
-V = pi*1^2*h;    %体积 = (pi*d^2*h)/4;d^2 = 4
-Ffeng = 0.625*S*v^2;    %由公式：Ffeng = 0.625*横截面积*风速^2
-Ffu = rou*g*V;    %浮标浮力
-G = m*g;        %浮标重力
-
-if Ffu - G &lt; 0
-    continue;
-end
-
-alpha(1) = atan(Ffeng/(Ffu-G));        %根据建立的模型，解得浮标与第一个钢管之间的角度
-Ft(1) = sqrt(Ffeng^2+(Ffu-Gfu)^2);    %根据之前建立的模型，解得浮标与第一个钢管之间的拉力
-
-%{以下为钢管部分}%
-
-Vg = 1*pi*0.025^2;    %钢管的体积
-Ggang = 10*g;        %钢管的质量
-Fgfu = rou*g*Vg;    %钢管的浮力
-for i=1:4
-    alpha(i+1) = atan(Ft(i)*sin(alpha(i))/(Ft(i)*cos(alpha(i))+Fgfu-Ggang));
-    Ft(i+1) = Ft(i)*sin(alpha(i+1));thital1(i) = atan(Ft(i)*sin(alpha(i))*1/(Fgfu-Ggang)*1/2+Ft(i)*cos(alpha(i))));
-end    
-</code></pre>
       
     </div>
 

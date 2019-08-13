@@ -96,17 +96,22 @@
 
 
 
-  <meta name="description" content="记录python学习之旅">
+  <meta name="description" content="潜心学习技术，最近发现了一篇比较好的介绍PID的文章。学习并记录一下。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PID学习笔记">
 <meta property="og:url" content="http://linmushen.com/2019/08/13/PID学习笔记/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="记录python学习之旅">
+<meta property="og:description" content="潜心学习技术，最近发现了一篇比较好的介绍PID的文章。学习并记录一下。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-13T06:38:03.251Z">
+<meta property="og:image" content="https://i.imgur.com/j5YKEuO.png">
+<meta property="og:image" content="https://i.imgur.com/ICGUcUc.png">
+<meta property="og:image" content="https://i.imgur.com/JJfTRfg.png">
+<meta property="og:image" content="https://i.imgur.com/5tp9brf.png">
+<meta property="og:updated_time" content="2019-08-13T07:40:12.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PID学习笔记">
-<meta name="twitter:description" content="记录python学习之旅">
+<meta name="twitter:description" content="潜心学习技术，最近发现了一篇比较好的介绍PID的文章。学习并记录一下。">
+<meta name="twitter:image" content="https://i.imgur.com/j5YKEuO.png">
 
 
 
@@ -336,9 +341,13 @@
                 
               
 
-              <time title="创建时间：2019-08-13 14:38:03" itemprop="dateCreated datePublished" datetime="2019-08-13T14:38:03+08:00">2019-08-13</time>
+              <time title="创建时间：2019-08-13 14:38:03 / 修改时间：15:40:12" itemprop="dateCreated datePublished" datetime="2019-08-13T14:38:03+08:00">2019-08-13</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -371,7 +380,15 @@
       
 
       
-        
+        <p>潜心学习技术，最近发现了一篇比较好的介绍PID的文章。学习并记录一下。<br><a id="more"></a><br>PID控制是对偏差进行比例，积分和微分的控制。PID由三个单元组成，分别是比例单元，积分单元，微分单元。</p>
+<h1 id="位置闭环控制"><a href="#位置闭环控制" class="headerlink" title="位置闭环控制"></a>位置闭环控制</h1><h2 id="PID简介"><a href="#PID简介" class="headerlink" title="PID简介"></a>PID简介</h2><p>位置闭环控制是根据编码器的脉冲累加测量电机的位置信息，并与目标值进行比较，进而得到控制偏差，然后对偏差进行比例、积分、微分进行控制。使偏差趋近于0。</p>
+<h2 id="PID理论知识"><a href="#PID理论知识" class="headerlink" title="PID理论知识"></a>PID理论知识</h2><p>1）PID公式<br><img src="https://i.imgur.com/j5YKEuO.png" alt><br>2）符号含义<br><img src="https://i.imgur.com/ICGUcUc.png" alt></p>
+<h2 id="控制原理"><a href="#控制原理" class="headerlink" title="控制原理"></a>控制原理</h2><p><img src="https://i.imgur.com/JJfTRfg.png" alt><br>其中PID控制器，是一个软件实现过程（比如程序里的一个函数）。</p>
+<h2 id="C语言实现"><a href="#C语言实现" class="headerlink" title="C语言实现"></a>C语言实现</h2><p>通过改变KP,KI,KD的值实现调参。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int Position_PID(int Encoder,int Targe)		//入口参数为位置测量值和位置目标值</span><br><span class="line">&#123;</span><br><span class="line">	Static float Bias,Pwm,Integral_bias,Last_Bias;	  </span><br><span class="line">	Bias = Encoder-Target;	//计算偏差</span><br><span class="line">	Interal_bias+=Bias;		//用累加法，求出偏差的积分</span><br><span class="line">	Pwm=Position_KP*Bias+Position_KI*Integral_bias+Position_KD*(Bias-Last_Bias);	//根据PID计算Pwm输出值</span><br><span class="line">	Last_Bias=Bias;	//保存上一次偏差</span><br><span class="line">	return Pwm;		//返回Pwm</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在中断服务函数中调用这个函数并将输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PWM = Position_PID(Encoder,Targe)</span><br></pre></td></tr></table></figure></p>
+<h2 id="实际使用"><a href="#实际使用" class="headerlink" title="实际使用"></a>实际使用</h2><p>1）稳定性：主要评估指标为最大超调量，最大超调量是指响应曲线的最大峰值与稳态值的差。<br>2）快速性：主要评估指标为上升时间，上升时间是指响应工作状态从原始工作状态出发，第一次到达输出稳定值所需要的时间，是评估系统快速性的一个重要指标。<br>3）准确性：主要评估指标为静差，静差是被控制量与给定值之差，一般用于衡量系统的准确性。<img src="https://i.imgur.com/5tp9brf.png" alt></p>
+<h2 id="调参注意事项"><a href="#调参注意事项" class="headerlink" title="调参注意事项"></a>调参注意事项</h2><p>P：用于提高响应速度。<br>I：用于减小静差。<br>D：用于抑制震荡。<br>一般调参时，先将I值和D值设置为0，然后把P值从0逐渐增大，直到系统震荡。<br>静差一般是在P值较小，且I值为0的时候出现的。所以增大P值可以一定程度上的消除静差，提高响应速度，但会导致系统震荡。<br>加入D值后，震荡得到抑制，但响应速度变慢了。<br>所以一般调节经验可以总结为：先只P控制，增大P直至系统震荡之后加入D控制，消除一点震荡后，再次调节P和I参数。<br>控制难度取决于系统转动惯量和对相应速度的要求。转动惯量越小，对相应速度要求越低，PID参数就越不敏感。</p>
+<h1 id="速度闭环控制"><a href="#速度闭环控制" class="headerlink" title="速度闭环控制"></a>速度闭环控制</h1>
       
     </div>
 
@@ -453,8 +470,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -500,6 +526,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#位置闭环控制"><span class="nav-number">1.</span> <span class="nav-text">位置闭环控制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PID简介"><span class="nav-number">1.1.</span> <span class="nav-text">PID简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PID理论知识"><span class="nav-number">1.2.</span> <span class="nav-text">PID理论知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制原理"><span class="nav-number">1.3.</span> <span class="nav-text">控制原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C语言实现"><span class="nav-number">1.4.</span> <span class="nav-text">C语言实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实际使用"><span class="nav-number">1.5.</span> <span class="nav-text">实际使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调参注意事项"><span class="nav-number">1.6.</span> <span class="nav-text">调参注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#速度闭环控制"><span class="nav-number">2.</span> <span class="nav-text">速度闭环控制</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
