@@ -293,6 +293,164 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/08/16/Matlab学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="林木深">
+      <meta itemprop="description" content="记录python学习之旅">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="林木深的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/16/Matlab学习笔记/" class="post-title-link" itemprop="url">Matlab学习笔记</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-16 13:16:47 / 修改时间：19:34:02" itemprop="dateCreated datePublished" datetime="2019-08-16T13:16:47+08:00">2019-08-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="开篇"><a href="#开篇" class="headerlink" title="开篇"></a>开篇</h1><h2 id="学习目录"><a href="#学习目录" class="headerlink" title="学习目录"></a>学习目录</h2><p>1）了解Matlab基本用法，常用的命令。<br>2）熟悉常见模型的求解算法和套路，如：连续模型、规划模型等。<br>3）将机理建模的过程模拟出来，能够建立和求解没有套路的模型。</p>
+<h2 id="主要题型对应的模型"><a href="#主要题型对应的模型" class="headerlink" title="主要题型对应的模型"></a>主要题型对应的模型</h2><p><img src="https://i.imgur.com/3oIfAhp.png" alt><br><img src="https://i.imgur.com/mQt1xY1.png" alt></p>
+<h1 id="第一篇—实战项目"><a href="#第一篇—实战项目" class="headerlink" title="第一篇—实战项目"></a>第一篇—实战项目</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>已知股票的交易数据：日期、开盘价、最高价、最低价、收盘价、成交量、换手率，用某种方法来评价这只股票的价值和风险。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>作为一个科学计算问题，典型的流程是：1.获取并导入数据；2.数据探索和建模；3.分享结果</p>
+<h2 id="Matlab实现"><a href="#Matlab实现" class="headerlink" title="Matlab实现"></a>Matlab实现</h2><h3 id="第一步—从外部读取数据（获取省略，已下为导入部分）"><a href="#第一步—从外部读取数据（获取省略，已下为导入部分）" class="headerlink" title="第一步—从外部读取数据（获取省略，已下为导入部分）"></a>第一步—从外部读取数据（获取省略，已下为导入部分）</h3><p>1）在左侧窗口下找到需要读取的数据的位置<br><img src="https://i.imgur.com/gB5VTcr.png" alt><br>2）右击该文件，点击导入数据<br>3）出现一个导入引擎<br><img src="https://i.imgur.com/gUGdBnC.png" alt><br>4）点击导入所选内容（大绿色对号），点击之前可以选择导入的形式（默认是列向量的形式），之后Matlab工作区出现这些导入的数据。</p>
+<h3 id="第二步—数据探索和建模"><a href="#第二步—数据探索和建模" class="headerlink" title="第二步—数据探索和建模"></a>第二步—数据探索和建模</h3><p>绘制图形：<br>首先双击变量名，然后选中变量，点击绘图建，选择想要绘制的图形，可视化查看数据。<br><img src="https://i.imgur.com/djqIzuE.jpg" alt><br><img src="https://i.imgur.com/xoddok0.png" alt><br>或者输入 plot(x轴：文件名.变量名,y轴：文件名.变量名)</p>
+<p>创建脚本：<br>还是找到数据所在位置，然后右击导入数据，进入菜单，点击大绿对号下的小箭头，选择生成脚本，然后保存该脚本。<img src="https://i.imgur.com/lUzJTng.png" alt></p>
+<p>知识积累：<br>1）画图<br>x = linspace(起始点，终止点，点的个数)<br>y = sin(x)<br>沿sin(x)曲线生成点的个数（默认是100个）个等间距的点</p>
+<p>2）数据拟合：<br>p = polyfit(x,y,n)；返回n+1阶拟合后函数的系数。<br>配合y = polyval(p,x)；计算对应点y的值。</p>
+<p>3）读取Excel电子表格文件<br>xlsread(filename,sheetx,xlrange)<br>filename：文件名<br>sheetx：第几个表格（sheet1,sheet2…）<br>xlrange:矩阵范围A1：H99（从A行的第一列的元素到H行的第九十九的元素之间的矩阵）</p>
+<p>4）清除临时变量<br>clearvars 临时变量1 临时变量2；</p>
+<p>5）创建一个新的临时图像窗口<br>figure</p>
+<p>6）datetick(变量1，变量2)<br>变量1：要改变的轴<br>变量2：日期转变的形式<br><img src="https://i.imgur.com/DGFnl7c.png" alt></p>
+<p>Matlab程序<br>写在了 C:\Users\树枝990\Matlab\Matlab学习1 下</p>
+<h3 id="发布—转换成word形式"><a href="#发布—转换成word形式" class="headerlink" title="发布—转换成word形式"></a>发布—转换成word形式</h3><p>1）点击发布下的编辑发布内容<br><img src="https://i.imgur.com/YpTRybG.png" alt></p>
+<p>2）改为word形式<br><img src="https://i.imgur.com/ednd6ng.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">clc,clear,close all</span><br><span class="line">[~,~,raw] = xlsread(&apos;sz000004.xlsx&apos;,&apos;Sheet1&apos;,&apos;A2:H99&apos;);   %读取sz000004.xls文件中的sheet表格中的A2到H99之间矩阵的所有元素</span><br><span class="line">data = reshape([raw&#123;:&#125;],size(raw));     %将raw&#123;:&#125;重构成原来尺寸的矩阵</span><br><span class="line"></span><br><span class="line">Date = data(:,1);</span><br><span class="line">DataNum = data(:,2);</span><br><span class="line">Popen = data(:,3);</span><br><span class="line">Phigh = data(:,4);</span><br><span class="line">Plow = data(:,5);</span><br><span class="line">Pclose = data(:,6);</span><br><span class="line">Volum = data(:,7);</span><br><span class="line">Turm = data(:,8);</span><br><span class="line"></span><br><span class="line">clearvars data raw;</span><br><span class="line"></span><br><span class="line">plot(DataNum,Pclose,&apos;k&apos;)</span><br><span class="line">datetick(&apos;x&apos;,&apos;dd&apos;);     %修改日期形式</span><br><span class="line">xlabel(&apos;日期&apos;);</span><br><span class="line">ylabel(&apos;收盘价格&apos;);</span><br><span class="line">figure %创建一个临时窗口</span><br><span class="line">bar(Pclose)</span><br><span class="line"></span><br><span class="line">p = polyfit(DataNum,Pclose,1);</span><br><span class="line">P1 = polyval(p,DataNum);    %进行拟合</span><br><span class="line">figure</span><br><span class="line">plot(DataNum,P1,DataNum,Pclose,&apos;*g&apos;)</span><br><span class="line">value = p(1);</span><br><span class="line"></span><br><span class="line">MaxDD = maxdrawdown(Pclose);</span><br><span class="line">risk = MaxDD;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/08/13/PID学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -504,7 +662,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-16 11:56:53" itemprop="dateModified" datetime="2019-08-16T11:56:53+08:00">2019-08-16</time>
+                <time title="修改时间：2019-08-16 13:16:30" itemprop="dateModified" datetime="2019-08-16T13:16:30+08:00">2019-08-16</time>
               
             
           </span>
@@ -1703,170 +1861,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/04/03/语法内容/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="林木深">
-      <meta itemprop="description" content="记录python学习之旅">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="林木深的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/03/语法内容/" class="post-title-link" itemprop="url">语法内容</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-03 23:36:32" itemprop="dateCreated datePublished" datetime="2019-04-03T23:36:32+08:00">2019-04-03</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-27 17:29:16" itemprop="dateModified" datetime="2019-07-27T17:29:16+08:00">2019-07-27</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>为了更方便的记笔记，我搭建了这个博客<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/03/语法内容/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1906,7 +1907,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
