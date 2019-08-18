@@ -1760,7 +1760,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffe9b8;
+  background: #b926ff;
 }
 .feed-link,
 .chat {
@@ -2480,6 +2480,16 @@ embed {
     -o-background-size: cover;
     -moz-background-size: cover;
     -ms-background-size: cover;
+  }
+  .main-inner {
+    margin-top: 60px;
+    padding: 60px 60px 60px 60px;
+    background: #fff;
+    min-height: 500px;
+    opacity: 0.8;
+  }
+  .header-inner {
+    opacity: 1;
   }
   #footer a {
     color: #eee;
