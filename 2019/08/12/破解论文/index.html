@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="为了准备数学建模竞赛，力求在假期剩余的十几天中，破解七篇优秀论文。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="破解论文">
+<meta property="og:url" content="http://linmushen.com/2019/08/12/破解论文/index.html">
+<meta property="og:site_name" content="林木深的个人博客">
+<meta property="og:description" content="为了准备数学建模竞赛，力求在假期剩余的十几天中，破解七篇优秀论文。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/HAsNEAC.png">
+<meta property="og:image" content="https://i.imgur.com/dRzGAao.png">
+<meta property="og:image" content="https://i.imgur.com/7Ns9n2x.png">
+<meta property="og:image" content="https://i.imgur.com/FaUHj7H.png">
+<meta property="og:image" content="https://i.imgur.com/vYLHcff.png">
+<meta property="og:updated_time" content="2019-08-18T16:09:48.731Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="破解论文">
+<meta name="twitter:description" content="为了准备数学建模竞赛，力求在假期剩余的十几天中，破解七篇优秀论文。">
+<meta name="twitter:image" content="https://i.imgur.com/HAsNEAC.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="林木深的个人博客" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://linmushen.com/2019/08/12/破解论文/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>破解论文 | 林木深的个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">林木深的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">热爱技术，痴迷技术</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/08/12/破解论文/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="林木深">
+      <meta itemprop="description" content="学海无涯。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="林木深的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">破解论文
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-12 09:58:55" itemprop="dateCreated datePublished" datetime="2019-08-12T09:58:55+08:00">2019-08-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-19 00:09:48" itemprop="dateModified" datetime="2019-08-19T00:09:48+08:00">2019-08-19</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Mathematical-modeling/" itemprop="url" rel="index"><span itemprop="name">数学建模</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>为了准备数学建模竞赛，力求在假期剩余的十几天中，破解七篇优秀论文。<br><a id="more"></a><br>了解算法的大致原理，如何使用、调用现成的程序</p>
+<h1 id="第一篇优秀论文"><a href="#第一篇优秀论文" class="headerlink" title="第一篇优秀论文"></a>第一篇优秀论文</h1><h2 id="模型一部分"><a href="#模型一部分" class="headerlink" title="模型一部分"></a>模型一部分</h2><h3 id="模型准备"><a href="#模型准备" class="headerlink" title="模型准备"></a>模型准备</h3><p>建立坐标系，为各个结构件命名。<br>（以锚和锚链的交点为原点，建立坐标系；将各个结构件从上至下命名为P1~P267）</p>
+<h3 id="模型建立"><a href="#模型建立" class="headerlink" title="模型建立"></a>模型建立</h3><p>1）对有关结构件进行受力分析，得到各个力之间的方程（模型）。<br>2）确定约束条件（水的深度；吃水深与各个结构件的投影之和等于水的深度）。<br>3）最后要将所有的到的方程汇总写在一起。<br><img src="https://i.imgur.com/HAsNEAC.png" alt></p>
+<h3 id="模型修正"><a href="#模型修正" class="headerlink" title="模型修正"></a>模型修正</h3><p>对特殊情况予以考虑，并得到修正方程（修正模型）。<br>（是否有铁链沉底）。</p>
+<h3 id="模型求解"><a href="#模型求解" class="headerlink" title="模型求解"></a>模型求解</h3><p>共有两个变量吃水深h以及各个角度Ai。<br>1）将多目标非线性方程（在第二步中汇总的方程）转换为单目标非线性方程（利用角度与吃水深之间的递推关系）。<br>2）将连续型的变量h转化为离散型的（通过规定步长（步长就是累加的数））。<br>3）计算每一个解，由于最优解等于最大的h（h&lt;=2），计算出满足h&lt;=2的最大h即为最优解。<br><img src="https://i.imgur.com/dRzGAao.png" alt><br>4）算法精度检验（暂时不懂）。</p>
+<h2 id="Matlab程序"><a href="#Matlab程序" class="headerlink" title="Matlab程序"></a>Matlab程序</h2><p>当存在一个变量在多个地方有意义时，应该使用矩阵<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">mq = 1200;	%重物球质量</span><br><span class="line">n = 210;	%锚链数量（22.5/锚链直径）</span><br><span class="line">min = inf;	%实际水深和计算得到的水的深度的差值</span><br><span class="line">minh = 0;	%修正时目前的计算得到的吃水深</span><br><span class="line">minH = 0;	%修正时目前得到的水深（由吃水深度+投影得到的，但不到18m，因此需要修正）</span><br><span class="line">minbeta = 0;%修正时目前的铁桶与竖直方向的夹角。</span><br><span class="line">minthital1 = zeros(1,4);		%修正时目前的钢管与竖直方向的夹角。</span><br><span class="line">minthital2 = zeros(1,n)+pi/2;	%修正时目前的锚链与竖直方向的夹角的修正办法。</span><br><span class="line">minFt2 = zeros(1,n+1);		%创建一个一行211列的零矩阵（）</span><br><span class="line"></span><br><span class="line">for h= 0 : 0.0001 : 2		%h从0开始，每次运行完结构内容后加0.0001，一直到2。</span><br><span class="line"></span><br><span class="line">	Ft = zeros(1,5);	%各钢管、浮标之间的拉力</span><br><span class="line">	alpha = zeros(1,5);	%各钢管、浮标之间的角度</span><br><span class="line">	thital1 = zeros(1,4);	%各钢管与竖直方向的夹角</span><br><span class="line">	beta = 0；			%钢桶与竖直方向夹角</span><br><span class="line">	Ft2 = zeros(1,n+1); %各锚链之间的力</span><br><span class="line">	gama = zeros(1,n+1);%各锚链之间的夹角</span><br><span class="line">	thital2 = zeros(1,n);	%各锚链与竖直方向的夹角</span><br><span class="line"></span><br><span class="line">	%&#123;以下为浮标部分&#125;%</span><br><span class="line"></span><br><span class="line">	v = 24;		%风速=24</span><br><span class="line">	S = 2*(2-h);%浮标没有没入水中部分的横截面积</span><br><span class="line">	m = 1000;	%浮标质量为1000kg</span><br><span class="line">	rou = 1025; %水的密度</span><br><span class="line">	g = 9.8；	%重力加速度</span><br><span class="line">	V = pi*1^2*h;	%体积 = (pi*d^2*h)/4;d^2 = 4</span><br><span class="line">	Ffeng = 0.625*S*v^2;	%由公式：Ffeng = 0.625*横截面积*风速^2</span><br><span class="line">	Ffu = rou*g*V;	%浮标浮力</span><br><span class="line">	G = m*g;		%浮标重力</span><br><span class="line">	</span><br><span class="line">	if Ffu - G &lt; 0</span><br><span class="line">		continue;</span><br><span class="line">	end</span><br><span class="line">	</span><br><span class="line">	alpha(1) = atan(Ffeng/(Ffu-G));		%根据建立的模型，解得浮标与第一个钢管之间的角度</span><br><span class="line">	Ft(1) = sqrt(Ffeng^2+(Ffu-Gfu)^2);	%根据之前建立的模型，解得浮标与第一个钢管之间的拉力</span><br><span class="line"></span><br><span class="line">	%&#123;以下为钢管部分&#125;%</span><br><span class="line"></span><br><span class="line">	Vg = 1*pi*0.025^2;	%钢管的体积</span><br><span class="line">	Ggang = 10*g;		%钢管的质量</span><br><span class="line">	Fgfu = rou*g*Vg;	%钢管的浮力</span><br><span class="line">	for i=1:4</span><br><span class="line">		alpha(i+1) = atan(Ft(i)*sin(alpha(i))/(Ft(i)*cos(alpha(i))+Fgfu-Ggang));	%根据之前得到的模型，分别计算出四个钢管的之间的角度</span><br><span class="line">		Ft(i+1) = Ft(i)*sin(alpha(i+1));thital1(i) = atan(Ft(i)*sin(alpha(i))*1/(Fgfu-Ggang)*1/2+Ft(i)*cos(alpha(i))));		%根据之前建立的模型，分别计算出来四个钢管之间的作用力</span><br><span class="line">	end	</span><br><span class="line"></span><br><span class="line">	%&#123;以下是钢桶部分&#125;%</span><br><span class="line"></span><br><span class="line">	Vt = 1*pi*0.15^2;	%钢桶的体积（钢桶直径为30cm）</span><br><span class="line">	Vq = mq/7800;		%重物球的体积（由于本题中球的半径没有给出，因此，用铁道密度代指球的密度，用球的质量比球的体积，进而得到球的体积）</span><br><span class="line">	Gt = 100*g;			%钢桶的重量</span><br><span class="line">	Gq = mq*g;			%重物球的重量</span><br><span class="line">	Ftfu = rou*g*Vt;	%桶收到的浮力</span><br><span class="line">	Fqfu = rpu*g*Vq;	%球受到的浮力</span><br><span class="line">	</span><br><span class="line">	gama(1) = atan(Ft(5)*sin(alpha(5))/(Ftfu+Ft(5)*cos(alpha(5))-Gt-Gq+Fqfu));</span><br><span class="line">	%根据之前得到的模型，计算第一个锚链与钢桶的夹角</span><br><span class="line">	bata = atan(Ft(5)*sin(alpha(5)*1/(Ftfu-Gt)*1/2+Ft(5)*cos(alpha(5))*1));	%根据之前得到的模型，计算出钢桶与竖直夹角</span><br><span class="line"></span><br><span class="line">	%&#123;以下是锚链部分&#125;%</span><br><span class="line">	</span><br><span class="line">	mm = 0.735;		%锚链的质量（查阅资料得到）</span><br><span class="line">	roum = 6450;	%锚链的密度（查阅资料得到）</span><br><span class="line">	Vm = mm/roum;	%锚链的体积</span><br><span class="line">	Fmfu = rou*g*Vm;%锚链收到的浮力</span><br><span class="line">	Gm = mm*g;		%锚链受到的重力</span><br><span class="line">	Lm = 0.105;		%一节锚链的长度（22.05/210得到）</span><br><span class="line"></span><br><span class="line">	for i=1:n</span><br><span class="line">		gama(i+1)=atan(Ft2(i)*sin(gama(i))/(Ft(i)*cos(gama(i))+Fmfu - Gm));	%根据之前得到的模型，计算出每个锚链之间的夹角。</span><br><span class="line"></span><br><span class="line">		if gama(i+1)&lt;0		%如果夹角小于0，则加派。</span><br><span class="line"></span><br><span class="line">			gama(i+1) = gama(i+1)+pi</span><br><span class="line"></span><br><span class="line">		end</span><br><span class="line"></span><br><span class="line">		Ft2(i+1) = Ft2(i)*sin(gama(i))/sin(gama(i+1));	%根据模型，得到各个锚链之间的作用力。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		thital2(i) = atan(Ft2(i)*sin(gama(i))*Lm/((Fmfu-Gm)*Lm/2+Ft2(i)*cos(gama(i))*Lm));		%根据模型，计算得到每个锚链与竖直方向的夹角。</span><br><span class="line">		</span><br><span class="line">		if thital2(i)&lt;0		%如果夹角小于0，则加派</span><br><span class="line">			</span><br><span class="line">			thital=thital+pi;</span><br><span class="line">		</span><br><span class="line">		end</span><br><span class="line">	end</span><br><span class="line">	H = h+1*sum(cos(thital1))+1*cos(beta)+Lm*sum(cos(thital2))	%构建几何约束条件，其中sum()为求和函数。</span><br><span class="line">	</span><br><span class="line">	%&#123;当出现有铁链沉底的情况，需要进行修正&#125;%</span><br><span class="line"></span><br><span class="line">	if abs(H-18)&lt;min	</span><br><span class="line">		minh = h;</span><br><span class="line">		min = abs(H-18);</span><br><span class="line">		minH = H ;</span><br><span class="line">		minthita1 = thita1;</span><br><span class="line">		minthita2 = thita2;</span><br><span class="line">		minbeta = beta;</span><br><span class="line">		minFt2 = Ft2;</span><br><span class="line">	end</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<h2 id="模型二部分"><a href="#模型二部分" class="headerlink" title="模型二部分"></a>模型二部分</h2><h3 id="模型准备-1"><a href="#模型准备-1" class="headerlink" title="模型准备"></a>模型准备</h3><p>根据问题一的模型，求解当前风速（36m/s）时的各系统参数（钢管、浮标、吃水深度）。<br>然后根据问题一的模型，将钢桶倾斜角和锚链在锚点处的夹角，计算得到重物球重量范围。</p>
+<h3 id="模型建立-1"><a href="#模型建立-1" class="headerlink" title="模型建立"></a>模型建立</h3><p>1）确定决策变量（决策变量等同于因变量，这个因变量有一定范围）—-本题中的重物球重量。<br>2）确定目标变量（目标变量等同于要求解的变量，等同于自变量）—-本题中有三个自变量（钢桶倾斜角、浮标吃水深度、浮标游动区域）。<br>3）确定约束变量（约束条件一般由题目已知条件）—-本题中锚点210与竖直方向夹角小于16度和钢桶倾斜角小于5度。</p>
+<h3 id="模型建立-2"><a href="#模型建立-2" class="headerlink" title="模型建立"></a>模型建立</h3><p><img src="https://i.imgur.com/7Ns9n2x.png" alt></p>
+<h3 id="模型求解-1"><a href="#模型求解-1" class="headerlink" title="模型求解"></a>模型求解</h3><p>求解方法还是循环搜索算法，但重物球有重量上下范围，同样需要设置步长。<br>先将最开始计算得到参数值带入，从重量球最小值开始带入，计算得到U，每次计算重量球重量球加步长，最后当达到最大值时，输出U。</p>
+<h3 id="灵敏性分析"><a href="#灵敏性分析" class="headerlink" title="灵敏性分析"></a>灵敏性分析</h3><p>灵敏性—决策变量对每一个优化目标的影响（画图），最终得到结论，重量球重量对浮标游动、吃水深影响较小；对钢桶倾角影响大。<br><img src="https://i.imgur.com/FaUHj7H.png" alt></p>
+<h2 id="Matlab程序-1"><a href="#Matlab程序-1" class="headerlink" title="Matlab程序"></a>Matlab程序</h2><p>function [y1,…,yN] = myfun(x1,…,xM) 声明名为 myfun 的函数，该函数接受输入 x1,…,xM 并返回输出 y1,…,yN。此声明语句必须是函数的第一个可执行代码行。有效的函数名称以字母字符开头，并且可以包含字母、数字或下划线。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line">n=210;	%锚链数目</span><br><span class="line"></span><br><span class="line">%&#123;创建几个用于存放数据的矩阵&#125;%</span><br><span class="line"></span><br><span class="line">kxmq=[];	</span><br><span class="line">kxh=[];</span><br><span class="line">kxr=[];</span><br><span class="line">kxbeta=[];</span><br><span class="line">zfenshu=[];</span><br><span class="line"></span><br><span class="line">%&#123;开始搜索法，求出每一个mq对应的值&#125;%</span><br><span class="line"></span><br><span class="line">for mq=1800:4100</span><br><span class="line">	mq	%输出mq</span><br><span class="line">	min = inf;	%最小值，用于存放实际水深（18m）和计算得到的水深的差值。</span><br><span class="line">	minh = 0;	%得到的最小吃水深度。</span><br><span class="line">	minH = 0;	%根据最小吃水深度得到的计算水深。</span><br><span class="line">	minbeta = 0;	%得到的钢桶最小夹角。</span><br><span class="line">	minthita1 = zeros(1,4);		%浮标、钢管之间的夹角。</span><br><span class="line">	minthita2 = zeros(1,n);		%锚链、铁桶之间的夹角。</span><br><span class="line">	minFt2 = zeros(1,n+1);		%锚链、铁桶、锚之间的拉力。</span><br><span class="line">	</span><br><span class="line">	for h= 0 : 0.0001 : 2       %h从0开始，每次运行完结构内容后加0.0001，一直到2。</span><br><span class="line">	</span><br><span class="line">	    Ft = zeros(1,5);    %各钢管、浮标之间的拉力</span><br><span class="line">	    alpha = zeros(1,5); %各钢管、浮标之间的角度</span><br><span class="line">	    thital1 = zeros(1,4);   %各钢管与竖直方向的夹角</span><br><span class="line">	    beta = 0；           %钢桶与竖直方向夹角</span><br><span class="line">	    Ft2 = zeros(1,n+1); %各锚链之间的力</span><br><span class="line">	    gama = zeros(1,n+1);%各锚链之间的夹角</span><br><span class="line">	    thital2 = zeros(1,n);   %各锚链与竖直方向的夹角</span><br><span class="line">	</span><br><span class="line">	    %&#123;以下为浮标部分&#125;%</span><br><span class="line">	</span><br><span class="line">	    v = 24;     %风速=24</span><br><span class="line">	    S = 2*(2-h);%浮标没有没入水中部分的横截面积</span><br><span class="line">	    m = 1000;   %浮标质量为1000kg</span><br><span class="line">	    rou = 1025; %水的密度</span><br><span class="line">	    g = 9.8；    %重力加速度</span><br><span class="line">	    V = pi*1^2*h;   %体积 = (pi*d^2*h)/4;d^2 = 4</span><br><span class="line">	    Ffeng = 0.625*S*v^2;    %由公式：Ffeng = 0.625*横截面积*风速^2</span><br><span class="line">	    Ffu = rou*g*V;  %浮标浮力</span><br><span class="line">	    G = m*g;        %浮标重力</span><br><span class="line">	</span><br><span class="line">	    if Ffu - G &lt; 0</span><br><span class="line">	        continue;</span><br><span class="line">	    end</span><br><span class="line">	</span><br><span class="line">	    alpha(1) = atan(Ffeng/(Ffu-G));     %根据建立的模型，解得浮标与第一个钢管之间的角度</span><br><span class="line">	    Ft(1) = sqrt(Ffeng^2+(Ffu-Gfu)^2);  %根据之前建立的模型，解得浮标与第一个钢管之间的拉力</span><br><span class="line">	</span><br><span class="line">	    %&#123;以下为钢管部分&#125;%</span><br><span class="line">	</span><br><span class="line">	    Vg = 1*pi*0.025^2;  %钢管的体积</span><br><span class="line">	    Ggang = 10*g;       %钢管的质量</span><br><span class="line">	    Fgfu = rou*g*Vg;    %钢管的浮力</span><br><span class="line">	    for i=1:4</span><br><span class="line">	        alpha(i+1) = atan(Ft(i)*sin(alpha(i))/(Ft(i)*cos(alpha(i))+Fgfu-Ggang));    %根据之前得到的模型，分别计算出四个钢管的之间的角度</span><br><span class="line">	        Ft(i+1) = Ft(i)*sin(alpha(i+1));thital1(i) = atan(Ft(i)*sin(alpha(i))*1/(Fgfu-Ggang)*1/2+Ft(i)*cos(alpha(i))));     %根据之前建立的模型，分别计算出来四个钢管之间的作用力</span><br><span class="line">	    end </span><br><span class="line">	</span><br><span class="line">	    %&#123;以下是钢桶部分&#125;%</span><br><span class="line">	</span><br><span class="line">	    Vt = 1*pi*0.15^2;   %钢桶的体积（钢桶直径为30cm）</span><br><span class="line">	    Vq = mq/7800;       %重物球的体积（由于本题中球的半径没有给出，因此，用铁道密度代指球的密度，用球的质量比球的体积，进而得到球的体积）</span><br><span class="line">	    Gt = 100*g;         %钢桶的重量</span><br><span class="line">	    Gq = mq*g;          %重物球的重量</span><br><span class="line">	    Ftfu = rou*g*Vt;    %桶收到的浮力</span><br><span class="line">	    Fqfu = rpu*g*Vq;    %球受到的浮力</span><br><span class="line">	</span><br><span class="line">	    gama(1) = atan(Ft(5)*sin(alpha(5))/(Ftfu+Ft(5)*cos(alpha(5))-Gt-Gq+Fqfu));</span><br><span class="line">	    %根据之前得到的模型，计算第一个锚链与钢桶的夹角</span><br><span class="line">	    bata = atan(Ft(5)*sin(alpha(5)*1/(Ftfu-Gt)*1/2+Ft(5)*cos(alpha(5))*1)); %根据之前得到的模型，计算出钢桶与竖直夹角</span><br><span class="line">	</span><br><span class="line">	    %&#123;以下是锚链部分&#125;%</span><br><span class="line">	</span><br><span class="line">	    mm = 0.735;     %锚链的质量（查阅资料得到）</span><br><span class="line">	    roum = 6450;    %锚链的密度（查阅资料得到）</span><br><span class="line">	    Vm = mm/roum;   %锚链的体积</span><br><span class="line">	    Fmfu = rou*g*Vm;%锚链收到的浮力</span><br><span class="line">	    Gm = mm*g;      %锚链受到的重力</span><br><span class="line">	    Lm = 0.105;     %一节锚链的长度（22.05/210得到）</span><br><span class="line">	</span><br><span class="line">	    for i=1:n</span><br><span class="line">	        gama(i+1)=atan(Ft2(i)*sin(gama(i))/(Ft(i)*cos(gama(i))+Fmfu - Gm)); %根据之前得到的模型，计算出每个锚链之间的夹角。</span><br><span class="line">	</span><br><span class="line">	        if gama(i+1)&lt;0      %如果夹角小于0，则加派。</span><br><span class="line">	</span><br><span class="line">	            gama(i+1) = gama(i+1)+pi</span><br><span class="line">	</span><br><span class="line">	        end</span><br><span class="line">	</span><br><span class="line">	        Ft2(i+1) = Ft2(i)*sin(gama(i))/sin(gama(i+1));  %根据模型，得到各个锚链之间的作用力。</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	        thital2(i) = atan(Ft2(i)*sin(gama(i))*Lm/((Fmfu-Gm)*Lm/2+Ft2(i)*cos(gama(i))*Lm));      %根据模型，计算得到每个锚链与竖直方向的夹角。</span><br><span class="line">	</span><br><span class="line">	        if thital2(i)&lt;0     %如果夹角小于0，则加派</span><br><span class="line">	</span><br><span class="line">	            thital=thital+pi;</span><br><span class="line">	</span><br><span class="line">	        end</span><br><span class="line">	    end</span><br><span class="line">	    H = h+1*sum(cos(thital1))+1*cos(beta)+Lm*sum(cos(thital2))  %构建几何约束条件，其中sum()为求和函数。</span><br><span class="line">	</span><br><span class="line">	    %&#123;当出现有铁链沉底的情况，需要进行修正&#125;%</span><br><span class="line"></span><br><span class="line">	    if abs(H-18)&lt;min    </span><br><span class="line">	        minh = h;</span><br><span class="line">	        min = abs(H-18);</span><br><span class="line">	        minH = H ;</span><br><span class="line">	        minthita1 = thita1;</span><br><span class="line">	        minthita2 = thita2;</span><br><span class="line">	        minbeta = beta;</span><br><span class="line">	        minFt2 = Ft2;</span><br><span class="line">	    end</span><br><span class="line">	end</span><br><span class="line">	</span><br><span class="line">	%&#123;验证是否满足水深约束，不满足则调用修正函数&#125;%</span><br><span class="line"></span><br><span class="line">	if minthia2(n)&gt;pi/2		%大于90度，则说明沉底</span><br><span class="line"></span><br><span class="line">		[r,minh,minbeta,minthita1,minthita2,minH] = tuodir(n,mq);	%调用修正函数，得到新值</span><br><span class="line"></span><br><span class="line">	else</span><br><span class="line"></span><br><span class="line">		r = Lm*sum(sin(minthia2))+sum(sin(minbeta))+sum(sin(minthia1));</span><br><span class="line"></span><br><span class="line">	end</span><br><span class="line">	</span><br><span class="line">	%&#123;验证是否满足约束条件，不满足直接结束本次循环，进行下一次&#125;%</span><br><span class="line"></span><br><span class="line">	if minthia*180/pi&gt;5</span><br><span class="line">		continue;</span><br><span class="line">	end</span><br><span class="line">	</span><br><span class="line">	if (90-minthia2(n)*180/pi)&gt;16;</span><br><span class="line">		cintinue;</span><br><span class="line">	end</span><br><span class="line"></span><br><span class="line">	if abs(minH-18)&gt;0.2</span><br><span class="line">		continue;</span><br><span class="line">	end</span><br><span class="line"></span><br><span class="line">	kxmq = [kxmq,mq];</span><br><span class="line">	kxh = [kxh,minh];</span><br><span class="line">	kxbeta = [kxbeta,minbeta];</span><br><span class="line">	kxr = [kxr,r];</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">[fenshu,i] = max(-zfenshu);		%将矩阵中最优（U最大）的拿出来</span><br><span class="line">fenshu							%打印出来</span><br><span class="line">kxmq(i)</span><br></pre></td></tr></table></figure></p>
+<h1 id="第二遍优秀论文"><a href="#第二遍优秀论文" class="headerlink" title="第二遍优秀论文"></a>第二遍优秀论文</h1><p>除去摘要和问题重述，第一部分为问题分析。</p>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><h3 id="问题一分析"><a href="#问题一分析" class="headerlink" title="问题一分析"></a>问题一分析</h3><p>1）阐述问题：要求建立合理的指标，并分析出租车资源的匹配程度。<br>2）简述述解决问题的答案：建立了两个指标—里程利用率、供求比。<br>3）详述解决问题的方法：得到平衡点N(K<em>,n</em>)和实际点M(K,n)；通过归一化处理后，计算实际点与平衡点之间的距离，距离越大供求匹配度越低。</p>
+<h3 id="问题二分析"><a href="#问题二分析" class="headerlink" title="问题二分析"></a>问题二分析</h3><p>1）阐述问题：要求分析各公司补贴办法是否有用。<br>2）简述解决问题的步骤：</p>
+<ol>
+<li>计算各公司对乘客、对司机的补贴金额。</li>
+<li>设计意愿半径、软件使用人数来计算人均车辆占有率（有多少使用软件的人在司机的意愿半径内）。</li>
+<li>通过人均车辆占有率来检测不同补贴效果。<h3 id="问题三分析"><a href="#问题三分析" class="headerlink" title="问题三分析"></a>问题三分析</h3>1）阐述问题：设计补贴方案并论证合理性。<br>2）简述解决办法</li>
+</ol>
+<h2 id="模型一部分-1"><a href="#模型一部分-1" class="headerlink" title="模型一部分"></a>模型一部分</h2><h3 id="模型准备—指标确立"><a href="#模型准备—指标确立" class="headerlink" title="模型准备—指标确立"></a>模型准备—指标确立</h3><p>1）里程利用率<br>公式：里程利用率K = 载客里程/行驶里程 *100%<br>指标意义：<br>K大—对司机：空驶率较低；对乘客—可供打的车不多。<br>K小—对司机：空驶率较高；对乘客—可供打的车较多。<br>因此，K存在一个平衡值。</p>
+<p>2）供求比率<br>公式：供求比率n = 一定时间内某市场可供额的总和/相应的需求额总和 *100%<br>指标意义：<br>n&gt;1：供大于求。<br>n&lt;1：供小于求。<br>n=1：供等于求。<br>因此，n存在一个平衡值。</p>
+<h3 id="模型建立—指标理想值确定"><a href="#模型建立—指标理想值确定" class="headerlink" title="模型建立—指标理想值确定"></a>模型建立—指标理想值确定</h3><p>1）里程利用率理想值<br>出租车总里程L；出租车载客总里程Ls；乘客需求里程Ld。<br>K = L/Ls；当Ls = Ld时，得到K的平衡值K*。</p>
+<p>本题将L细分为：</p>
+<ul>
+<li>出租车保有量—N</li>
+<li>主要时间段平均运营时间—T</li>
+<li>出租车平均行驶速度—v</li>
+<li>出租车出车率—a</li>
+<li>主要时间段占全天运营时间的比例—b<br>L = TvNa/b</li>
+</ul>
+<p>本题将Ld细分为：</p>
+<ul>
+<li>人口总量—n</li>
+<li>人均出行—o</li>
+<li>出租车出行占所有出行方式的比例—p</li>
+<li>每次出行的平均距离—d</li>
+<li>出租车承担的人民出行周转量（旅客人数与其距离的乘积）—Q</li>
+<li>平均每天乘出租车总人数—s<br>Ld = nopd/s</li>
+</ul>
+<p>得到理想值<br>Ld = Ls<br>最终得到 K* = nopdb/TNsva</p>
+<p>2）供求比率理想值<br>需求订单量D，出租车数量S，n = S/D。<br>以每个人（每个订单）为圆心，以司机的意愿半径为半径，画圆。由于不同地方n的值差异较大，因此将大区域划分为n个小区域。<br>小区域分为三种</p>
+<ul>
+<li>供大于求,D1,n1</li>
+<li>供小于求,D2,n2</li>
+<li>供等于求,D3,n3<br>n = (D1/D)<em>n1+(D2/D)</em>n2+D3/(D*n3)—不是打错了，n3&lt;1，所以n3越大表示供求越平衡，所以需要改动。<br>n1&gt;1，所以n1越大表示供求越不平衡。</li>
+</ul>
+<p>得到理想值n = 1。</p>
+<h3 id="模型建立-3"><a href="#模型建立-3" class="headerlink" title="模型建立"></a>模型建立</h3><p>此时得到了平衡点坐标N(K<em>,n</em>)和实际点M(K,n)，但不是关于原点的情况，不易于求解，因此通过<strong>归一化处理</strong>转化为关于原点的数据，点Q。<br>Q = (K-K<em>/K</em>,n<em>-n/n</em>)<br>综合不平衡度—Q到原点的距离r。</p>
+<p><img src="https://i.imgur.com/vYLHcff.png" alt></p>
+<h3 id="模型求解-2"><a href="#模型求解-2" class="headerlink" title="模型求解"></a>模型求解</h3><p>带入理想值需要的数据，求解得到K<em>，n</em>。<br>利用matlab仿真，得到K，n<br>并分别在时间角度、空间角度下，解得r。</p>
+<h2 id="Matlab仿真"><a href="#Matlab仿真" class="headerlink" title="Matlab仿真"></a>Matlab仿真</h2>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/29/OPENMV学习笔记/" rel="next" title="OPENMV学习笔记">
+                <i class="fa fa-chevron-left"></i> OPENMV学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/16/Matlab学习笔记/" rel="prev" title="Matlab学习笔记">
+                Matlab学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">林木深</p>
+              <div class="site-description motion-element" itemprop="description">学海无涯。</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一篇优秀论文"><span class="nav-number">1.</span> <span class="nav-text">第一篇优秀论文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型一部分"><span class="nav-number">1.1.</span> <span class="nav-text">模型一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型准备"><span class="nav-number">1.1.1.</span> <span class="nav-text">模型准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立"><span class="nav-number">1.1.2.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型修正"><span class="nav-number">1.1.3.</span> <span class="nav-text">模型修正</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型求解"><span class="nav-number">1.1.4.</span> <span class="nav-text">模型求解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matlab程序"><span class="nav-number">1.2.</span> <span class="nav-text">Matlab程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型二部分"><span class="nav-number">1.3.</span> <span class="nav-text">模型二部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型准备-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">模型准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立-2"><span class="nav-number">1.3.3.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型求解-1"><span class="nav-number">1.3.4.</span> <span class="nav-text">模型求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#灵敏性分析"><span class="nav-number">1.3.5.</span> <span class="nav-text">灵敏性分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matlab程序-1"><span class="nav-number">1.4.</span> <span class="nav-text">Matlab程序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二遍优秀论文"><span class="nav-number">2.</span> <span class="nav-text">第二遍优秀论文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题分析"><span class="nav-number">2.1.</span> <span class="nav-text">问题分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一分析"><span class="nav-number">2.1.1.</span> <span class="nav-text">问题一分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二分析"><span class="nav-number">2.1.2.</span> <span class="nav-text">问题二分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题三分析"><span class="nav-number">2.1.3.</span> <span class="nav-text">问题三分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型一部分-1"><span class="nav-number">2.2.</span> <span class="nav-text">模型一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型准备—指标确立"><span class="nav-number">2.2.1.</span> <span class="nav-text">模型准备—指标确立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立—指标理想值确定"><span class="nav-number">2.2.2.</span> <span class="nav-text">模型建立—指标理想值确定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立-3"><span class="nav-number">2.2.3.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型求解-2"><span class="nav-number">2.2.4.</span> <span class="nav-text">模型求解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matlab仿真"><span class="nav-number">2.3.</span> <span class="nav-text">Matlab仿真</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">林木深</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+</body>
+</html>
