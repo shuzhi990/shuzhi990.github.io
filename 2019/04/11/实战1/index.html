@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="本节根据星瞳科技的OPENMV">
+  <meta name="description" content="第一个实战小项目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OPENMV学习笔记">
-<meta property="og:url" content="http://linmushen.com/2019/07/29/OPENMV学习笔记/index.html">
+<meta property="og:title" content="实战1">
+<meta property="og:url" content="http://linmushen.com/2019/04/11/实战1/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="本节根据星瞳科技的OPENMV">
+<meta property="og:description" content="第一个实战小项目">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-18T15:15:28.590Z">
+<meta property="og:updated_time" content="2019-08-18T16:13:04.309Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OPENMV学习笔记">
-<meta name="twitter:description" content="本节根据星瞳科技的OPENMV">
+<meta name="twitter:title" content="实战1">
+<meta name="twitter:description" content="第一个实战小项目">
 
 
 
@@ -116,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="http://linmushen.com/2019/07/29/OPENMV学习笔记/">
+  <link rel="canonical" href="http://linmushen.com/2019/04/11/实战1/">
 
 
 
@@ -126,7 +126,7 @@
   };
 </script>
 
-  <title>OPENMV学习笔记 | 林木深的个人博客</title>
+  <title>实战1 | 林木深的个人博客</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/07/29/OPENMV学习笔记/">
+    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/04/11/实战1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="林木深">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">OPENMV学习笔记
+          <h1 class="post-title" itemprop="name headline">实战1
 
               
             
@@ -338,7 +338,7 @@
                 
               
 
-              <time title="创建时间：2019-07-29 19:07:59" itemprop="dateCreated datePublished" datetime="2019-07-29T19:07:59+08:00">2019-07-29</time>
+              <time title="创建时间：2019-04-11 22:40:15" itemprop="dateCreated datePublished" datetime="2019-04-11T22:40:15+08:00">2019-04-11</time>
             
 
             
@@ -355,7 +355,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-18 23:15:28" itemprop="dateModified" datetime="2019-08-18T23:15:28+08:00">2019-08-18</time>
+                <time title="修改时间：2019-08-19 00:13:04" itemprop="dateModified" datetime="2019-08-19T00:13:04+08:00">2019-08-19</time>
               
             
           </span>
@@ -372,7 +372,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MCU/" itemprop="url" rel="index"><span itemprop="name">硬件部分</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/life/" itemprop="url" rel="index"><span itemprop="name">杂记</span></a></span>
 
                 
                 
@@ -407,21 +407,33 @@
       
 
       
-        <p>本节根据星瞳科技的OPENMV<br><a id="more"></a></p>
-<h1 id="OPENMV图像处理方法"><a href="#OPENMV图像处理方法" class="headerlink" title="OPENMV图像处理方法"></a>OPENMV图像处理方法</h1><h2 id="感光元件"><a href="#感光元件" class="headerlink" title="感光元件"></a>感光元件</h2><p>sensor模块，用于设置感光元件的参数。</p>
-<blockquote>
-<p>初始化：.resert()–初始化感光元件。<br>设置彩色/黑白：.set_pixformat(sensor.RGB565[彩色]/sensor.GARYSCALE[灰度])<br>设置图像大小：.set_framesize([A])</p>
-<blockquote>
-<p>其中A：sensor.QQVGA: 160x120<br>sensor.QQVGA2: 128x160 (用于 lcd 扩展板)<br>sensor.HQVGA: 240x160<br>sensor.QVGA: 320x240<br>sensor.VGA: 640x480 (只用于OpenMV Cam M7 的灰度图处理图像，或者彩图采集图像)<br>sensor.QQCIF: 88x72<br>sensor.QCIF: 176x144<br>sensor.CIF: 352x288</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>跳过一些帧：.skip_frames(n=需要跳过的帧数,time=需要跳过的ms数)。<br>获取一张图象：.snapshot()，拍摄一张照片并返回一个image对象。<br>自动增益：.set_auto_gain(True/False)，使用颜色追踪时，需要关闭(False)自动增益。<br>白平衡：.set_auto_whitebat(True/False)，使用颜色追踪时，需要关闭(False)白平衡。<br>设置窗口ROI：.set_windowing(roi)，roi的格式是(x,y)，取中间的x*y区域。ROI为感兴趣区。<br>设置翻转：.set_hmirror(True)—水平方向翻转；.set_vflip(True)—垂直方向翻转。</p>
-</blockquote>
-<h1 id="图像的基本运算"><a href="#图像的基本运算" class="headerlink" title="图像的基本运算"></a>图像的基本运算</h1><h2 id="获取设置像素点-pixel"><a href="#获取设置像素点-pixel" class="headerlink" title="获取设置像素点(pixel)"></a>获取设置像素点(pixel)</h2><ol>
-<li>image.get_pixel(x,y):返回image中(x,y)处的像素值（若为灰度图，返回灰度值；若为彩色图，返回RGB 的元组）。</li>
-<li>image.set_pixel(x,y):设置image中(x,y)处的像素值（若为灰度图，设置灰度值；若为彩色图，设置(R,G,B)的值。</li>
+        <p>第一个实战小项目<br><a id="more"></a></p>
+<h2 id="解决问题的起点：步骤"><a href="#解决问题的起点：步骤" class="headerlink" title="解决问题的起点：步骤"></a>解决问题的起点：步骤</h2><ol>
+<li>根据要解决的问题画出流程图</li>
+<li>摘录第一条的关键概念并研究</li>
+<li>创建一个类和对象的层次结构图</li>
+<li>用代码实现各个类，并测试</li>
+<li>重复上述步骤</li>
 </ol>
+<p>**有抽象概念入手，逐渐细化</p>
+<h2 id="各种名字"><a href="#各种名字" class="headerlink" title="各种名字"></a>各种名字</h2><p>根据思路写出一个名词列表作为变量名<br>根据思路写出一个动词列表作为函数名</p>
+<h2 id="对各种操作进行研究"><a href="#对各种操作进行研究" class="headerlink" title="对各种操作进行研究"></a>对各种操作进行研究</h2><p>如：玩家引爆炸弹的工作<br>怎么把游戏状态存储金数据库<br>应该通过学习类似游戏的工作原理来研究</p>
+<h2 id="创建层次图和对象关系图"><a href="#创建层次图和对象关系图" class="headerlink" title="创建层次图和对象关系图"></a>创建层次图和对象关系图</h2><p>类的结构图：</p>
+<ul>
+<li>和其他东西有哪些类似</li>
+<li>那个东西是另一个东西的换个说法而已</li>
+</ul>
+<h2 id="字典真是好用"><a href="#字典真是好用" class="headerlink" title="字典真是好用"></a>字典真是好用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scenes = &#123;</span><br><span class="line">&apos;Death&apos;:Death(),</span><br><span class="line">&apos;Escapepod&apos;:Escapepod(),</span><br><span class="line">&apos;TheBridge&apos;:TheBridge(),</span><br><span class="line">&apos;LaserWeaponArmony&apos;:LaserWeaponArmony(),</span><br><span class="line">&apos;central_corridor&apos;:CentralCorridor()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以通过返回值来简单的引用类</p>
+<ul>
+<li>父类中的函数，若与子类的重名，而且没有被调用，则会被覆盖<h2 id="类中变量的使用"><a href="#类中变量的使用" class="headerlink" title="类中变量的使用"></a>类中变量的使用</h2>类中的被多个类中函数调用的变量要加上self表明位置，否则出现全局变量错误。（而参数不用）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class English(object):   #游戏引擎，用来根据场景名生产变量并切换场景</span><br><span class="line">	def __init__(self,scene_map):</span><br><span class="line">		self.dizhi = scene_map</span><br><span class="line">	def play(self):</span><br><span class="line">		current_scene = self.dizhi.opening_scene()</span><br><span class="line">		while True:</span><br><span class="line">			print &quot;\n--------&quot;</span><br><span class="line">			</span><br><span class="line">			self.next_scene_name = current_scene.enter()</span><br><span class="line">			</span><br><span class="line">			current_scene = self.dizhi.next_scene(self.next_scene_name)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class CentralCorridor(Scene):</span><br><span class="line">	def enter(self):</span><br><span class="line">		</span><br><span class="line">		xiao = raw_input(&apos;&gt;&apos;)</span><br><span class="line">		if xiao == &apos;1&apos;:</span><br><span class="line">			print u&quot;(卫兵倒下，你成功进入下个房间。)&quot;</span><br><span class="line">			return &apos;LaserWeaponArmony&apos;</span><br><span class="line">		else:</span><br><span class="line">			print u&quot;你是个没有幽默感的蠢货，哥顿人怒火中烧，把你打成了马蜂窝。&quot;</span><br><span class="line">			return&apos;Death&apos;</span><br></pre></td></tr></table></figure>
+<p>而变量xiao则不用。</p>
+<h2 id="init"><a href="#init" class="headerlink" title="init()"></a><strong>init</strong>()</h2><p>直接实例化类，相当于直接调用其中的init</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Map(object):</span><br><span class="line">	def __init__(self,start_scene):</span><br><span class="line">		self.dizhi = start_scene</span><br><span class="line">	def next_scene(self,scene_name):</span><br><span class="line">		return Map.scenes.get(scene_name)   #对获取的类进行实例化</span><br><span class="line">	def opening_scene(self):</span><br><span class="line">		return self.next_scene(self.dizhi)</span><br><span class="line"></span><br><span class="line">a_map = Map(&apos;central_corridor&apos;)</span><br></pre></td></tr></table></figure>
+<p>a_map = Map(‘str’)<br>等价于<br>a_map = Map.<strong>init</strong>(‘str’)<br>就相当于<br>a_map.dizhi = str</p>
 
       
     </div>
@@ -452,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/18/stm32学习笔记/" rel="next" title="stm32学习笔记">
-                <i class="fa fa-chevron-left"></i> stm32学习笔记
+              <a href="/2019/04/08/面向对象/" rel="next" title="有关面向对象编程">
+                <i class="fa fa-chevron-left"></i> 有关面向对象编程
               </a>
             
           </div>
@@ -462,8 +474,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/12/破解论文/" rel="prev" title="破解论文">
-                破解论文 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/12/知识积累/" rel="prev" title="知识积累">
+                知识积累 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -605,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OPENMV图像处理方法"><span class="nav-number">1.</span> <span class="nav-text">OPENMV图像处理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#感光元件"><span class="nav-number">1.1.</span> <span class="nav-text">感光元件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图像的基本运算"><span class="nav-number">2.</span> <span class="nav-text">图像的基本运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取设置像素点-pixel"><span class="nav-number">2.1.</span> <span class="nav-text">获取设置像素点(pixel)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决问题的起点：步骤"><span class="nav-number">1.</span> <span class="nav-text">解决问题的起点：步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各种名字"><span class="nav-number">2.</span> <span class="nav-text">各种名字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对各种操作进行研究"><span class="nav-number">3.</span> <span class="nav-text">对各种操作进行研究</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建层次图和对象关系图"><span class="nav-number">4.</span> <span class="nav-text">创建层次图和对象关系图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典真是好用"><span class="nav-number">5.</span> <span class="nav-text">字典真是好用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类中变量的使用"><span class="nav-number">6.</span> <span class="nav-text">类中变量的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#init"><span class="nav-number">7.</span> <span class="nav-text">init()</span></a></li></ol></div>
             
 
           </div>
