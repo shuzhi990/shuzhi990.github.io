@@ -4,55 +4,106 @@
 
 
 
+
+
+
+
+
+
+
+  
+
+
 <html class="theme-next pisces use-motion" lang="zh-CN">
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
-
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
-<script id="hexo-configurations">
+  
+  
+    
+      
+    
+    
+  <script src="true"></script>
+  <link rel="stylesheet" href="/lib/pace/.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '7.3.0',
-    exturl: false,
+    version: '7.1.0',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    save_scroll: false,
-    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: true,
+    back2top_sidebar: false,
     fancybox: false,
-    mediumzoom: false,
+    fastclick: ,
     lazyload: false,
-    pangu: false,
+    tabs: ,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      appID: '',
+      applicationID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
     }
   };
 </script>
+
+
+  
+
+
+
 
   <meta name="description" content="潜心学习技术，最近发现了一篇比较好的介绍PID的文章。学习并记录一下。">
 <meta property="og:type" content="article">
@@ -70,24 +121,31 @@
 <meta name="twitter:title" content="PID学习笔记">
 <meta name="twitter:description" content="潜心学习技术，最近发现了一篇比较好的介绍PID的文章。学习并记录一下。">
 <meta name="twitter:image" content="https://i.imgur.com/j5YKEuO.png">
+
+
+
   <link rel="alternate" href="/atom.xml" title="林木深的个人博客" type="application/atom+xml">
+
+
+
+  
+  
   <link rel="canonical" href="http://linmushen.com/2019/08/13/PID学习笔记/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
+
+<script id="page.configurations">
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
   };
 </script>
 
   <title>PID学习笔记 | 林木深的个人博客</title>
-  <meta name="generator" content="Hexo 3.8.0">
   
+
+
+
+
 
 
 
@@ -125,12 +183,18 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  <div class="container sidebar-position-left">
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta">
+    
 
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
@@ -139,8 +203,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
+      
         <p class="site-subtitle">热爱技术，痴迷技术</p>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
@@ -153,45 +221,79 @@
 </div>
 
 
+
 <nav class="site-nav">
   
-  <ul id="menu" class="menu">
-      
-      
+    <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
     
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
-      
-      
-      
         
-        <li class="menu-item menu-item-categories">
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
       
+    
+
     
 
     <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
-      
-      
-      
         
-        <li class="menu-item menu-item-archives">
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
       
+    
+
     
 
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
-  </ul>
 
+      
+      
+    </ul>
+  
+
+  
+
+  
 </nav>
+
+
+
+  
+
+
+
 </div>
     </header>
 
@@ -201,15 +303,25 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
             
 
-          <div id="content" class="content page-post-detail">
+          
+          <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
 
-  <article class="post" itemscope itemtype="http://schema.org/Article">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -225,43 +337,71 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="林木深的个人博客">
     </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">PID学习笔记
 
-          
-        </h1>
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">PID学习笔记
+
+              
+            
+          </h1>
+        
 
         <div class="post-meta">
-            <span class="post-meta-item">
+          <span class="post-time">
+
+            
+            
+            
+
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
               
                 
               
 
               <time title="创建时间：2019-08-13 14:38:03" itemprop="dateCreated datePublished" datetime="2019-08-13T14:38:03+08:00">2019-08-13</time>
-            </span>
-          
             
 
             
-              <span class="post-meta-item">
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
                 <time title="修改时间：2019-08-19 00:13:04" itemprop="dateModified" datetime="2019-08-19T00:13:04+08:00">2019-08-19</time>
-              </span>
+              
             
+          </span>
+
           
-            <span class="post-meta-item">
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MCU/" itemprop="url" rel="index"><span itemprop="name">硬件部分</span></a></span>
 
@@ -272,35 +412,58 @@
           
 
           
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>1.1k</span>
-            </span>
+            
+            
           
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
               
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+
               
-              <span>2 分钟</span>
-            </span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">5 分钟</span>
+              
+            </div>
+          
+
           
 
         </div>
       </header>
+    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
+
+      
+      
 
       
         <p>潜心学习技术，最近发现了一篇比较好的介绍PID的文章。学习并记录一下。<br><a id="more"></a><br>PID控制是对偏差进行比例，积分和微分的控制。PID由三个单元组成，分别是比例单元，积分单元，微分单元。</p>
@@ -312,45 +475,62 @@
 <h2 id="实际使用"><a href="#实际使用" class="headerlink" title="实际使用"></a>实际使用</h2><p>1）稳定性：主要评估指标为最大超调量，最大超调量是指响应曲线的最大峰值与稳态值的差。<br>2）快速性：主要评估指标为上升时间，上升时间是指响应工作状态从原始工作状态出发，第一次到达输出稳定值所需要的时间，是评估系统快速性的一个重要指标。<br>3）准确性：主要评估指标为静差，静差是被控制量与给定值之差，一般用于衡量系统的准确性。<img src="https://i.imgur.com/5tp9brf.png" alt></p>
 <h2 id="调参注意事项"><a href="#调参注意事项" class="headerlink" title="调参注意事项"></a>调参注意事项</h2><p>P：用于提高响应速度。<br>I：用于减小静差。<br>D：用于抑制震荡。<br>一般调参时，先将I值和D值设置为0，然后把P值从0逐渐增大，直到系统震荡。<br>静差一般是在P值较小，且I值为0的时候出现的。所以增大P值可以一定程度上的消除静差，提高响应速度，但会导致系统震荡。<br>加入D值后，震荡得到抑制，但响应速度变慢了。<br>所以一般调节经验可以总结为：先只P控制，增大P直至系统震荡之后加入D控制，消除一点震荡后，再次调节P和I参数。<br>控制难度取决于系统转动惯量和对相应速度的要求。转动惯量越小，对相应速度要求越低，PID参数就越不敏感。</p>
 <h1 id="速度闭环控制"><a href="#速度闭环控制" class="headerlink" title="速度闭环控制"></a>速度闭环控制</h1>
+      
     </div>
 
     
+
     
     
-        
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
       
 
-      <footer class="post-footer">
+      
+      
+      
 
-        
-
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/2019/08/12/破解论文/" rel="next" title="破解论文">
-                  <i class="fa fa-chevron-left"></i> 破解论文
-                </a>
-              
-            </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/08/16/Matlab学习笔记/" rel="prev" title="Matlab学习笔记">
-                  Matlab学习笔记 <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/12/破解论文/" rel="next" title="破解论文">
+                <i class="fa fa-chevron-left"></i> 破解论文
+              </a>
+            
           </div>
-        
-      </footer>
-    
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/16/Matlab学习笔记/" rel="prev" title="Matlab学习笔记">
+                Matlab学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
   </article>
+
 
   </div>
 
@@ -358,7 +538,12 @@
           </div>
           
 
+  
+
+
+
         </div>
+        
           
   
   <div class="sidebar-toggle">
@@ -371,6 +556,10 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
+
+      
+
+      
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
@@ -383,56 +572,81 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">林木深</p>
-  <div class="site-description motion-element" itemprop="description">学海无涯。</div>
-</div>
-  <nav class="site-state motion-element">
-      <div class="site-state-item site-state-posts">
-        
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">11</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-    
-      
-      
-      <div class="site-state-item site-state-categories">
-        
-          
-            <a href="/categories/">
-          
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
-      </div>
-    
-  </nav>
-  <div class="feed-link motion-element">
-    <a href="/atom.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
+            
+              <p class="site-author-name" itemprop="name">林木深</p>
+              <div class="site-description motion-element" itemprop="description">学海无涯。</div>
+          </div>
 
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
 
         </div>
       </div>
+
+      
       <!--noindex-->
         <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
@@ -451,11 +665,14 @@
       <!--/noindex-->
       
 
+      
+
     </div>
   </aside>
-  <div id="sidebar-dimmer"></div>
+  
 
 
+        
       </div>
     </main>
 
@@ -466,20 +683,39 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">林木深</span>
+
+  
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
+    
     <span title="站点总字数">50k</span>
+  
+
+  
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
+    
     <span title="站点阅读时长">1:23</span>
+  
 </div>
+
+
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.3.0</div>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.0</div>
+
+
+
 
         
 
@@ -493,61 +729,102 @@
         
       </div>
     </footer>
+
+    
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        <span>0%</span>
+        
       </div>
+    
 
     
 
+    
+
+    
   </div>
 
   
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
     
   
   <script color="0,0,0" opacity="0.5" zindex="-1" count="150" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
 
-<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+  
 
 
-<script src="/js/next-boot.js?v=7.3.0"></script>
+  <script src="/js/utils.js?v=7.1.0"></script>
 
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
 
 
 
   
 
 
+  <script src="/js/next-boot.js?v=7.1.0"></script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
   
 
@@ -557,8 +834,48 @@
 
 
   
-  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/love.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
 
 </body>
 </html>
