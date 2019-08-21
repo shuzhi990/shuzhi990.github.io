@@ -97,6 +97,26 @@
   </entry>
   
   <entry>
+    <title>数学建模</title>
+    <link href="http://linmushen.com/2019/07/21/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    <id>http://linmushen.com/2019/07/21/数学建模/</id>
+    <published>2019-07-21T13:14:50.000Z</published>
+    <updated>2019-08-21T09:08:46.060Z</updated>
+    
+    <content type="html"><![CDATA[<p>一些有关数学建模的知识及matlab算法<br><a id="more"></a></p><h1 id="线性规划问题"><a href="#线性规划问题" class="headerlink" title="线性规划问题"></a>线性规划问题</h1><h2 id="纯线性规划问题"><a href="#纯线性规划问题" class="headerlink" title="纯线性规划问题"></a>纯线性规划问题</h2><p>（例程：px1.m 和 px2.m)<br>1.线性规划概念：在一组线性约束条件限制下，求一组线性目标最大或最小的<br>题<br>1）目标函数： max z=4x+3y<br>2) 约束条件(s.t.)：{2x+y&lt;=10,x+y&lt;=8,0&lt;y&lt;=7,x&gt;0<br>3）决策变量：x,y<br>4）可行解：满足约束条件的解X=[x,y,z…]称为可行解<br>5）可行域：所有可行解的集合X…称为可行域<br>注：难点在于选择合适的决策变量</p><p>2.线性规划的Matlab的标准形式及软件求解<br>1）将问题转换成Matlab标准形式：1.其中目标函数应为求最小值。2.目标函数中不等式应为小于等于的形式<br>2）然后根据转换得到的形式列出要创建的列向量f（价值向量）,X,b（资源向量）,beq,lb,ub。<br>3）然后创建矩阵A,Aeq。<br>4）通过[X,fval]=linprog(f,A,b)或<br>[X,fval]=linprog(f,A,b,Aeq,beq)或<br>[X,fval]=linprog(f,A,b,Aeq,beq,lb,nb)求解出最优解(X)和最有解对应的值(fval)<br>注：1.f列向量是目标函数的系数，是一个列向量。<br>2.b是各约束条件（小于等于形式的不等式）所对应的常数构成的列向量。<br>3.A是约束条件（小于等于形式的不等式）系数构成的矩阵。<br>4.lb,ub（列向量）:  lb&lt;=X&lt;=ub.   lb,ub的行数与X的行数相同。如： x1,x2,x3&gt;=0  则lb=[0;0;0]<br>5.当存在lb而没有Aeq，beq时，对应缺失的矩阵用[]代替。如：linprog(f,A,b,[],[],lb)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一些有关数学建模的知识及matlab算法&lt;br&gt;
+    
+    </summary>
+    
+      <category term="数学建模" scheme="http://linmushen.com/categories/Mathematical-modeling/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>stm32学习笔记</title>
     <link href="http://linmushen.com/2019/07/18/stm32%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://linmushen.com/2019/07/18/stm32学习笔记/</id>
