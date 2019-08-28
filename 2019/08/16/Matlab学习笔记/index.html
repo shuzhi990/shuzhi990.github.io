@@ -129,7 +129,7 @@
 <meta property="og:image" content="https://i.imgur.com/jfP4t1g.png">
 <meta property="og:image" content="https://i.imgur.com/ByTdLiZ.png">
 <meta property="og:image" content="https://i.imgur.com/zyTIcqR.png">
-<meta property="og:updated_time" content="2019-08-28T08:51:05.121Z">
+<meta property="og:updated_time" content="2019-08-28T14:48:34.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matlab学习笔记">
 <meta name="twitter:description" content="好好学习Matlab。">
@@ -382,7 +382,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-28 16:51:05" itemprop="dateModified" datetime="2019-08-28T16:51:05+08:00">2019-08-28</time>
+                <time title="修改时间：2019-08-28 22:48:34" itemprop="dateModified" datetime="2019-08-28T22:48:34+08:00">2019-08-28</time>
               
             
           </span>
@@ -511,6 +511,7 @@
 </code></pre><p>NaN表示”not a number”即不是数字。观察语句R1 = unifrnd(x,1);“从x到1”产生区间[1,1],[2,1],[3,1]显然只有第一个区间可以取得“随机数”1，其余区间不符合规定，故而返回NaN。</p>
 <p>观察R2 = unifrnd(1,x);从1到x产生区间[1,1],[1,2],[1,3],取得随机数组R2。</p>
 <p>14） exp(X)：指数函数，返回X中每个元素的e^x。<br>15）legend(‘线条名称1’，···，‘线条名称n’，’Location’,’Sountheast’):最后一个变量用来指定说明的位置，前面是东南处。</p>
+<p>16）匿名函数：NAME =@(参数列表) 实现功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = @(x,y) x^2+y^2;	%定义匿名函数</span><br><span class="line">f(1,2);				%使用； 1^2+2^2</span><br></pre></td></tr></table></figure></p>
 <h1 id="开篇"><a href="#开篇" class="headerlink" title="开篇"></a>开篇</h1><h2 id="学习目录"><a href="#学习目录" class="headerlink" title="学习目录"></a>学习目录</h2><p>1）了解Matlab基本用法，常用的命令。<br>2）熟悉常见模型的求解算法和套路，如：连续模型、规划模型等。<br>3）将机理建模的过程模拟出来，能够建立和求解没有套路的模型。</p>
 <h2 id="主要题型对应的模型"><a href="#主要题型对应的模型" class="headerlink" title="主要题型对应的模型"></a>主要题型对应的模型</h2><p><img src="https://i.imgur.com/3oIfAhp.png" alt><br><img src="https://i.imgur.com/mQt1xY1.png" alt></p>
 <h1 id="第一篇—实战项目"><a href="#第一篇—实战项目" class="headerlink" title="第一篇—实战项目"></a>第一篇—实战项目</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>已知股票的交易数据：日期、开盘价、最高价、最低价、收盘价、成交量、换手率，用某种方法来评价这只股票的价值和风险。</p>
