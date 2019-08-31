@@ -96,22 +96,17 @@
 
 
 
-  <meta name="description" content="潜心学习技术，最近发现了一篇比较好的介绍PID的文章。学习并记录一下。">
+  <meta name="description" content="在大致学习了几类数学建模的模型和算法后，我决定开始做题试一试。本节笔记例题均来自司守奎的算法与应用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PID学习笔记">
-<meta property="og:url" content="http://linmushen.com/2019/08/13/PID学习笔记/index.html">
+<meta property="og:title" content="习题练习">
+<meta property="og:url" content="http://linmushen.com/2019/08/31/习题练习/index.html">
 <meta property="og:site_name" content="林木深的个人博客">
-<meta property="og:description" content="潜心学习技术，最近发现了一篇比较好的介绍PID的文章。学习并记录一下。">
+<meta property="og:description" content="在大致学习了几类数学建模的模型和算法后，我决定开始做题试一试。本节笔记例题均来自司守奎的算法与应用。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://i.imgur.com/j5YKEuO.png">
-<meta property="og:image" content="https://i.imgur.com/ICGUcUc.png">
-<meta property="og:image" content="https://i.imgur.com/JJfTRfg.png">
-<meta property="og:image" content="https://i.imgur.com/5tp9brf.png">
-<meta property="og:updated_time" content="2019-08-18T16:13:04.306Z">
+<meta property="og:updated_time" content="2019-08-31T09:25:05.551Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PID学习笔记">
-<meta name="twitter:description" content="潜心学习技术，最近发现了一篇比较好的介绍PID的文章。学习并记录一下。">
-<meta name="twitter:image" content="https://i.imgur.com/j5YKEuO.png">
+<meta name="twitter:title" content="习题练习">
+<meta name="twitter:description" content="在大致学习了几类数学建模的模型和算法后，我决定开始做题试一试。本节笔记例题均来自司守奎的算法与应用。">
 
 
 
@@ -121,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="http://linmushen.com/2019/08/13/PID学习笔记/">
+  <link rel="canonical" href="http://linmushen.com/2019/08/31/习题练习/">
 
 
 
@@ -131,7 +126,7 @@
   };
 </script>
 
-  <title>PID学习笔记 | 林木深的个人博客</title>
+  <title>习题练习 | 林木深的个人博客</title>
   
 
 
@@ -300,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/08/13/PID学习笔记/">
+    <link itemprop="mainEntityOfPage" href="http://linmushen.com/2019/08/31/习题练习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="林木深">
@@ -317,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PID学习笔记
+          <h1 class="post-title" itemprop="name headline">习题练习
 
               
             
@@ -343,24 +338,12 @@
                 
               
 
-              <time title="创建时间：2019-08-13 14:38:03" itemprop="dateCreated datePublished" datetime="2019-08-13T14:38:03+08:00">2019-08-13</time>
+              <time title="创建时间：2019-08-31 14:15:14 / 修改时间：17:25:05" itemprop="dateCreated datePublished" datetime="2019-08-31T14:15:14+08:00">2019-08-31</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-19 00:13:04" itemprop="dateModified" datetime="2019-08-19T00:13:04+08:00">2019-08-19</time>
               
             
           </span>
@@ -377,7 +360,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MCU/" itemprop="url" rel="index"><span itemprop="name">硬件部分</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Mathematical-modeling/" itemprop="url" rel="index"><span itemprop="name">数学建模</span></a></span>
 
                 
                 
@@ -406,7 +389,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.9k</span>
+                <span title="本文字数">8k</span>
               
 
               
@@ -420,7 +403,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">7 分钟</span>
               
             </div>
           
@@ -440,15 +423,16 @@
       
 
       
-        <p>潜心学习技术，最近发现了一篇比较好的介绍PID的文章。学习并记录一下。<br><a id="more"></a><br>PID控制是对偏差进行比例，积分和微分的控制。PID由三个单元组成，分别是比例单元，积分单元，微分单元。</p>
-<h1 id="位置闭环控制"><a href="#位置闭环控制" class="headerlink" title="位置闭环控制"></a>位置闭环控制</h1><h2 id="PID简介"><a href="#PID简介" class="headerlink" title="PID简介"></a>PID简介</h2><p>位置闭环控制是根据编码器的脉冲累加测量电机的位置信息，并与目标值进行比较，进而得到控制偏差，然后对偏差进行比例、积分、微分进行控制。使偏差趋近于0。</p>
-<h2 id="PID理论知识"><a href="#PID理论知识" class="headerlink" title="PID理论知识"></a>PID理论知识</h2><p>1）PID公式<br><img src="https://i.imgur.com/j5YKEuO.png" alt><br>2）符号含义<br><img src="https://i.imgur.com/ICGUcUc.png" alt></p>
-<h2 id="控制原理"><a href="#控制原理" class="headerlink" title="控制原理"></a>控制原理</h2><p><img src="https://i.imgur.com/JJfTRfg.png" alt><br>其中PID控制器，是一个软件实现过程（比如程序里的一个函数）。</p>
-<h2 id="C语言实现"><a href="#C语言实现" class="headerlink" title="C语言实现"></a>C语言实现</h2><p>通过改变KP,KI,KD的值实现调参。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int Position_PID(int Encoder,int Targe)		//入口参数为位置测量值和位置目标值</span><br><span class="line">&#123;</span><br><span class="line">	Static float Bias,Pwm,Integral_bias,Last_Bias;	  </span><br><span class="line">	Bias = Encoder-Target;	//计算偏差</span><br><span class="line">	Interal_bias+=Bias;		//用累加法，求出偏差的积分</span><br><span class="line">	Pwm=Position_KP*Bias+Position_KI*Integral_bias+Position_KD*(Bias-Last_Bias);	//根据PID计算Pwm输出值</span><br><span class="line">	Last_Bias=Bias;	//保存上一次偏差</span><br><span class="line">	return Pwm;		//返回Pwm</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在中断服务函数中调用这个函数并将输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PWM = Position_PID(Encoder,Targe)</span><br></pre></td></tr></table></figure></p>
-<h2 id="实际使用"><a href="#实际使用" class="headerlink" title="实际使用"></a>实际使用</h2><p>1）稳定性：主要评估指标为最大超调量，最大超调量是指响应曲线的最大峰值与稳态值的差。<br>2）快速性：主要评估指标为上升时间，上升时间是指响应工作状态从原始工作状态出发，第一次到达输出稳定值所需要的时间，是评估系统快速性的一个重要指标。<br>3）准确性：主要评估指标为静差，静差是被控制量与给定值之差，一般用于衡量系统的准确性。<img src="https://i.imgur.com/5tp9brf.png" alt></p>
-<h2 id="调参注意事项"><a href="#调参注意事项" class="headerlink" title="调参注意事项"></a>调参注意事项</h2><p>P：用于提高响应速度。<br>I：用于减小静差。<br>D：用于抑制震荡。<br>一般调参时，先将I值和D值设置为0，然后把P值从0逐渐增大，直到系统震荡。<br>静差一般是在P值较小，且I值为0的时候出现的。所以增大P值可以一定程度上的消除静差，提高响应速度，但会导致系统震荡。<br>加入D值后，震荡得到抑制，但响应速度变慢了。<br>所以一般调节经验可以总结为：先只P控制，增大P直至系统震荡之后加入D控制，消除一点震荡后，再次调节P和I参数。<br>控制难度取决于系统转动惯量和对相应速度的要求。转动惯量越小，对相应速度要求越低，PID参数就越不敏感。</p>
-<h1 id="速度闭环控制"><a href="#速度闭环控制" class="headerlink" title="速度闭环控制"></a>速度闭环控制</h1>
+        <p>在大致学习了几类数学建模的模型和算法后，我决定开始做题试一试。<br>本节笔记例题均来自司守奎的算法与应用。<br><a id="more"></a></p>
+<h1 id="第一章—线性规划"><a href="#第一章—线性规划" class="headerlink" title="第一章—线性规划"></a>第一章—线性规划</h1><p>线性规划问题是在一组线性约束条件限制下，求一线性目标函数最大或最小值的问题</p>
+<h2 id="例题代码实现"><a href="#例题代码实现" class="headerlink" title="例题代码实现"></a>例题代码实现</h2><h3 id="例题1-1"><a href="#例题1-1" class="headerlink" title="例题1.1"></a>例题1.1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">%习题1</span><br><span class="line"></span><br><span class="line">clc</span><br><span class="line">clear</span><br><span class="line">A1 = [1,-2,1;4,-1,-2];  %创建系数矩阵1(小于部分的系数)</span><br><span class="line">A2 = [-2,0,1];          %创建系数矩阵2(等于部分的系数)</span><br><span class="line">B1 = [11;-3];            %创建常数矩阵1</span><br><span class="line">B2 = [1];               %创建常数矩阵2</span><br><span class="line">f = [-3,1,1];           %目标函数系数矩阵</span><br><span class="line"></span><br><span class="line">%求解线性规划</span><br><span class="line">%[x,fval] = linprog(f,A,b,Aeq,Beq,lb,ub);</span><br><span class="line">%x为决策变量取值，fval为最优解；</span><br><span class="line">%f为目标函数的系数矩阵，A，b为不等式约束条件的系数矩阵、常数项矩阵；</span><br><span class="line">%Aeq,Beq为等式约束条件；</span><br><span class="line">%后面两个数为决策变量上下域</span><br><span class="line"></span><br><span class="line">[x,fval] = linprog(f,A1,B1,A2,B2,0);</span><br><span class="line"></span><br><span class="line">%由于Matlab算法解得的是最小值，所以需要进行一步转换</span><br><span class="line"></span><br><span class="line">fval = - fval;</span><br><span class="line">disp(&quot;当x为&quot;)</span><br><span class="line">disp(x)</span><br><span class="line">disp(&quot;时，取得最优解&quot;)</span><br><span class="line">disp(&quot;   &quot;)</span><br><span class="line">disp(&quot;最优解为&quot;)</span><br><span class="line">disp(fval)</span><br></pre></td></tr></table></figure>
+<p>解得<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">当x为</span><br><span class="line">    4.0000</span><br><span class="line">    1.0000</span><br><span class="line">    9.0000</span><br><span class="line"></span><br><span class="line">时，取得最优解</span><br><span class="line">   </span><br><span class="line">最优解为</span><br><span class="line">    2.0000</span><br></pre></td></tr></table></figure></p>
+<h3 id="例题1-2"><a href="#例题1-2" class="headerlink" title="例题1.2"></a>例题1.2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">%习题2，转化为线性规划的问题</span><br><span class="line">%核心思想是将xi的绝对值进行转化---ui=(xi+|xi|)/2;vi=(xi-|xi|)/2</span><br><span class="line">clc</span><br><span class="line">clear</span><br><span class="line">f = 1:4;</span><br><span class="line">f = [f,f];      %目标函数系数矩阵，翻倍</span><br><span class="line">A1 = [1,-1,-1,1;1,-1,1,-3;1,-1,-2,3];</span><br><span class="line">%xi = ui-vi;因此vi的系数要取相反值</span><br><span class="line">A1 = [A1,-A1];   %等式部分的系数矩阵</span><br><span class="line">%常数项矩阵不变</span><br><span class="line">B = [0;1;-1/2]; %等使部分的常数项矩阵</span><br><span class="line">%分别求u，v的解，并将两个矩阵合并,其中xi，vi均大于0。</span><br><span class="line">[uv,fval] = linprog(f,[],[],A1,B,zeros(8,1))</span><br><span class="line">%依据xi = ui-vi来求得x。</span><br><span class="line">x = uv(1:4)-uv(5:8)</span><br></pre></td></tr></table></figure>
+<p>解得<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x =</span><br><span class="line"></span><br><span class="line">    0.2500         0         0   -0.2500</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fval =</span><br><span class="line"></span><br><span class="line">    1.2500</span><br></pre></td></tr></table></figure></p>
+<h3 id="例题1-3"><a href="#例题1-3" class="headerlink" title="例题1.3"></a>例题1.3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">%习题3</span><br><span class="line">%主要时系数比较难算，而且“设备有效台时”，“满负荷时的设备费用”等名词需要查阅确定其含义</span><br><span class="line"></span><br><span class="line">clc</span><br><span class="line">clear</span><br><span class="line">A1 = [5 0 0 0 0 10 0 0 0;0 7 0 0 0 0 9 0 12;0 0 6 0 0 0 0 8 0;0 0 0 4 0 0 0 0 11;0 0 0 0 7 0 0 0 0];</span><br><span class="line">A2 = [1 1 -1 -1 -1 0 0 0 0;0 0 0 0 0 1 1 -1 0];</span><br><span class="line">B1 = [6000;10000;4000;7000;4000];</span><br><span class="line">B2 = [0;0];</span><br><span class="line">F = [-0.75 -0.7753 0.375 0.4448 0.35 0.5 0.2889 -1.15 2.675];</span><br><span class="line">C = zeros(9,1);</span><br><span class="line">[x,fval] = linprog(F,A1,B1,A2,B2,C);</span><br><span class="line">x</span><br><span class="line">fval =-fval</span><br></pre></td></tr></table></figure>
+<p>解得<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x =</span><br><span class="line"></span><br><span class="line">   1.0e+03 *</span><br><span class="line"></span><br><span class="line">   1.2000    0.7857    0    1.4143    0.5714    0    0.5000    0.5000    0</span><br><span class="line"></span><br><span class="line">fval =</span><br><span class="line"></span><br><span class="line">   1.1106e+03</span><br></pre></td></tr></table></figure></p>
+<p>2019/8/31 17:24:59 </p>
+
       
     </div>
 
@@ -478,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/12/破解论文/" rel="next" title="破解论文">
-                <i class="fa fa-chevron-left"></i> 破解论文
+              <a href="/2019/08/30/备忘录/" rel="next" title="备忘录">
+                <i class="fa fa-chevron-left"></i> 备忘录
               </a>
             
           </div>
@@ -487,10 +471,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/16/Matlab学习笔记/" rel="prev" title="Matlab学习笔记">
-                Matlab学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -631,7 +611,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#位置闭环控制"><span class="nav-number">1.</span> <span class="nav-text">位置闭环控制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PID简介"><span class="nav-number">1.1.</span> <span class="nav-text">PID简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PID理论知识"><span class="nav-number">1.2.</span> <span class="nav-text">PID理论知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制原理"><span class="nav-number">1.3.</span> <span class="nav-text">控制原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C语言实现"><span class="nav-number">1.4.</span> <span class="nav-text">C语言实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实际使用"><span class="nav-number">1.5.</span> <span class="nav-text">实际使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调参注意事项"><span class="nav-number">1.6.</span> <span class="nav-text">调参注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#速度闭环控制"><span class="nav-number">2.</span> <span class="nav-text">速度闭环控制</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章—线性规划"><span class="nav-number">1.</span> <span class="nav-text">第一章—线性规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#例题代码实现"><span class="nav-number">1.1.</span> <span class="nav-text">例题代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题1-1"><span class="nav-number">1.1.1.</span> <span class="nav-text">例题1.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题1-2"><span class="nav-number">1.1.2.</span> <span class="nav-text">例题1.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题1-3"><span class="nav-number">1.1.3.</span> <span class="nav-text">例题1.3</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
