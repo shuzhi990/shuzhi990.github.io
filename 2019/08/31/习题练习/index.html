@@ -103,10 +103,13 @@
 <meta property="og:site_name" content="林木深的个人博客">
 <meta property="og:description" content="在大致学习了几类数学建模的模型和算法后，我决定开始做题试一试。本节笔记例题均来自司守奎的算法与应用。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-02T14:25:50.584Z">
+<meta property="og:image" content="https://i.imgur.com/pBMYPFs.png">
+<meta property="og:image" content="https://i.imgur.com/yeigMaS.png">
+<meta property="og:updated_time" content="2019-09-04T09:09:29.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="习题练习">
 <meta name="twitter:description" content="在大致学习了几类数学建模的模型和算法后，我决定开始做题试一试。本节笔记例题均来自司守奎的算法与应用。">
+<meta name="twitter:image" content="https://i.imgur.com/pBMYPFs.png">
 
 
 
@@ -355,7 +358,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-02 22:25:50" itemprop="dateModified" datetime="2019-09-02T22:25:50+08:00">2019-09-02</time>
+                <time title="修改时间：2019-09-04 17:09:29" itemprop="dateModified" datetime="2019-09-04T17:09:29+08:00">2019-09-04</time>
               
             
           </span>
@@ -401,7 +404,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">27k</span>
+                <span title="本文字数">35k</span>
               
 
               
@@ -415,7 +418,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">25 分钟</span>
+                <span title="阅读时长">32 分钟</span>
               
             </div>
           
@@ -458,6 +461,12 @@
 <p>解得<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">最优解为：212.0000</span><br></pre></td></tr></table></figure></p>
 <p>第二问：</p>
 <h1 id="第三章—非线性规划"><a href="#第三章—非线性规划" class="headerlink" title="第三章—非线性规划"></a>第三章—非线性规划</h1><p>目标函数或约束条件中包含非线性函数的规划问题叫非线性规划问题。</p>
+<h1 id="第四章—预测方法"><a href="#第四章—预测方法" class="headerlink" title="第四章—预测方法"></a>第四章—预测方法</h1><h2 id="插值法"><a href="#插值法" class="headerlink" title="插值法"></a>插值法</h2><h3 id="习题4-1"><a href="#习题4-1" class="headerlink" title="习题4.1"></a>习题4.1</h3><p>本题通过插值法求出步长0.1下对应的每一个速度点，进而得出图像</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">clc</span><br><span class="line">clear</span><br><span class="line">% 第一段时间部分</span><br><span class="line">y1 = [9.68 9.48 9.31 9.13 8.98 8.81 8.69 8.52 8.39 8.22];   %第一个时间段水位的高度</span><br><span class="line">xce = [0:0.1:8.22]; %需要预测的时间段</span><br><span class="line">x1 = [0 0.92 1.84 2.95 3.87 4.98 5.9 7.01 7.93 8.97];   %已知的时刻</span><br><span class="line"></span><br><span class="line">%p1 = pchip(x1,y1,xce);</span><br><span class="line">y1 = y1*pi/4*302.76;    %每时刻对应水的体积</span><br><span class="line">v = gradient(y1&apos;,x1&apos;)   %每时刻对应的水流速度</span><br><span class="line">v1 = pchip(x1,v,xce);   %将所有时刻的速度计算出来</span><br><span class="line">figure(1)</span><br><span class="line">plot(xce,-v1,&apos;r&apos;)</span><br><span class="line"></span><br><span class="line">%第二段时间部分</span><br><span class="line">x2 = [10.95 12.03 12.95 13.88 14.98 15.9 16.83 17.93 19.04 19.96 20.84 ];   %第二段时间中的时刻</span><br><span class="line">y2 = [10.82 10.5 10.21 9.94 9.65 9.41 9.18 8.92 8.66 8.43 8.22];</span><br><span class="line">xce2 = [10.95:0.1:20.84];   %第二次的时间段</span><br><span class="line"></span><br><span class="line">y2 = y2*pi/4*302.76;    %每时刻对应水的体积</span><br><span class="line">v2 = gradient(y2&apos;,x2&apos;)   %每时刻对应的水流速度</span><br><span class="line">v2 = pchip(x2,v2,xce2);   %将所有时刻的速度计算出来</span><br><span class="line">figure(2)</span><br><span class="line">plot(xce2,-v2,&apos;g&apos;)</span><br><span class="line"></span><br><span class="line">%第三段时间部分</span><br><span class="line">x3 = [23.88 24.99 25.91];</span><br><span class="line">y3 = [10.59 10.35 10.18];</span><br><span class="line">xce3 = [23.88:0.1:25.91];</span><br><span class="line">y3 = y3*pi/4*302.76;    %每时刻对应水的体积</span><br><span class="line">v3 = gradient(y3&apos;,x3&apos;)   %每时刻对应的水流速度</span><br><span class="line">v3 = pchip(x3,v3,xce3);   %将所有时刻的速度计算出来</span><br><span class="line">figure(3)</span><br><span class="line">plot(xce3,-v3)</span><br><span class="line"></span><br><span class="line">%绘制总体图</span><br><span class="line">x = [xce xce2 xce3];</span><br><span class="line">V = [-v1 -v2 -v3];</span><br><span class="line">figure(4)</span><br><span class="line">plot(x,V,&apos;r&apos;)</span><br></pre></td></tr></table></figure>
+</code></pre><p>解得图像<br><img src="https://i.imgur.com/pBMYPFs.png" alt></p>
+<h2 id="拟合法"><a href="#拟合法" class="headerlink" title="拟合法"></a>拟合法</h2><h3 id="习题1-1"><a href="#习题1-1" class="headerlink" title="习题1.1"></a>习题1.1</h3><p>本题为插值法1.1的另一种解。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">clc</span><br><span class="line">clear</span><br><span class="line">% 第一段时间部分</span><br><span class="line">y1 = [9.68 9.48 9.31 9.13 8.98 8.81 8.69 8.52 8.39 8.22];   %第一个时间段水位的高度</span><br><span class="line">xce = [0:0.1:8.22]; %需要预测的时间段</span><br><span class="line">x1 = [0 0.92 1.84 2.95 3.87 4.98 5.9 7.01 7.93 8.97];   %已知的时刻</span><br><span class="line"></span><br><span class="line">y1 = y1*pi/4*302.76;    %每时刻对应水的体积</span><br><span class="line">v = gradient(y1&apos;,x1&apos;);  %每时刻对应的水流速度</span><br><span class="line">v = -v;</span><br><span class="line"></span><br><span class="line">a1 = polyfit(x1,v&apos;,3);</span><br><span class="line">Y1 = polyval(a1,xce);</span><br><span class="line"></span><br><span class="line">figure(1)</span><br><span class="line">plot(xce,Y1)</span><br><span class="line">%第二部分时间计算</span><br><span class="line">x2 = [10.95 12.03 12.95 13.88 14.98 15.9 16.83 17.93 19.04 19.96 20.84 ];   %第二段时间中的时刻</span><br><span class="line">y2 = [10.82 10.5 10.21 9.94 9.65 9.41 9.18 8.92 8.66 8.43 8.22];</span><br><span class="line">xce2 = [10.95:0.1:20.84];   %第二次的时间段</span><br><span class="line"></span><br><span class="line">y2 = y2*pi/4*302.76;    %每时刻对应水的体积</span><br><span class="line">v2 = gradient(y2&apos;,x2&apos;);  %每时刻对应的水流速度</span><br><span class="line">v2 = -v2;</span><br><span class="line"></span><br><span class="line">a2 = polyfit(x2,v2&apos;,3);</span><br><span class="line">Y2 = polyval(a2,xce2);</span><br><span class="line"></span><br><span class="line">figure(2)</span><br><span class="line">plot(xce2,Y2)</span><br><span class="line">% 第三段时间部分</span><br><span class="line">x3 = [23.88 24.99 25.91];</span><br><span class="line">y3 = [10.59 10.35 10.18];</span><br><span class="line">xce3 = [23.88:0.1:25.91];</span><br><span class="line">y3 = y3*pi/4*302.76;    %每时刻对应水的体积</span><br><span class="line">v3 = gradient(y3&apos;,x3&apos;)   %每时刻对应的水流速度</span><br><span class="line">v3 = -v3</span><br><span class="line"></span><br><span class="line">a3 = polyfit(x3,v3&apos;,3);</span><br><span class="line">Y3 = polyval(a3,xce3);</span><br><span class="line"></span><br><span class="line">figure(3)</span><br><span class="line">plot(xce3,Y3)</span><br><span class="line">%绘制总图</span><br><span class="line">x = [xce xce2 xce3];</span><br><span class="line">V = [Y1 Y2 Y3];</span><br><span class="line">figure(4)</span><br><span class="line">plot(x,V,&apos;r&apos;)</span><br></pre></td></tr></table></figure>
+</code></pre><p>解得图像<br><img src="https://i.imgur.com/yeigMaS.png" alt></p>
 
       
     </div>
@@ -637,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章—线性规划"><span class="nav-number">1.</span> <span class="nav-text">第一章—线性规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#例题代码实现"><span class="nav-number">1.1.</span> <span class="nav-text">例题代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题1-1"><span class="nav-number">1.1.1.</span> <span class="nav-text">例题1.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题1-2"><span class="nav-number">1.1.2.</span> <span class="nav-text">例题1.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题1-3"><span class="nav-number">1.1.3.</span> <span class="nav-text">例题1.3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题1-4"><span class="nav-number">1.1.4.</span> <span class="nav-text">例题1.4</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章—整数规划"><span class="nav-number">2.</span> <span class="nav-text">第二章—整数规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-1型整数规划"><span class="nav-number">2.1.</span> <span class="nav-text">0-1型整数规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#习题2-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">习题2.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#习题2-2"><span class="nav-number">2.1.2.</span> <span class="nav-text">习题2.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#习题2-3"><span class="nav-number">2.1.3.</span> <span class="nav-text">习题2.3</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章—非线性规划"><span class="nav-number">3.</span> <span class="nav-text">第三章—非线性规划</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章—线性规划"><span class="nav-number">1.</span> <span class="nav-text">第一章—线性规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#例题代码实现"><span class="nav-number">1.1.</span> <span class="nav-text">例题代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题1-1"><span class="nav-number">1.1.1.</span> <span class="nav-text">例题1.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题1-2"><span class="nav-number">1.1.2.</span> <span class="nav-text">例题1.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题1-3"><span class="nav-number">1.1.3.</span> <span class="nav-text">例题1.3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题1-4"><span class="nav-number">1.1.4.</span> <span class="nav-text">例题1.4</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章—整数规划"><span class="nav-number">2.</span> <span class="nav-text">第二章—整数规划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-1型整数规划"><span class="nav-number">2.1.</span> <span class="nav-text">0-1型整数规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#习题2-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">习题2.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#习题2-2"><span class="nav-number">2.1.2.</span> <span class="nav-text">习题2.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#习题2-3"><span class="nav-number">2.1.3.</span> <span class="nav-text">习题2.3</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章—非线性规划"><span class="nav-number">3.</span> <span class="nav-text">第三章—非线性规划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章—预测方法"><span class="nav-number">4.</span> <span class="nav-text">第四章—预测方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插值法"><span class="nav-number">4.1.</span> <span class="nav-text">插值法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#习题4-1"><span class="nav-number">4.1.1.</span> <span class="nav-text">习题4.1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拟合法"><span class="nav-number">4.2.</span> <span class="nav-text">拟合法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#习题1-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">习题1.1</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -670,7 +679,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">71k</span>
+    <span title="站点总字数">74k</span>
   
 
   
@@ -679,7 +688,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:05</span>
+    <span title="站点阅读时长">1:07</span>
   
 </div>
 
