@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linmushen.com/"/>
-  <updated>2019-09-06T07:19:34.284Z</updated>
+  <updated>2019-09-06T18:31:01.369Z</updated>
   <id>http://linmushen.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>链接收藏</title>
+    <link href="http://linmushen.com/2019/09/06/%E9%93%BE%E6%8E%A5%E6%94%B6%E8%97%8F/"/>
+    <id>http://linmushen.com/2019/09/06/链接收藏/</id>
+    <published>2019-09-06T15:46:52.000Z</published>
+    <updated>2019-09-06T18:31:01.369Z</updated>
+    
+    <content type="html"><![CDATA[<p>几个链接，防止以后找不到<br><a id="more"></a><br>关于论文侧重点的说明<br>&lt; <a href="https://www.zhihu.com/question/65256909/answer/365283612" target="_blank" rel="noopener">https://www.zhihu.com/question/65256909/answer/365283612</a><br>建模概述<br>&lt; <a href="https://zhuanlan.zhihu.com/p/32918281" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/32918281</a></p><p>论文模板<br><a href="https://wenku.baidu.com/view/a3bd8763783e0912a2162a9e.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/a3bd8763783e0912a2162a9e.html</a></p><p>matlab文档查询</p><blockquote><p><a href="https://ww2.mathworks.cn/help/matlab/index.html" target="_blank" rel="noopener">https://ww2.mathworks.cn/help/matlab/index.html</a></p></blockquote><p>matlab统计概率分布</p><blockquote><p><a href="https://www.cnblogs.com/djcsch2001/archive/2012/02/05/2339193.html" target="_blank" rel="noopener">https://www.cnblogs.com/djcsch2001/archive/2012/02/05/2339193.html</a></p></blockquote><p>学校图书馆地址</p><blockquote><p><a href="http://lib.hrbust.edu.cn/" target="_blank" rel="noopener">http://lib.hrbust.edu.cn/</a></p></blockquote><p>数学建模的一般步骤</p><blockquote><p><a href="https://wenku.baidu.com/view/dc1712795acfa1c7aa00cc65.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/dc1712795acfa1c7aa00cc65.html</a></p></blockquote><p>数学建模算法大全</p><blockquote><p><a href="https://blog.csdn.net/weixin_43107805/article/details/89069182?utm_source=app" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43107805/article/details/89069182?utm_source=app</a><br><a href="https://blog.csdn.net/dyq1995/article/details/84426634" target="_blank" rel="noopener">https://blog.csdn.net/dyq1995/article/details/84426634</a></p></blockquote><p>智能车基地论坛</p><blockquote><p><a href="http://www.daimxa.cn/forum.php" target="_blank" rel="noopener">http://www.daimxa.cn/forum.php</a></p></blockquote><p>山外论坛</p><blockquote><p><a href="http://www.vcan123.com/forum.php" target="_blank" rel="noopener">http://www.vcan123.com/forum.php</a></p></blockquote><p>智能车制作</p><blockquote><p><a href="http://www.znczz.com/" target="_blank" rel="noopener">http://www.znczz.com/</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;几个链接，防止以后找不到&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>模型模板</title>
