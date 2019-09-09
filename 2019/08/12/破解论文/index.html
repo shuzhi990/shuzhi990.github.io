@@ -108,8 +108,7 @@
 <meta property="og:image" content="https://i.imgur.com/7Ns9n2x.png">
 <meta property="og:image" content="https://i.imgur.com/FaUHj7H.png">
 <meta property="og:image" content="https://i.imgur.com/vYLHcff.png">
-<meta property="og:image" content="https://i.imgur.com/GzO8sda.png">
-<meta property="og:updated_time" content="2019-08-22T15:40:47.963Z">
+<meta property="og:updated_time" content="2019-09-08T13:29:28.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="破解论文">
 <meta name="twitter:description" content="为了准备数学建模竞赛，力求在假期剩余的十几天中，破解七篇优秀论文。">
@@ -362,7 +361,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-22 23:40:47" itemprop="dateModified" datetime="2019-08-22T23:40:47+08:00">2019-08-22</time>
+                <time title="修改时间：2019-09-08 21:29:28" itemprop="dateModified" datetime="2019-09-08T21:29:28+08:00">2019-09-08</time>
               
             
           </span>
@@ -408,7 +407,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">31k</span>
+                <span title="本文字数">28k</span>
               
 
               
@@ -422,7 +421,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">28 分钟</span>
+                <span title="阅读时长">26 分钟</span>
               
             </div>
           
@@ -504,58 +503,15 @@
 <h3 id="模型建立-3"><a href="#模型建立-3" class="headerlink" title="模型建立"></a>模型建立</h3><p>此时得到了平衡点坐标N(K<em>,n</em>)和实际点M(K,n)，但不是关于原点的情况，不易于求解，因此通过<strong>归一化处理</strong>转化为关于原点的数据，点Q。<br>Q = (K-K<em>/K</em>,n<em>-n/n</em>)<br>综合不平衡度—Q到原点的距离r。</p>
 <p><img src="https://i.imgur.com/vYLHcff.png" alt></p>
 <h3 id="模型求解-2"><a href="#模型求解-2" class="headerlink" title="模型求解"></a>模型求解</h3><p>带入理想值需要的数据，求解得到K<em>，n</em>。<br>利用matlab仿真，得到K，n<br>并分别在时间角度、空间角度下，解得r。</p>
-<h1 id="2018年B题"><a href="#2018年B题" class="headerlink" title="2018年B题"></a>2018年B题</h1><h2 id="对条件的推测"><a href="#对条件的推测" class="headerlink" title="对条件的推测"></a>对条件的推测</h2><p>一. 智能加工系统组成</p>
+<h1 id="2016B题"><a href="#2016B题" class="headerlink" title="2016B题"></a>2016B题</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>建立评价指标体系</p>
 <ol>
-<li>轨道车(RGV)可以自由移动，且有一个机械手臂，两只机械手爪，物料清洗槽。可以控制移动方向、移动距离。</li>
-<li>RGV直线轨道共RGV自由移动。</li>
-<li>8台计算机数控机床。</li>
-<li>上料传送带、下料传送带。</li>
-<li>机械臂可以在拿取熟料的同时放上一个生料。</li>
+<li>选取评价指标</li>
+<li>层次分析法求权重</li>
+<li>根据权重判断指标的可行性</li>
 </ol>
-<p>二. 推测工序</p>
-<p>一道工序版：</p>
-<ol>
-<li>未加工的生料 放到 上料传送带。</li>
-<li>RGV运动到物料位置，然后抓取到某一台CNC。</li>
-<li>物料加工完成后，RGV用自带的物料清洗槽进行清洗。</li>
-<li>清洗完成后放到下料传送带。</li>
+<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><ol>
+<li>TOPSOS模型求得排序指标值(影响力度)</li>
 </ol>
-<p>两道工序版：</p>
-<ol>
-<li>未加工的生料 放到 上料传送带。</li>
-<li>RGV运动到物料位置，然后抓取到某一台CNC。</li>
-<li>物料加工完第一道工序后，RGV运动到该位置后，进行抓取，放到不同的CNC上。</li>
-<li>物料加工完成后，RGV用自带的物料清洗槽进行清洗。</li>
-<li>清洗完成后放到下料传送带。</li>
-</ol>
-<p>三. 问题假设</p>
-<ol>
-<li>假设输入指令无延迟，传送信号无延迟。</li>
-<li>假设物料放置时间间隔相同（因为速度不变，所以间距相同）且无停顿。</li>
-</ol>
-<p>四. 大致方案<br>一道工序版：<br>RGV将物料就近放到CNC机床上，如果该机床在忙，则放到相对机床上，如果也在忙，则放到相邻机床上。</p>
-<h2 id="对作业流程的分析"><a href="#对作业流程的分析" class="headerlink" title="对作业流程的分析"></a>对作业流程的分析</h2><ol>
-<li>起始位置：通电后，RGV在CNC1与CNC2正中间。<img src="https://i.imgur.com/GzO8sda.png" alt></li>
-<li>需求指令：空闲、加工完成时都发送。</li>
-<li>上下料作业次序：适用于刚刚加工完毕的CNC，需要先将熟料拿下来，然后将生料放上。</li>
-<li>RGV上下料作业：根据需求指令，首先RGV运动到需要作业的RGV处，同时上料传送带将料传到该处。</li>
-<li>上下料所需时间：偶数编号CNC上料时间大于奇数CNC上料时间。</li>
-<li>RGV清洗作业时间：RGV为某CNC完成一次上下料作业后，进行清洗作业的时间。这段时间RGV不能移动。<br>这段时间远小于上下料所需时间。</li>
-<li>RGV的等待：无信号时出现等待。</li>
-<li>CNC的等待：发出信号，RGV没有到达。</li>
-</ol>
-<h2 id="对问题的分析"><a href="#对问题的分析" class="headerlink" title="对问题的分析"></a>对问题的分析</h2><p>任务1：对一般问题进行研究，给出RGV动态调度模型和相应的求解算法；<br>任务2：利用表1中系统作业参数的3组数据分别检验模型的实用性和算法的有效性，给出RGV的调度策略和系统的作业效率，并将具体的结果分别填入附件2的EXCEL表中。</p>
-<ol>
-<li>RGV动态调度模型</li>
-<li>相应求解算法</li>
-<li>利用参数检验模型实用性、算法有效性</li>
-<li>给出RGV调度策略、系统作业效率</li>
-</ol>
-<h2 id="大致推测涉及到的变量"><a href="#大致推测涉及到的变量" class="headerlink" title="大致推测涉及到的变量"></a>大致推测涉及到的变量</h2><p>RGV移动一个单位的时间：    T1<br>RGV移动两个单位的时间：    T2<br>RGV移动三个单位的时间：    T3<br>RGV偶数上料时间：        To<br>RGV奇数上料时间：        Tj<br>RGV清洗作业时间：        Tq<br>CNC加工一个只需一道工序的时间：            t1<br>CNC加工一个需两道工序的第一道工序的时间：    t2<br>CNC加工一个需两道工序的第二道工序的时间：    t3</p>
-<h2 id="模型建立-4"><a href="#模型建立-4" class="headerlink" title="模型建立"></a>模型建立</h2><p>RGV动态调度模型：<br>先奇数次，然后偶数次：<br>启始后，依次将左侧所有都上料,然后反向为右侧上料。</p>
-<p>空闲时间：<br>CNC1– TX1 = 0;<br>CNC3– TX2 = T1+TJ;<br>CNC5– TX3 = T2+2TJ;<br>CNC7– TX4 = T3+3TJ;<br>CNC8– TX5 = T3+4TJ;<br>CNC6– TX6 = T3+T1+4TJ+TO;<br>CNC4– TX7 = T3+T2+4TJ+2TO;<br>CNC2– TX8 = 2T3+4TJ+3TO;</p>
-<p>然后为奇数次下料：<br>空闲时间2：<br>CNC1– TX8-t1;<br>CNC3– TX8-TX2+T1+TJ+Tq-t1;<br>CNC5– TX8-TX3+T2+2TJ+2Tq-t1;<br>CNC7– TX8-TX4+T3+3TJ+3Tq-t1;<br>CNC8– TX8-TX5+T3+4TJ+4Tq-t1;<br>CNC6– TX8-TX6+T3+T1+5TJ+5Tq-t1;<br>CNC4– TX8-TX7+T3+T2+6TJ+6Tq-t1;<br>CNC2– 2T3+7TJ+7Tq-t1;</p>
-<p>CNCX = 上好料多久了（TX8-TXx）+ 移动所需要的时间 + 之前机器清洗的时间 + 之前机器上料的时间 - 加工需要的时间</p>
 
       
     </div>
@@ -741,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一篇优秀论文"><span class="nav-number">1.</span> <span class="nav-text">第一篇优秀论文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型一部分"><span class="nav-number">1.1.</span> <span class="nav-text">模型一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型准备"><span class="nav-number">1.1.1.</span> <span class="nav-text">模型准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立"><span class="nav-number">1.1.2.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型修正"><span class="nav-number">1.1.3.</span> <span class="nav-text">模型修正</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型求解"><span class="nav-number">1.1.4.</span> <span class="nav-text">模型求解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matlab程序"><span class="nav-number">1.2.</span> <span class="nav-text">Matlab程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型二部分"><span class="nav-number">1.3.</span> <span class="nav-text">模型二部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型准备-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">模型准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立-2"><span class="nav-number">1.3.3.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型求解-1"><span class="nav-number">1.3.4.</span> <span class="nav-text">模型求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#灵敏性分析"><span class="nav-number">1.3.5.</span> <span class="nav-text">灵敏性分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matlab程序-1"><span class="nav-number">1.4.</span> <span class="nav-text">Matlab程序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二遍优秀论文"><span class="nav-number">2.</span> <span class="nav-text">第二遍优秀论文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题分析"><span class="nav-number">2.1.</span> <span class="nav-text">问题分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一分析"><span class="nav-number">2.1.1.</span> <span class="nav-text">问题一分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二分析"><span class="nav-number">2.1.2.</span> <span class="nav-text">问题二分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题三分析"><span class="nav-number">2.1.3.</span> <span class="nav-text">问题三分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型一部分-1"><span class="nav-number">2.2.</span> <span class="nav-text">模型一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型准备—指标确立"><span class="nav-number">2.2.1.</span> <span class="nav-text">模型准备—指标确立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立—指标理想值确定"><span class="nav-number">2.2.2.</span> <span class="nav-text">模型建立—指标理想值确定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立-3"><span class="nav-number">2.2.3.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型求解-2"><span class="nav-number">2.2.4.</span> <span class="nav-text">模型求解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2018年B题"><span class="nav-number">3.</span> <span class="nav-text">2018年B题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对条件的推测"><span class="nav-number">3.1.</span> <span class="nav-text">对条件的推测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对作业流程的分析"><span class="nav-number">3.2.</span> <span class="nav-text">对作业流程的分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对问题的分析"><span class="nav-number">3.3.</span> <span class="nav-text">对问题的分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大致推测涉及到的变量"><span class="nav-number">3.4.</span> <span class="nav-text">大致推测涉及到的变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型建立-4"><span class="nav-number">3.5.</span> <span class="nav-text">模型建立</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一篇优秀论文"><span class="nav-number">1.</span> <span class="nav-text">第一篇优秀论文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型一部分"><span class="nav-number">1.1.</span> <span class="nav-text">模型一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型准备"><span class="nav-number">1.1.1.</span> <span class="nav-text">模型准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立"><span class="nav-number">1.1.2.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型修正"><span class="nav-number">1.1.3.</span> <span class="nav-text">模型修正</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型求解"><span class="nav-number">1.1.4.</span> <span class="nav-text">模型求解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matlab程序"><span class="nav-number">1.2.</span> <span class="nav-text">Matlab程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型二部分"><span class="nav-number">1.3.</span> <span class="nav-text">模型二部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型准备-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">模型准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立-2"><span class="nav-number">1.3.3.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型求解-1"><span class="nav-number">1.3.4.</span> <span class="nav-text">模型求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#灵敏性分析"><span class="nav-number">1.3.5.</span> <span class="nav-text">灵敏性分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matlab程序-1"><span class="nav-number">1.4.</span> <span class="nav-text">Matlab程序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二遍优秀论文"><span class="nav-number">2.</span> <span class="nav-text">第二遍优秀论文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题分析"><span class="nav-number">2.1.</span> <span class="nav-text">问题分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一分析"><span class="nav-number">2.1.1.</span> <span class="nav-text">问题一分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二分析"><span class="nav-number">2.1.2.</span> <span class="nav-text">问题二分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题三分析"><span class="nav-number">2.1.3.</span> <span class="nav-text">问题三分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型一部分-1"><span class="nav-number">2.2.</span> <span class="nav-text">模型一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型准备—指标确立"><span class="nav-number">2.2.1.</span> <span class="nav-text">模型准备—指标确立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立—指标理想值确定"><span class="nav-number">2.2.2.</span> <span class="nav-text">模型建立—指标理想值确定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型建立-3"><span class="nav-number">2.2.3.</span> <span class="nav-text">模型建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型求解-2"><span class="nav-number">2.2.4.</span> <span class="nav-text">模型求解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2016B题"><span class="nav-number">3.</span> <span class="nav-text">2016B题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">3.1.</span> <span class="nav-text">摘要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">3.1.1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">3.1.2.</span> <span class="nav-text">问题二</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -774,7 +730,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">82k</span>
+    <span title="站点总字数">81k</span>
   
 
   
@@ -783,7 +739,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:15</span>
+    <span title="站点阅读时长">1:14</span>
   
 </div>
 
