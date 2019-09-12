@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linmushen.com/"/>
-  <updated>2019-09-11T13:25:51.581Z</updated>
+  <updated>2019-09-12T11:08:52.593Z</updated>
   <id>http://linmushen.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>破解论文2</title>
+    <link href="http://linmushen.com/2019/09/10/%E7%A0%B4%E8%A7%A3%E8%AE%BA%E6%96%872/"/>
+    <id>http://linmushen.com/2019/09/10/破解论文2/</id>
+    <published>2019-09-10T14:46:37.000Z</published>
+    <updated>2019-09-12T11:08:52.593Z</updated>
+    
+    <content type="html"><![CDATA[<p>按照模型分类的优秀论文。<br><a id="more"></a></p><h1 id="大量数据、灰色关联、优化、聚类、神经网络"><a href="#大量数据、灰色关联、优化、聚类、神经网络" class="headerlink" title="大量数据、灰色关联、优化、聚类、神经网络"></a>大量数据、灰色关联、优化、聚类、神经网络</h1><h2 id="原文位置"><a href="#原文位置" class="headerlink" title="原文位置"></a>原文位置</h2><p>C:/Users/树枝990/Desktop/数学建模/数学建模论文/30个常用模型对应的建模比赛获奖论文（中文）/灰色关联分析/[2017年国赛高教杯奖B题]华中科技大学-基于聚类分析的双目标优化定价模型</p><h2 id="大量数据"><a href="#大量数据" class="headerlink" title="大量数据"></a>大量数据</h2><p>此题有近两千组数据。</p><h3 id="定性分析"><a href="#定性分析" class="headerlink" title="定性分析"></a>定性分析</h3><p>根据题中经纬度数据、定价数据绘制三维立体图。<br>将三组数据进行拟合三维拟合图，将经纬度用坐标表示出来，将定价用颜色深浅表示出来。</p><h3 id="定量分析"><a href="#定量分析" class="headerlink" title="定量分析"></a>定量分析</h3><p>首先要剔除异常数据，利用拉依达准则。<br>对数据进行离散化处理：将范围分为相同大小的单元格。计算每个单元格的平均影响因子数据(任务数量、会员数量、平均完成能力)。<br>熵权法确定会员的得分。</p><blockquote><p>熵权法教程<br><a href="https://blog.csdn.net/qq_32942549/article/details/80019005" target="_blank" rel="noopener">https://blog.csdn.net/qq_32942549/article/details/80019005</a><br>计算表格里会员的平均得分。<br>进行K-means聚类分析，得到各聚类的中心位置，计算每个点距中心的距离(影响因子)<br>K-means教程<br><a href="https://www.cnblogs.com/niniya/p/8784947.html" target="_blank" rel="noopener">https://www.cnblogs.com/niniya/p/8784947.html</a></p></blockquote><h2 id="灰色关联"><a href="#灰色关联" class="headerlink" title="灰色关联"></a>灰色关联</h2><p>先分为两种情况(完成/未完成)<br>计算两种情况下影响因子的相关系数(影响程度)，计算两种情况下同一因子之间的差值，从而得到对未完成影响最大的因子(即未完成原因)。</p><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;按照模型分类的优秀论文。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="数学建模" scheme="http://linmushen.com/categories/Mathematical-modeling/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>链接收藏</title>
