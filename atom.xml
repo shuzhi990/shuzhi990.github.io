@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linmushen.com/"/>
-  <updated>2019-09-12T11:08:52.593Z</updated>
+  <updated>2019-09-26T16:22:35.654Z</updated>
   <id>http://linmushen.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>K60学习笔记</title>
+    <link href="http://linmushen.com/2019/09/18/K60%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://linmushen.com/2019/09/18/K60学习笔记/</id>
+    <published>2019-09-18T05:22:43.000Z</published>
+    <updated>2019-09-26T16:22:35.654Z</updated>
+    
+    <content type="html"><![CDATA[<p>好好学习K60单片机<br><a id="more"></a></p><h1 id="文件夹规定"><a href="#文件夹规定" class="headerlink" title="文件夹规定"></a>文件夹规定</h1><h2 id="一级文件夹"><a href="#一级文件夹" class="headerlink" title="一级文件夹"></a>一级文件夹</h2><p>App—–用户程序<br>Board—开发板驱动程序<br>Chip—-K60芯片驱动程序<br>Lib—–库代码<br>Prj—–工程文件</p><h2 id="二级文件夹"><a href="#二级文件夹" class="headerlink" title="二级文件夹"></a>二级文件夹</h2><p>Inc—–程序头文件<br>src—–驱动程序<br>IAR—–工程文件</p><h2 id="三级文件夹"><a href="#三级文件夹" class="headerlink" title="三级文件夹"></a>三级文件夹</h2><p>IAR—–与IAR编译器相关的头文件<br>kinetis-与MCU相关的头文件<br>IAR—–IAR驱动程序和编译器相关驱动程序</p><h1 id="正式开篇"><a href="#正式开篇" class="headerlink" title="正式开篇"></a>正式开篇</h1><p>经过几天的准备工作（环境搭建，编译设置）后，今天正式开始学习K60单片机。</p><h1 id="关于库"><a href="#关于库" class="headerlink" title="关于库"></a>关于库</h1><p>常用库文件说明：<br>MK60_conf.h—配置文件，包含printf函数，波特率设置，频率设置。<br>MK60_conf.c—断言函数，printf底层接口，默认中断等函数。<br>MK60_it.c—–中断函数库。<br>PORT_cfg.h—-管脚服用配置文件，用于配置默认复用管脚。</p><h2 id="快速复用管脚"><a href="#快速复用管脚" class="headerlink" title="快速复用管脚"></a>快速复用管脚</h2><p>只需在PORT_cfg.h中按照注释里写着的可选范围进行修改这里的宏定义，就能更改默认的复用管脚，不需要修改函数。 </p><h2 id="中断函数的编写"><a href="#中断函数的编写" class="headerlink" title="中断函数的编写"></a>中断函数的编写</h2><p>set_vector_handler(中断号的枚举类型,中断服务函数)<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set_vector_handler(PORTD_VECTORn,PORTD_IRQHandler)</span><br><span class="line">//第一个参数是port模块的D端口的中断，第二个参数是编写好的中断服务函数</span><br><span class="line">//第一个参数详见C:\Users\树枝990\Desktop\K60单片机\fire_Kinetis\Chip\inc</span><br></pre></td></tr></table></figure></p><h2 id="安全检查"><a href="#安全检查" class="headerlink" title="安全检查"></a>安全检查</h2><p>跳过，暂时看不懂。</p><h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3><h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><h1 id="模块学习"><a href="#模块学习" class="headerlink" title="模块学习"></a>模块学习</h1><h2 id="PORT模块（管脚管理模块）"><a href="#PORT模块（管脚管理模块）" class="headerlink" title="PORT模块（管脚管理模块）"></a>PORT模块（管脚管理模块）</h2><p>PORT模块：K60的PORT模块是引脚控制和中断模块，控制每个管脚复用到各个不同的内部模块（GPIO,UART,I2C），配置每一个管脚的各种属性（上拉下拉电阻、无源滤波）。</p><h2 id="PORT库的使用"><a href="#PORT库的使用" class="headerlink" title="PORT库的使用"></a>PORT库的使用</h2><h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>下降沿触发：就是说，当端口输入为低电平触发。<br>上拉电阻：当输入不确定信号时，上拉为高电平。</p><h3 id="常用枚举列表"><a href="#常用枚举列表" class="headerlink" title="常用枚举列表"></a>常用枚举列表</h3><p>PTXn_e:管脚编号。例:PTB0<br>PTX_e:端口模块。例:PTA<br>PTn_e:管脚位号。例:PT1</p><h3 id="函数列表"><a href="#函数列表" class="headerlink" title="函数列表"></a>函数列表</h3><p>port_init(PTXn_e,cfg)：PORT初始化（配置复用功能）</p><blockquote><p>例:port_init(PTA8,IRQ_RISING|PF|ALT1|PULLUP);  配置了复用功能ALT1。<br>port_init_NoALT(PTXn_e,cfg)：PORT初始化（不改变复用功能）<br>例:port_init_NoALT(PTA8,IRQ_RISING|PF|PULLUP)</p></blockquote><h3 id="宏定义列表"><a href="#宏定义列表" class="headerlink" title="宏定义列表"></a>宏定义列表</h3><p>PORT_FUNC(X,num,func)：中断函数中的宏定义，简化代码量。（据说可以不用清楚位标志）</p><blockquote><p>x:为端口号（A~E）。<br>num:为管脚位号（1~31）。<br>func:相应的中断处理函数。<br>例:PORT_FUNC(A,6,key)</p><blockquote><p>其中key为中断中需要执行的用户任务。</p></blockquote></blockquote><h2 id="实例使用"><a href="#实例使用" class="headerlink" title="实例使用"></a>实例使用</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;好好学习K60单片机&lt;br&gt;
+    
+    </summary>
+    
+      <category term="硬件部分" scheme="http://linmushen.com/categories/MCU/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>破解论文2</title>
